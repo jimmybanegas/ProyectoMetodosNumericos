@@ -118,16 +118,6 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="leParam6">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>80</y>
-       <width>81</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="lbParam3">
      <property name="geometry">
       <rect>
@@ -138,33 +128,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Param1:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lbParam7">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>20</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Param1:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lbParam6">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>80</y>
-       <width>91</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Param1:</string>
+      <string>Param3:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="leParam3">
@@ -177,19 +141,6 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="lbParam8">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>50</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Param1:</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="lbParam4">
      <property name="geometry">
       <rect>
@@ -200,17 +151,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Param1:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="leParam8">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>50</y>
-       <width>81</width>
-       <height>20</height>
-      </rect>
+      <string>Param4:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="leParam2">
@@ -233,16 +174,6 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="leParam7">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>20</y>
-       <width>81</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="lbParam2">
      <property name="geometry">
       <rect>
@@ -253,7 +184,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Param1:</string>
+      <string>Param2:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="leParam1">
@@ -289,7 +220,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Param1:</string>
+      <string>Param5:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pbCalculate">
@@ -300,6 +231,13 @@
        <width>141</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="text">
       <string>Calcular</string>
@@ -321,9 +259,16 @@
      <rect>
       <x>545</x>
       <y>440</y>
-      <width>121</width>
+      <width>181</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -332,11 +277,18 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>430</x>
       <y>440</y>
-      <width>61</width>
+      <width>101</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Resultado:</string>
@@ -355,6 +307,17 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>leEquation</tabstop>
+  <tabstop>leParam1</tabstop>
+  <tabstop>leParam2</tabstop>
+  <tabstop>leParam3</tabstop>
+  <tabstop>leParam4</tabstop>
+  <tabstop>leParam5</tabstop>
+  <tabstop>cboMethod</tabstop>
+  <tabstop>pbCalculate</tabstop>
+  <tabstop>teSteps</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

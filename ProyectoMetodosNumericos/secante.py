@@ -1,75 +1,72 @@
 import parser
-from math import sin
-from math import cos
-from math import tan
-from math import asin
+from math import *
 
-def secante(formula, p0, p1, tol, n_iter):
+def secante(formula, p0, p1, tol, n_iter, lista):
 	code = parser.expr(formula).compile()
 	valor = 0
 	dato =0
 	
-	var = "**********Metodo Secante********** \n \n"
+	lista.append("**********Metodo Secante**********)")
 	
-	var += "       *****Paso 1***** \n"
+	lista.append("       *****Paso 1***** ")
 	itera = 2
-	var +=  "Tome i = "+str(itera) + "\n"
+	lista.append( "Tome i = "+str(itera))
 	x = p0
 	q0 = eval(code)
-	var += "Q0 = " + str(q0) + "\n"
+	lista.append("Q0 = " + str(q0) )
 	x = p1
 	q1 = eval(code)	
-	var += "Q1 = " + str(q1) + "\n" + "\n"
+	lista.append("Q1 = " + str(q1))
 	
-	var += "        *****Paso 2*****" + "\n"
-	var += "Mientras i <= a " + str(n_iter) + "\n" 
-	var += "Hacer los pasos del 3 al 6" + "\n" + "\n" 
+	lista.append("        *****Paso 2*****")
+	lista.append("Mientras i <= a " + str(n_iter))
+	lista.append("Hacer los pasos del 3 al 6" + "\n")
 	
 	while itera <= n_iter:
-		var += "------------- i = " + str(itera) + " ------------------" + "\n"
-		var += "         *****Paso 3*****" + "\n"
+		lista.append("------------- i = " + str(itera) + " ------------------")
+		lista.append("         *****Paso 3*****" )
 		p = p1-((q1*(p1-p0))/(q1-q0))
 		valor = p
-		var += "      p = " + str(p) + "\n" + "\n"
+		lista.append("      p = " + str(p) + "\n" )
 	
 		if(True):
 		
 			break
 	
-		var += "         *****Paso 4*****" + "\n"
+		lista.append("         *****Paso 4*****" )
 		if(abs(p-p1) < tol):
-			var += "Procedimiento terminado satisfactoriamente  despues de " + str(itera) + " iteracion(es)" + "\n"
-			var += "Con resultado : " + str(p) + "\n"
+			lista.append("Procedimiento terminado satisfactoriamente  despues de " + str(itera) + " iteracion(es)")
+			lista.append("Con resultado : " + str(p))
 			return var
 		else:
-			var += "      FALSO" + "\n"
+			lista.append("      FALSO")
 		
-		var += "         *****Paso 5*****" + "\n"
+		lista.append("         *****Paso 5*****")
 		itera  = itera +1
-		var += "      i = " + str(itera-1) + "+1=" + str(itera) 	+ "\n" + "\n"
+		lista.append("      i = " + str(itera-1) + "+1=" + str(itera) 	+ "\n" )
 		
-		var += "         *****Paso 6*****" + "\n"
+		lista.append("         *****Paso 6*****" )
 		
 		p0 = p1
-		var += "      P0 = " + str(p1) + "\n"
+		lista.append("      P0 = " + str(p1) )
 		
 		q0 = q1
-		var += "      Q0 = " + str(q1) + "\n"
+		lista.append("      Q0 = " + str(q1) )
 		
 		p1 = p
-		var += "      P1 = " + str(p)  + "\n"
+		lista.append("      P1 = " + str(p)  )
 		
 		x = p
-		var += "      x = " + str(p) + "\n"
+		lista.append("      x = " + str(p) )
 		
 		q1 = eval(code)
-		var += "      Q1 = " + str(q1) + "\n" + "\n"
+		lista.append("      Q1 = " + str(q1) + "\n")
 		
  
-	var += "Metodo Fallo" + "\n"
+	lista.append("Metodo Fallo" )
 	return var
 
-		
+'''		
 print "Ingrese ecuacion: "
 ecua = raw_input()
 print "Ingrese aprox inicial P0: "
@@ -84,3 +81,4 @@ ite = int(raw_input())
 #print secante("cos(x)-x",1,2.0,0.0000	5,50)
 print secante(ecua,p0,p1,tol,ite)
 
+'''

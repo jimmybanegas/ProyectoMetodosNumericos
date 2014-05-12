@@ -301,7 +301,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>18</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -309,12 +309,12 @@
  </widget>
  <tabstops>
   <tabstop>leEquation</tabstop>
+  <tabstop>cboMethod</tabstop>
   <tabstop>leParam1</tabstop>
   <tabstop>leParam2</tabstop>
   <tabstop>leParam3</tabstop>
   <tabstop>leParam4</tabstop>
   <tabstop>leParam5</tabstop>
-  <tabstop>cboMethod</tabstop>
   <tabstop>pbCalculate</tabstop>
   <tabstop>teSteps</tabstop>
  </tabstops>

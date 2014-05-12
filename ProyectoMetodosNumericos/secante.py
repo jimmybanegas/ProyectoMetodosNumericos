@@ -37,7 +37,7 @@ def secante(formula, p0, p1, tol, n_iter, lista):
 		if(abs(p-p1) < tol):
 			lista.append("Procedimiento terminado satisfactoriamente  despues de " + str(itera) + " iteracion(es)")
 			lista.append("Con resultado : " + str(p))
-			return var
+			return p
 		else:
 			lista.append("      FALSO")
 		
@@ -64,7 +64,7 @@ def secante(formula, p0, p1, tol, n_iter, lista):
 		
  
 	lista.append("Metodo Fallo" )
-	return var
+	
 
 '''		
 print "Ingrese ecuacion: "

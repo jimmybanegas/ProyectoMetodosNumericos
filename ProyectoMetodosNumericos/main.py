@@ -11,6 +11,7 @@ from Newton import Newt
 from puntofijo import puntoFijo
 from falsa_posicion import pos_f
 from muller import muller
+from secante import secante
 from visualFunctions import resetAll, hideAll
             
 from mwindow import Ui_MWindow
@@ -107,7 +108,7 @@ class Main(QtGui.QMainWindow):
             #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
                
-                resp=muller(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
+                resp=secante(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
         

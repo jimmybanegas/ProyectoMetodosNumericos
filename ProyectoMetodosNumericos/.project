@@ -14,4 +14,21 @@
 	<natures>
 		<nature>org.python.pydev.pythonNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>muller.py</name>
+			<type>1</type>
+			<location>C:/Users/William/Documents/GitHub/ProyectoMetodosNumericos/ProyectoMetodosNumericos/muller.py</location>
+		</link>
+		<link>
+			<name>puntofijo.py</name>
+			<type>1</type>
+			<location>C:/Users/William/Documents/GitHub/ProyectoMetodosNumericos/ProyectoMetodosNumericos/puntofijo.py</location>
+		</link>
+		<link>
+			<name>secante.py</name>
+			<type>1</type>
+			<location>C:/Users/William/Documents/GitHub/ProyectoMetodosNumericos/ProyectoMetodosNumericos/secante.py</location>
+		</link>
+	</linkedResources>
 </projectDescription>

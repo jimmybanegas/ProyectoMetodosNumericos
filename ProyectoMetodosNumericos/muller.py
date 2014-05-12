@@ -73,7 +73,7 @@ def muller(ecuacion, x0,x1,x2,tol,N,lista):
         lista.append('d = (s2 - s1)/(h2 - h1); d = ' + str(d))
         i += 1
         lista.append('Incrementar i; i = ' + str(i))
-    lista.append('El algoritmo falló luego de ' + str(N) + ' iteraciones.')
+    lista.append('El algoritmo fallo luego de ' + str(N) + ' iteraciones.')
     return 0
 '''    
 lista =[]

@@ -35,6 +35,6 @@ def puntoFijo(ecuacion, p0, tol, N, lista):
         p0 = float(p)
     lista.append('Paso 7: El metodo fracaso luego de ' + str(N) +' iteraciones')
 
-lista=[]
+"""lista=[]
 puntoFijo('atanh(x)/10', 0.5749, 0.0001, 50, lista)
-print(lista)
+print(lista)"""

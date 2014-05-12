@@ -1,9 +1,9 @@
 #!/usr/bin/python
 import parser
 import math
-from math import atan,asin,acos
+from math import *
 
-def pos_f(cadena,formula, p0, p1, tol, n_iter):
+def pos_f(formula, p0, p1, tol, n_iter,cadena):
     cadena.append("Paso #1")
     itera = 2
     n_iter1=n_iter
@@ -60,8 +60,8 @@ def pos_f(cadena,formula, p0, p1, tol, n_iter):
     cadena.append("El metodo Fallo sobrepaso el numero maximo de iteraciones sin encontrar respuesta.")
     return 0    
 
-cadena=[]  
-pos_f(cadena,"cos(x)-x",0.5,0.7853,0.00005,50)  
+"""cadena=[]  
+pos_f(cadena,"cos(x)-x",0.5,0.7853,0.00005,50)"""  
     
     
     

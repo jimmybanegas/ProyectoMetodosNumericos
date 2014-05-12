@@ -2,7 +2,7 @@
 """
 Created on Sun May 11 17:46:27 2014
 Metodo de Iteracion de punto fijo como esta en el libro
-@author: Jay C Espinoza
+@author: Juan Carlos Espinoza
 """
 from math import *
 import parser

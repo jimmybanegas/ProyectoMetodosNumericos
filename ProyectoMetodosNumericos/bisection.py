@@ -1,5 +1,5 @@
 import parser
-import math
+from  math import*
 
 def bis(formula, a, b, tol, n_iter,lista):
     p = 0.00001

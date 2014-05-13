@@ -64,7 +64,7 @@ def secante(formula, p0, p1, tol, n_iter, lista):
 		
  
 	lista.append("Metodo Fallo" )
-	
+	return p
 
 '''		
 print "Ingrese ecuacion: "

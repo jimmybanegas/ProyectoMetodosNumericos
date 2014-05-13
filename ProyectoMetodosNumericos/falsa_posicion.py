@@ -35,7 +35,6 @@ def pos_f(formula, p0, p1, tol, n_iter,cadena):
         if abs(p-p1)<tol:
             cadena.append("Procedimiento terminado exitosamente")
             cadena.append("Su resultado es: "+str(p))
-            print cadena
             return p
             break
         cadena.append("Paso #5")

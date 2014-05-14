@@ -25,7 +25,11 @@ class Main(QtGui.QMainWindow):
             self.ui.cboMethod.currentIndexChanged.connect(self.checkIndex) 
             self.ui.leEquation.setText("")
             self.checkIndex()
-    
+            self.ui.pbCalculate_2.clicked.connect(self.limpiarHistorial)
+            
+        def limpiarHistorial(self):
+            self.ui.teSteps.clear()            
+            
         def pushbutton_ClickedBiseccion(self):
             lista=[]
             #bis("x**2 +4*(x**2)-10",1,2,0.00005,50)

@@ -55,9 +55,9 @@ def secante(formula, p0, p1, tol, n_iter, lista):
             var += "      x = " + str(p) + "\n"
             q1 = eval(code)
             var += "      Q1 = " + str(q1) + "\n" + "\n" 
-        var += "Metodo Fallo" + "\n"
-        lista.append(var)
-        return p
+    var += "Metodo Fallo" + "\n"
+    lista.append(var)
+    return p
 '''
 		
 print "Ingrese ecuacion: "

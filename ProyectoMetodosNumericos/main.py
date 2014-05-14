@@ -97,7 +97,7 @@ class Main(QtGui.QMainWindow):
             #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
                
-                resp=muller(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),float(str(self.ui.leParam4   .text())),int(str(self.ui.leParam5.text())),lista)
+                resp=muller(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),float(str(self.ui.leParam4.text())),int(str(self.ui.leParam5.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
         

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mwindow.ui'
 #
-# Created: Wed May 14 16:15:41 2014
+# Created: Mon Jun 16 16:44:10 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -90,6 +90,9 @@ class Ui_MWindow(object):
         font.setWeight(75)
         self.pbCalculate.setFont(font)
         self.pbCalculate.setObjectName(_fromUtf8("pbCalculate"))
+        self.pushButtonOtros = QtGui.QPushButton(self.groupParameters)
+        self.pushButtonOtros.setGeometry(QtCore.QRect(560, 20, 75, 23))
+        self.pushButtonOtros.setObjectName(_fromUtf8("pushButtonOtros"))
         self.teSteps = QtGui.QTextEdit(self.centralwidget)
         self.teSteps.setGeometry(QtCore.QRect(10, 200, 721, 231))
         self.teSteps.setObjectName(_fromUtf8("teSteps"))
@@ -120,7 +123,7 @@ class Ui_MWindow(object):
         self.pbCalculate_2.setObjectName(_fromUtf8("pbCalculate_2"))
         MWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 763, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 763, 18))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         MWindow.setMenuBar(self.menubar)
 
@@ -152,6 +155,7 @@ class Ui_MWindow(object):
         self.lbParam1.setText(_translate("MWindow", "Param1:", None))
         self.lbParam5.setText(_translate("MWindow", "Param5:", None))
         self.pbCalculate.setText(_translate("MWindow", "Calcular", None))
+        self.pushButtonOtros.setText(_translate("MWindow", "Otros", None))
         self.label_3.setText(_translate("MWindow", "Resultado:", None))
         self.pbCalculate_2.setText(_translate("MWindow", "Limpiar Historial", None))
 

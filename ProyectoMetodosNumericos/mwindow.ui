@@ -243,6 +243,19 @@
       <string>Calcular</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButtonOtros">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>20</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Otros</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QTextEdit" name="teSteps">
     <property name="geometry">
@@ -321,7 +334,7 @@
      <x>0</x>
      <y>0</y>
      <width>763</width>
-     <height>21</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>

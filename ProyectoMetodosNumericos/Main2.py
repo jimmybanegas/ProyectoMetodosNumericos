@@ -15,8 +15,7 @@ class Main2(QtGui.QMainWindow):
             self.ui.setupUi(self)
             
 if __name__ == '__main__':
-   app = QtGui.QApplication(sys.argv)
-   mwindow = Main2()
-   mwindow.show()
-
-   sys.exit(app.exec_())
+    app = QtGui.QApplication(sys.argv)
+    mwindow = Main2()
+    mwindow.show()
+    sys.exit(app.exec_())

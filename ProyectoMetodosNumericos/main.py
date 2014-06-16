@@ -13,9 +13,9 @@ from falsa_posicion import pos_f
 from muller import muller
 from secante import secante
 from visualFunctions import resetAll, hideAll
-            
-from mwindow import Ui_MWindow
 
+from mwindow import Ui_MWindow
+from Main2 import Main2
 class Main(QtGui.QMainWindow):
         #Init
         def __init__(self):
@@ -26,9 +26,23 @@ class Main(QtGui.QMainWindow):
             self.ui.leEquation.setText("")
             self.checkIndex()
             self.ui.pbCalculate_2.clicked.connect(self.limpiarHistorial)
+            self.ui.pushButtonOtros.clicked.connect(self.mWind2)
+            self.w2=None
+            
+            
+        def mWind2(self):
+            self.w2 = Main2()
+            self.w2.show()
+            self.close()
+                
+            
+            
             
         def limpiarHistorial(self):
-            self.ui.teSteps.clear()            
+            self.ui.teSteps.clear()
+            
+          
+                 
             
         def pushbutton_ClickedBiseccion(self):
             lista=[]
@@ -251,4 +265,5 @@ if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
     mwindow = Main()
     mwindow.show()
+
     sys.exit(app.exec_())

@@ -6,8 +6,6 @@ Created on Thu Jun 12 13:48:15 2014
 """
 
 #663
-import numpy
-
 def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
     A = [0 for i in range(N+1)]
     B = [0 for i in range(N+1)]
@@ -58,22 +56,22 @@ def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
         
     L[N-1] = A[N-1] - C[N-1]*U[N-2]
     Z[N-1] = (D[N-1] - C[N-1]*Z[N-2])/L[N-1]
-
-    Y = [0 for i in range(N+2)]
-    Y[0] = alpha
-    Y[N+1] = beta
-    Y[N] = Z[N-1]
-
+    
     W[0] = alpha
     W[N+1] = beta
+    W[N] = Z[N-1]
+    print(W)
+    Y = [0 for i in range(N+2)]
     
-    for i in range(N-1, -1, -1):
-        Y[i] = Z[i] - U[i]*Y[i+1]
-        W[i+1] = Y[i]
+    for i in range(N-1, -1 , -1):
+        print("i " + str(i))
+        W[i] = Z[i] - U[i]*W[i+1]
+        Y[i+1] = W[i]
+    print(Y)
     
     for i in range(N+2):
         X[i] = a + i*h
-        print(str(i-1) + " x, w - " + str(X[i]) + ", " + str(W[i])) #changed from algorithm W[i]
+        #print(str(i-1) + " x, w - " + str(X[i]) + ", " + str(W[i-1])) #changed from algorithm W[i]
     
     return W
     

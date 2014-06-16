@@ -2,7 +2,7 @@
 """
 Created on Thu Jun 12 10:53:14 2014
 
-@author: Marco
+@author: Juan Carlos
 """
 
 def deriv_PLagrange(N, xs, fs, x_d, lista):

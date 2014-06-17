@@ -71,11 +71,15 @@ def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
         Y[i] = Z[i] - U[i]*Y[i+1]
         W[i+1] = Y[i]
     
+    retArray = [[0 for i in range(2)] for i in range(N+2)]
+    
     for i in range(N+2):
         X[i] = a + i*h
         print(str(i-1) + " x, w - " + str(X[i]) + ", " + str(W[i])) #changed from algorithm W[i]
+        retArray[i][0] = X[i]
+        retArray[i][1] = W[i]
     
-    return W
+    return retArray
     
 if(__name__ == "__main__"):
     fx = "-2/x"
@@ -87,4 +91,8 @@ if(__name__ == "__main__"):
     bet = 2
     lista = []
     N = 9 
-    print( "REsult: " + str(linealDifFinitas(fx,qx,rx, exa, exb, alp, bet, N, lista)))
+    #print( "REsult: " + str(linealDifFinitas(fx,qx,rx, exa, exb, alp, bet, N, lista)))
+    res = linealDifFinitas(fx,qx,rx, exa, exb, alp, bet, N, lista)
+    
+    for i in range(res.__len__()):
+        print(res[i])

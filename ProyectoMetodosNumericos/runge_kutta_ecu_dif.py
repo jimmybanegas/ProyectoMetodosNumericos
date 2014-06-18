@@ -60,4 +60,5 @@ def runge_kutta_ecu_dif(formula, a, b, alfa, N):
 
     return x_list
 
-runge_kutta_ecu_dif("x - t**2 + 1",0,2,0.5,10)
+if __name__ == '__main__':
+    runge_kutta_ecu_dif("x - t**2 + 1",0,2,0.5,10)

@@ -41,9 +41,6 @@ class Main(QtGui.QMainWindow):
         def limpiarHistorial(self):
             self.ui.teSteps.clear()
             
-          
-                 
-            
         def pushbutton_ClickedBiseccion(self):
             lista=[]
             #bis("x**2 +4*(x**2)-10",1,2,0.00005,50)

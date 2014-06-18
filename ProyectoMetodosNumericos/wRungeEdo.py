@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wRungeEdo.ui'
 #
-# Created: Wed Jun 18 16:49:41 2014
+# Created: Wed Jun 18 16:58:07 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,11 +23,11 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_wRungeEdo(object):
-    def setupUi(self, wRungeEdo):
-        wRungeEdo.setObjectName(_fromUtf8("wRungeEdo"))
-        wRungeEdo.resize(598, 424)
-        self.centralwidget = QtGui.QWidget(wRungeEdo)
+class Ui_WRungeEdo(object):
+    def setupUi(self, WRungeEdo):
+        WRungeEdo.setObjectName(_fromUtf8("WRungeEdo"))
+        WRungeEdo.resize(598, 424)
+        self.centralwidget = QtGui.QWidget(WRungeEdo)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.leExpresion = QtGui.QLineEdit(self.centralwidget)
         self.leExpresion.setGeometry(QtCore.QRect(90, 30, 113, 20))
@@ -65,17 +65,17 @@ class Ui_wRungeEdo(object):
         self.leBeta = QtGui.QLineEdit(self.centralwidget)
         self.leBeta.setGeometry(QtCore.QRect(390, 60, 113, 20))
         self.leBeta.setObjectName(_fromUtf8("leBeta"))
-        wRungeEdo.setCentralWidget(self.centralwidget)
+        WRungeEdo.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(wRungeEdo)
-        QtCore.QMetaObject.connectSlotsByName(wRungeEdo)
+        self.retranslateUi(WRungeEdo)
+        QtCore.QMetaObject.connectSlotsByName(WRungeEdo)
 
-    def retranslateUi(self, wRungeEdo):
-        wRungeEdo.setWindowTitle(_translate("wRungeEdo", "MainWindow", None))
-        self.label.setText(_translate("wRungeEdo", "Expresion", None))
-        self.pbResolver.setText(_translate("wRungeEdo", "Resolver", None))
-        self.label_2.setText(_translate("wRungeEdo", "Extremo a", None))
-        self.label_3.setText(_translate("wRungeEdo", "Extremo b", None))
-        self.label_4.setText(_translate("wRungeEdo", "Alpha", None))
-        self.label_5.setText(_translate("wRungeEdo", "Beta", None))
+    def retranslateUi(self, WRungeEdo):
+        WRungeEdo.setWindowTitle(_translate("WRungeEdo", "MainWindow", None))
+        self.label.setText(_translate("WRungeEdo", "Expresion", None))
+        self.pbResolver.setText(_translate("WRungeEdo", "Resolver", None))
+        self.label_2.setText(_translate("WRungeEdo", "Extremo a", None))
+        self.label_3.setText(_translate("WRungeEdo", "Extremo b", None))
+        self.label_4.setText(_translate("WRungeEdo", "Alpha", None))
+        self.label_5.setText(_translate("WRungeEdo", "Beta", None))
 

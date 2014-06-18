@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wsimpson.ui'
 #
-# Created: Wed Jun 18 16:49:26 2014
+# Created: Wed Jun 18 16:57:54 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,11 +23,11 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_wsimpson(object):
-    def setupUi(self, wsimpson):
-        wsimpson.setObjectName(_fromUtf8("wsimpson"))
-        wsimpson.resize(544, 415)
-        self.centralwidget = QtGui.QWidget(wsimpson)
+class Ui_WSimpson(object):
+    def setupUi(self, WSimpson):
+        WSimpson.setObjectName(_fromUtf8("WSimpson"))
+        WSimpson.resize(544, 415)
+        self.centralwidget = QtGui.QWidget(WSimpson)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.teProcedimiento = QtGui.QTextEdit(self.centralwidget)
         self.teProcedimiento.setGeometry(QtCore.QRect(30, 110, 491, 241))
@@ -71,18 +71,18 @@ class Ui_wsimpson(object):
         self.leB = QtGui.QLineEdit(self.layoutWidget)
         self.leB.setObjectName(_fromUtf8("leB"))
         self.gridLayout.addWidget(self.leB, 1, 4, 1, 1)
-        wsimpson.setCentralWidget(self.centralwidget)
+        WSimpson.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(wsimpson)
-        QtCore.QMetaObject.connectSlotsByName(wsimpson)
+        self.retranslateUi(WSimpson)
+        QtCore.QMetaObject.connectSlotsByName(WSimpson)
 
-    def retranslateUi(self, wsimpson):
-        wsimpson.setWindowTitle(_translate("wsimpson", "MainWindow", None))
-        self.label_5.setText(_translate("wsimpson", "Resultado: ", None))
-        self.lbResultado.setText(_translate("wsimpson", "0", None))
-        self.pbCalcular.setText(_translate("wsimpson", "Calcular", None))
-        self.label.setText(_translate("wsimpson", "Ecuacion F(X):", None))
-        self.label_2.setText(_translate("wsimpson", "Limite inferior A:", None))
-        self.label_4.setText(_translate("wsimpson", "Numero de Iteraciones N: ", None))
-        self.label_3.setText(_translate("wsimpson", "Limite inferior B:", None))
+    def retranslateUi(self, WSimpson):
+        WSimpson.setWindowTitle(_translate("WSimpson", "MainWindow", None))
+        self.label_5.setText(_translate("WSimpson", "Resultado: ", None))
+        self.lbResultado.setText(_translate("WSimpson", "0", None))
+        self.pbCalcular.setText(_translate("WSimpson", "Calcular", None))
+        self.label.setText(_translate("WSimpson", "Ecuacion F(X):", None))
+        self.label_2.setText(_translate("WSimpson", "Limite inferior A:", None))
+        self.label_4.setText(_translate("WSimpson", "Numero de Iteraciones N: ", None))
+        self.label_3.setText(_translate("WSimpson", "Limite inferior B:", None))
 

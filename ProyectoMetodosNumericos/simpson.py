@@ -41,4 +41,4 @@ def simpson(formula, a, b,n,cadena):
 
 
 cadena=[]
-print simpson("sin(x)",0,3.141592654,20,cadena)
+print (simpson("sin(x)",0,3.141592654,20,cadena))

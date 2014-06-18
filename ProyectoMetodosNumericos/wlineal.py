@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wlineal.ui'
 #
-# Created: Wed Jun 18 16:48:45 2014
+# Created: Wed Jun 18 16:58:46 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,11 +23,11 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_wsimpson(object):
-    def setupUi(self, wsimpson):
-        wsimpson.setObjectName(_fromUtf8("wsimpson"))
-        wsimpson.resize(547, 432)
-        self.centralwidget = QtGui.QWidget(wsimpson)
+class Ui_WLineal(object):
+    def setupUi(self, WLineal):
+        WLineal.setObjectName(_fromUtf8("WLineal"))
+        WLineal.resize(547, 432)
+        self.centralwidget = QtGui.QWidget(WLineal)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.pbResolver = QtGui.QPushButton(self.centralwidget)
         self.pbResolver.setGeometry(QtCore.QRect(390, 140, 131, 23))
@@ -83,36 +83,36 @@ class Ui_wsimpson(object):
         self.teResultado = QtGui.QTextEdit(self.centralwidget)
         self.teResultado.setGeometry(QtCore.QRect(30, 190, 491, 181))
         self.teResultado.setObjectName(_fromUtf8("teResultado"))
-        wsimpson.setCentralWidget(self.centralwidget)
-        self.menubar = QtGui.QMenuBar(wsimpson)
+        WLineal.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(WLineal)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 547, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
-        wsimpson.setMenuBar(self.menubar)
-        self.statusbar = QtGui.QStatusBar(wsimpson)
+        WLineal.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(WLineal)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
-        wsimpson.setStatusBar(self.statusbar)
+        WLineal.setStatusBar(self.statusbar)
 
-        self.retranslateUi(wsimpson)
-        QtCore.QMetaObject.connectSlotsByName(wsimpson)
-        wsimpson.setTabOrder(self.lePx, self.leQx)
-        wsimpson.setTabOrder(self.leQx, self.leRx)
-        wsimpson.setTabOrder(self.leRx, self.leExa)
-        wsimpson.setTabOrder(self.leExa, self.leExb)
-        wsimpson.setTabOrder(self.leExb, self.leAlpha)
-        wsimpson.setTabOrder(self.leAlpha, self.leBeta)
-        wsimpson.setTabOrder(self.leBeta, self.leEne)
-        wsimpson.setTabOrder(self.leEne, self.pbResolver)
-        wsimpson.setTabOrder(self.pbResolver, self.teResultado)
+        self.retranslateUi(WLineal)
+        QtCore.QMetaObject.connectSlotsByName(WLineal)
+        WLineal.setTabOrder(self.lePx, self.leQx)
+        WLineal.setTabOrder(self.leQx, self.leRx)
+        WLineal.setTabOrder(self.leRx, self.leExa)
+        WLineal.setTabOrder(self.leExa, self.leExb)
+        WLineal.setTabOrder(self.leExb, self.leAlpha)
+        WLineal.setTabOrder(self.leAlpha, self.leBeta)
+        WLineal.setTabOrder(self.leBeta, self.leEne)
+        WLineal.setTabOrder(self.leEne, self.pbResolver)
+        WLineal.setTabOrder(self.pbResolver, self.teResultado)
 
-    def retranslateUi(self, wsimpson):
-        wsimpson.setWindowTitle(_translate("wsimpson", "MainWindow", None))
-        self.pbResolver.setText(_translate("wsimpson", "Resolver", None))
-        self.label.setText(_translate("wsimpson", "p(x)", None))
-        self.label_2.setText(_translate("wsimpson", "q(x)", None))
-        self.label_3.setText(_translate("wsimpson", "r(x)", None))
-        self.label_4.setText(_translate("wsimpson", "Extremo a", None))
-        self.label_5.setText(_translate("wsimpson", "alpha", None))
-        self.label_6.setText(_translate("wsimpson", "Extremo b", None))
-        self.label_7.setText(_translate("wsimpson", "beta", None))
-        self.label_9.setText(_translate("wsimpson", "Entero N", None))
+    def retranslateUi(self, WLineal):
+        WLineal.setWindowTitle(_translate("WLineal", "MainWindow", None))
+        self.pbResolver.setText(_translate("WLineal", "Resolver", None))
+        self.label.setText(_translate("WLineal", "p(x)", None))
+        self.label_2.setText(_translate("WLineal", "q(x)", None))
+        self.label_3.setText(_translate("WLineal", "r(x)", None))
+        self.label_4.setText(_translate("WLineal", "Extremo a", None))
+        self.label_5.setText(_translate("WLineal", "alpha", None))
+        self.label_6.setText(_translate("WLineal", "Extremo b", None))
+        self.label_7.setText(_translate("WLineal", "beta", None))
+        self.label_9.setText(_translate("WLineal", "Entero N", None))
 

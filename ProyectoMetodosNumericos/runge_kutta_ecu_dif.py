@@ -13,18 +13,18 @@ def runge_kutta_ecu_dif(formula, a, b, alfa, N):
     x_list=[x]
 
     itera = 1
-    print "f(t,x) "
-    print "f("+str(t)+","+str(x)+")"
+    print ("f(t,x) ")
+    print ("f("+str(t)+","+str(x)+")")
 
-    print "Paso #2"
-    print "Mientras i sea menor o igual al numero de iteraciones" 
-    print "Hacer los pasos 3, 4, 5 x 6" 
+    print ("Paso #2")
+    print ("Mientras i sea menor o igual al numero de iteraciones" )
+    print ("Hacer los pasos 3, 4, 5 x 6" )
     while itera <= N:
-        print "------------- i = " + str(itera) + " ------------------"
+        print ("------------- i = " + str(itera) + " ------------------")
         t_bak = t
         x_bak = x
 
-        print "Paso #3"
+        print ("Paso #3")
         fun_t_x = eval(funcion)
         k_1 = h * fun_t_x
 
@@ -49,15 +49,15 @@ def runge_kutta_ecu_dif(formula, a, b, alfa, N):
         t_list.append(t)
         x_list.append(x)
 
-        print "f(t,x)"
-        print "f("+str(t)+","+str(x)+")"
+        print ("f(t,x)")
+        print ("f("+str(t)+","+str(x)+")")
         itera = itera+1
 
-    print "------------- RESULTADOS ------------------"
-    print "\tf(t,w)"
+    print ("------------- RESULTADOS ------------------")
+    print ("\tf(t,w)")
     for i in range(len(t_list)):
-        print "\tf("+str(t_list[i])+","+str(x_list[i])+")"
+        print ("\tf("+str(t_list[i])+","+str(x_list[i])+")")
 
-    return fun_t_x
+    return x_list
 
 runge_kutta_ecu_dif("x - t**2 + 1",0,2,0.5,10)

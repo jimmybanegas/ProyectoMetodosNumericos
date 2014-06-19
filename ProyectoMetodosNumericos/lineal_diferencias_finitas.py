@@ -80,7 +80,7 @@ def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
         retArray[i][1] = W[i]
     
     return retArray
-'''    
+    
 if(__name__ == "__main__"):
     fx = "-2/x"
     qx = "2/(x*x)"
@@ -96,4 +96,3 @@ if(__name__ == "__main__"):
     
     for i in range(res.__len__()):
         print(res[i])
-        '''

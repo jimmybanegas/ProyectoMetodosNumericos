@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wsimpson.ui'
 #
-# Created: Wed Jun 18 16:57:54 2014
+# Created: Wed Jun 18 22:47:53 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -29,18 +29,18 @@ class Ui_WSimpson(object):
         WSimpson.resize(544, 415)
         self.centralwidget = QtGui.QWidget(WSimpson)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
-        self.teProcedimiento = QtGui.QTextEdit(self.centralwidget)
-        self.teProcedimiento.setGeometry(QtCore.QRect(30, 110, 491, 241))
-        self.teProcedimiento.setObjectName(_fromUtf8("teProcedimiento"))
+        self.teResultado = QtGui.QTextEdit(self.centralwidget)
+        self.teResultado.setGeometry(QtCore.QRect(30, 110, 491, 241))
+        self.teResultado.setObjectName(_fromUtf8("teResultado"))
         self.label_5 = QtGui.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(290, 360, 61, 31))
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.lbResultado = QtGui.QLabel(self.centralwidget)
         self.lbResultado.setGeometry(QtCore.QRect(360, 360, 161, 31))
         self.lbResultado.setObjectName(_fromUtf8("lbResultado"))
-        self.pbCalcular = QtGui.QPushButton(self.centralwidget)
-        self.pbCalcular.setGeometry(QtCore.QRect(30, 360, 111, 23))
-        self.pbCalcular.setObjectName(_fromUtf8("pbCalcular"))
+        self.pbResolver = QtGui.QPushButton(self.centralwidget)
+        self.pbResolver.setGeometry(QtCore.QRect(30, 360, 111, 23))
+        self.pbResolver.setObjectName(_fromUtf8("pbResolver"))
         self.layoutWidget = QtGui.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(30, 30, 491, 48))
         self.layoutWidget.setObjectName(_fromUtf8("layoutWidget"))
@@ -80,7 +80,7 @@ class Ui_WSimpson(object):
         WSimpson.setWindowTitle(_translate("WSimpson", "MainWindow", None))
         self.label_5.setText(_translate("WSimpson", "Resultado: ", None))
         self.lbResultado.setText(_translate("WSimpson", "0", None))
-        self.pbCalcular.setText(_translate("WSimpson", "Calcular", None))
+        self.pbResolver.setText(_translate("WSimpson", "Resolver", None))
         self.label.setText(_translate("WSimpson", "Ecuacion F(X):", None))
         self.label_2.setText(_translate("WSimpson", "Limite inferior A:", None))
         self.label_4.setText(_translate("WSimpson", "Numero de Iteraciones N: ", None))

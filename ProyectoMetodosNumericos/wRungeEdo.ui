@@ -139,10 +139,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>Beta</string>
+     <string>N</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="leBeta">
+   <widget class="QLineEdit" name="leEne">
     <property name="geometry">
      <rect>
       <x>390</x>

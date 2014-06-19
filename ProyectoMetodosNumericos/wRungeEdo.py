@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wRungeEdo.ui'
 #
-# Created: Wed Jun 18 16:58:07 2014
+# Created: Wed Jun 18 19:45:17 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -62,9 +62,9 @@ class Ui_WRungeEdo(object):
         self.label_5 = QtGui.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(320, 60, 46, 16))
         self.label_5.setObjectName(_fromUtf8("label_5"))
-        self.leBeta = QtGui.QLineEdit(self.centralwidget)
-        self.leBeta.setGeometry(QtCore.QRect(390, 60, 113, 20))
-        self.leBeta.setObjectName(_fromUtf8("leBeta"))
+        self.leEne = QtGui.QLineEdit(self.centralwidget)
+        self.leEne.setGeometry(QtCore.QRect(390, 60, 113, 20))
+        self.leEne.setObjectName(_fromUtf8("leEne"))
         WRungeEdo.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(WRungeEdo)
@@ -77,5 +77,5 @@ class Ui_WRungeEdo(object):
         self.label_2.setText(_translate("WRungeEdo", "Extremo a", None))
         self.label_3.setText(_translate("WRungeEdo", "Extremo b", None))
         self.label_4.setText(_translate("WRungeEdo", "Alpha", None))
-        self.label_5.setText(_translate("WRungeEdo", "Beta", None))
+        self.label_5.setText(_translate("WRungeEdo", "N", None))
 

@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="teProcedimiento">
+   <widget class="QTextEdit" name="teResultado">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -50,7 +50,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pbCalcular">
+   <widget class="QPushButton" name="pbResolver">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -60,7 +60,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Calcular</string>
+     <string>Resolver</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">

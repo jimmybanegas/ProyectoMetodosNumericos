@@ -11,9 +11,9 @@ from wlineal import Ui_WLineal
 from wsimpson import Ui_WSimpson
 from wRungeEdo import Ui_WRungeEdo
 
-import runge_kutta_ecu_dif
+from runge_kutta_ecu_dif import runge_kutta_ecu_dif
 from lineal_diferencias_finitas import linealDifFinitas
-import simpson
+from simpson import simpson
 
 class MainLineal(QtGui.QMainWindow):
         #Init
@@ -26,18 +26,63 @@ class MainLineal(QtGui.QMainWindow):
         def resolver(self):
             lista=[]
             try:
-                #resp=bis(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
-                ##resp = linealDifFinitas("algo", "as", "3x", float(str(self.ui.leExa.text())), float(str(self.ui.leExb.text())), float(str(self.ui.leAlpha.text())), float(str(self.ui.leBeta.text())), int(str(self.ui.leEne.text())), lista))
-                ##resp = linealDifFinitas(str(self.ui.lePx.text()), str(self.ui.leQx.text()), str(self.ui.leRx.text()), float(str(self.ui.leExa.text())), float(str(self.ui.leExb.text())), float(str(self.ui.leAlpha.text())), float(str(self.ui.leBeta.text())), int(str(self.ui.leEne.text())), lista))
+                resp = linealDifFinitas(str(self.ui.lePx.text()), str(self.ui.leQx.text()), str(self.ui.leRx.text()), float(str(self.ui.leExa.text())), float(str(self.ui.leExb.text())), float(str(self.ui.leAlpha.text())), float(str(self.ui.leBeta.text())), int(str(self.ui.leEne.text())), lista)
+                
+                self.ui.teResultado.append("Tabla de Resultados:")
                 for n in resp:
+                    self.ui.teResultado.append("x\t\ty(x)")
+                    self.ui.teResultado.append(str(n[0]) + "\t\t" + str(n[1]))
+            except:
+                self.ui.teResultado.clear()
+                self.ui.teResultado.setText("Ingrese los datos corectamente")
+
+class MainRungeEdo(QtGui.QMainWindow):
+        #Init
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ui_WRungeEdo()
+            self.ui.setupUi(self)
+            self.ui.pbResolver.clicked.connect(self.resolver)
+            
+        def resolver(self):
+            lista=[]
+            try:
+                resp = runge_kutta_ecu_dif(str(self.ui.leExpresion.text()), float(str(self.ui.leExa.text())), float(str(self.ui.leExb.text())), float(str(self.ui.leApha.text())), int(str(self.ui.leEne.text())))
+                self.ui.teResultado.append("Tabla de Resultados:")
+                
+                for n in resp:
+                    '''                    
+                    self.ui.teResultado.append("x\t\ty(x)")
+                    self.ui.teResultado.append(str(n[0]) + "\t\t" + str(n[1]))
+                    '''
+                    self.ui.teResultado.append(str(n))
+            except:
+                self.ui.teResultado.clear()
+                self.ui.teResultado.setText("Ingrese los datos corectamente")
+                
+class MainSimpson(QtGui.QMainWindow):
+        #Init
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ui_WSimpson()
+            self.ui.setupUi(self)
+            self.ui.pbResolver.clicked.connect(self.resolver)
+            
+        def resolver(self):
+            lista=[]
+            try:
+                resp = simpson(str(self.ui.leFX.text()), float(str(self.ui.leA.text())), float(str(self.ui.leB.text())), float(str(self.ui.leN.text())), lista)
+                
+                for n in lista:
                     self.ui.teResultado.append(n)
-                print("nada")
+                self.ui.lbResultado.setText(str(resp))
+                
             except:
                 self.ui.teResultado.clear()
                 self.ui.teResultado.setText("Ingrese los datos corectamente")
                 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
-    mwindow = MainLineal()
+    mwindow = MainSimpson()
     mwindow.show()
     sys.exit(app.exec_())

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>WIndice</class>
+ <widget class="QDialog" name="WIndice">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -80,22 +80,27 @@
    </row>
    <row>
     <property name="text">
-     <string>New Row</string>
+     <string>Mario</string>
     </property>
    </row>
    <row>
     <property name="text">
-     <string>New Row</string>
+     <string>William</string>
     </property>
    </row>
    <row>
     <property name="text">
-     <string>New Row</string>
+     <string>Donaldo</string>
     </property>
    </row>
    <row>
     <property name="text">
-     <string>New Row</string>
+     <string>Edward</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Juan Carlos</string>
     </property>
    </row>
    <column>
@@ -195,7 +200,47 @@
    </item>
    <item row="8" column="1">
     <property name="text">
-     <string/>
+     <string>sistema_ecuaciones_gauss.py</string>
+    </property>
+   </item>
+   <item row="9" column="0">
+    <property name="text">
+     <string>Factorizacion LU</string>
+    </property>
+   </item>
+   <item row="9" column="1">
+    <property name="text">
+     <string>Factorizacion_LU.py</string>
+    </property>
+   </item>
+   <item row="10" column="0">
+    <property name="text">
+     <string>Sistema de Ecuacioes mediante la Inversa</string>
+    </property>
+   </item>
+   <item row="10" column="1">
+    <property name="text">
+     <string>MatrizInversa.py</string>
+    </property>
+   </item>
+   <item row="11" column="0">
+    <property name="text">
+     <string>Regresion Lineal</string>
+    </property>
+   </item>
+   <item row="11" column="1">
+    <property name="text">
+     <string>minimos_cuadrados.py</string>
+    </property>
+   </item>
+   <item row="12" column="0">
+    <property name="text">
+     <string>Metodo Lineal de Diferencias Finitas</string>
+    </property>
+   </item>
+   <item row="12" column="1">
+    <property name="text">
+     <string>lineal_diferencias_finitas.py</string>
     </property>
    </item>
   </widget>
@@ -205,7 +250,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>WIndice</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -221,7 +266,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>WIndice</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

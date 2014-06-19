@@ -154,6 +154,15 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>leExpresion</tabstop>
+  <tabstop>leExa</tabstop>
+  <tabstop>leExb</tabstop>
+  <tabstop>leAlpha</tabstop>
+  <tabstop>leEne</tabstop>
+  <tabstop>pbResolver</tabstop>
+  <tabstop>teResultado</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

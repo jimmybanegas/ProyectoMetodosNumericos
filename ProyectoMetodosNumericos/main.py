@@ -46,7 +46,6 @@ class Main(QtGui.QMainWindow):
             #bis("x**2 +4*(x**2)-10",1,2,0.00005,50)
             #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
-               
                 resp=bis(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
@@ -60,9 +59,7 @@ class Main(QtGui.QMainWindow):
         def pushbutton_ClickedNewton(self):
             lista=[]
             #Newton("cos(x)-x",1,0.00005,50,lista)
-            #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
-               
                 resp=Newt(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),int(str(self.ui.leParam3.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
@@ -74,10 +71,7 @@ class Main(QtGui.QMainWindow):
                 
         def pushbutton_ClickedPuntoFijo(self):
             lista=[]
-            #Newton("cos(x)-x",1,0.00005,50,lista)
-            #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
-               
                 resp=puntoFijo(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),int(str(self.ui.leParam3.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
@@ -89,10 +83,7 @@ class Main(QtGui.QMainWindow):
                 
         def pushbutton_ClickedFalsaPosicion(self):
             lista=[]
-            #Newton("cos(x)-x",1,0.00005,50,lista)
-            #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
-               
                 resp=pos_f(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
@@ -104,10 +95,7 @@ class Main(QtGui.QMainWindow):
             
         def pushbutton_ClickedMuller(self):
             lista=[]
-            #Newton("cos(x)-x",1,0.00005,50,lista)
-            #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
-               
                 resp=muller(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),float(str(self.ui.leParam4.text())),int(str(self.ui.leParam5.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)
@@ -119,10 +107,7 @@ class Main(QtGui.QMainWindow):
                 
         def pushbutton_ClickedSecante(self):
             lista=[]
-            #Newton("cos(x)-x",1,0.00005,50,lista)
-            #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
             try:
-               
                 resp=secante(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
                 for n in lista:
                     self.ui.teSteps.append(n)

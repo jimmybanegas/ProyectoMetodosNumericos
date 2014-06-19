@@ -117,6 +117,14 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>leFX</tabstop>
+  <tabstop>leN</tabstop>
+  <tabstop>leA</tabstop>
+  <tabstop>leB</tabstop>
+  <tabstop>teResultado</tabstop>
+  <tabstop>pbResolver</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

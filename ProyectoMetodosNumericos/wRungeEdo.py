@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wRungeEdo.ui'
 #
-# Created: Wed Jun 18 19:45:17 2014
+# Created: Wed Jun 18 23:16:32 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -69,6 +69,12 @@ class Ui_WRungeEdo(object):
 
         self.retranslateUi(WRungeEdo)
         QtCore.QMetaObject.connectSlotsByName(WRungeEdo)
+        WRungeEdo.setTabOrder(self.leExpresion, self.leExa)
+        WRungeEdo.setTabOrder(self.leExa, self.leExb)
+        WRungeEdo.setTabOrder(self.leExb, self.leAlpha)
+        WRungeEdo.setTabOrder(self.leAlpha, self.leEne)
+        WRungeEdo.setTabOrder(self.leEne, self.pbResolver)
+        WRungeEdo.setTabOrder(self.pbResolver, self.teResultado)
 
     def retranslateUi(self, WRungeEdo):
         WRungeEdo.setWindowTitle(_translate("WRungeEdo", "MainWindow", None))

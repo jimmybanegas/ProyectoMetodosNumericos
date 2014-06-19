@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wsimpson.ui'
 #
-# Created: Wed Jun 18 22:47:53 2014
+# Created: Wed Jun 18 23:16:23 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -75,6 +75,11 @@ class Ui_WSimpson(object):
 
         self.retranslateUi(WSimpson)
         QtCore.QMetaObject.connectSlotsByName(WSimpson)
+        WSimpson.setTabOrder(self.leFX, self.leN)
+        WSimpson.setTabOrder(self.leN, self.leA)
+        WSimpson.setTabOrder(self.leA, self.leB)
+        WSimpson.setTabOrder(self.leB, self.teResultado)
+        WSimpson.setTabOrder(self.teResultado, self.pbResolver)
 
     def retranslateUi(self, WSimpson):
         WSimpson.setWindowTitle(_translate("WSimpson", "MainWindow", None))

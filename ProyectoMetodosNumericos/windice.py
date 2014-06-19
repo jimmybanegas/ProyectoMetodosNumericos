@@ -121,9 +121,6 @@ class Ui_WIndice(object):
         self.tableWidget.setItem(12, 1, item)
 
         self.retranslateUi(WIndice)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), WIndice.accept)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), WIndice.reject)
-        QtCore.QMetaObject.connectSlotsByName(WIndice)
 
     def retranslateUi(self, WIndice):
         WIndice.setWindowTitle(_translate("WIndice", "Dialog", None))

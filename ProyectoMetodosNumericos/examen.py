@@ -11,9 +11,18 @@ from wlineal import Ui_WLineal
 from wsimpson import Ui_WSimpson
 from wRungeEdo import Ui_WRungeEdo
 from wmenu import Ui_WMenu
+from windice import Ui_WIndice
+
 from runge_kutta_ecu_dif import runge_kutta_ecu_dif
 from lineal_diferencias_finitas import linealDifFinitas
 from simpson import simpson
+
+class MainIndice(QtGui.QMainWindow):
+        #Init
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ui_WIndice()
+            self.ui.setupUi(self)
 
 class MainMenu(QtGui.QMainWindow):
         #Init
@@ -21,14 +30,31 @@ class MainMenu(QtGui.QMainWindow):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ui_WMenu()
             self.ui.setupUi(self)
-            self.ui.pushButtonOtros.clicked.connect(self.mWind2)
             self.w2=None
-            
+            self.ui.pbRungeEdo.clicked.connect(self.runge1)
+            self.ui.pbSimpson.clicked.connect(self.simpson)
+            self.ui.pbLineal.clicked.connect(self.lineal)
+            #self.ui.pbIndice.clicked.connect(self.indice)
             
         def mWind2(self):
             self.w2 = Main2()
             self.w2.show()
-            self.close()
+        
+        def runge1(self):
+            self.w2 = MainRungeEdo()
+            self.w2.show()
+        
+        def simpson(self):
+            self.w2 = MainSimpson()
+            self.w2.show()
+            
+        def lineal(self):
+            self.w2 = MainLineal()
+            self.w2.show()
+            
+        def indice(self):
+            self.w2 = MainIndice()
+            self.w2.show()
             
             
 class MainLineal(QtGui.QMainWindow):

@@ -10,11 +10,27 @@ from PyQt4 import QtGui
 from wlineal import Ui_WLineal
 from wsimpson import Ui_WSimpson
 from wRungeEdo import Ui_WRungeEdo
-
+from wmenu import Ui_WMenu
 from runge_kutta_ecu_dif import runge_kutta_ecu_dif
 from lineal_diferencias_finitas import linealDifFinitas
 from simpson import simpson
 
+class MainMenu(QtGui.QMainWindow):
+        #Init
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ui_WMenu()
+            self.ui.setupUi(self)
+            self.ui.pushButtonOtros.clicked.connect(self.mWind2)
+            self.w2=None
+            
+            
+        def mWind2(self):
+            self.w2 = Main2()
+            self.w2.show()
+            self.close()
+            
+            
 class MainLineal(QtGui.QMainWindow):
         #Init
         def __init__(self):
@@ -83,6 +99,6 @@ class MainSimpson(QtGui.QMainWindow):
                 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
-    mwindow = MainSimpson()
+    mwindow = MainMenu()
     mwindow.show()
     sys.exit(app.exec_())

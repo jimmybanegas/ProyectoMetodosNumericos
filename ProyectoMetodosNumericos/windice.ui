@@ -40,12 +40,67 @@
    </property>
    <row>
     <property name="text">
+     <string>Imer</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>William</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Juan Carlos</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Erick</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Edward</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Donaldo</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Gadiel</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Gadiel</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>New Row</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
      <string>New Row</string>
     </property>
    </row>
    <column>
     <property name="text">
-     <string>New Column</string>
+     <string>Algoritmo</string>
     </property>
    </column>
    <column>
@@ -60,7 +115,87 @@
    </item>
    <item row="0" column="1">
     <property name="text">
-     <string>lagrange2</string>
+     <string>lagrange2.py</string>
+    </property>
+   </item>
+   <item row="1" column="0">
+    <property name="text">
+     <string>Interpolacion Mediante Trazadores Cubicos Naturales</string>
+    </property>
+   </item>
+   <item row="1" column="1">
+    <property name="text">
+     <string>Trazador_cubico_natural.py</string>
+    </property>
+   </item>
+   <item row="2" column="0">
+    <property name="text">
+     <string>Diferenciacion Numerica mediante Polinomios de Lagrange</string>
+    </property>
+   </item>
+   <item row="2" column="1">
+    <property name="text">
+     <string>derivPLagrange.py</string>
+    </property>
+   </item>
+   <item row="3" column="0">
+    <property name="text">
+     <string>Integracion Numerica por la Regla del Trapecio</string>
+    </property>
+   </item>
+   <item row="3" column="1">
+    <property name="text">
+     <string>trapezoide.py</string>
+    </property>
+   </item>
+   <item row="4" column="0">
+    <property name="text">
+     <string>Integracion Numerica por el Metodo de Simpson</string>
+    </property>
+   </item>
+   <item row="4" column="1">
+    <property name="text">
+     <string>simpson.py</string>
+    </property>
+   </item>
+   <item row="5" column="0">
+    <property name="text">
+     <string>Integracion Numerica por la Cuadratura Gaussiana</string>
+    </property>
+   </item>
+   <item row="5" column="1">
+    <property name="text">
+     <string>CuadraturaGaussiana.py</string>
+    </property>
+   </item>
+   <item row="6" column="0">
+    <property name="text">
+     <string>Solucion de EDO por Euler</string>
+    </property>
+   </item>
+   <item row="6" column="1">
+    <property name="text">
+     <string>euler_ec_dif.py</string>
+    </property>
+   </item>
+   <item row="7" column="0">
+    <property name="text">
+     <string>Solucion EDO por Runge-Kutta</string>
+    </property>
+   </item>
+   <item row="7" column="1">
+    <property name="text">
+     <string>runge_kutta_ecu_dif</string>
+    </property>
+   </item>
+   <item row="8" column="0">
+    <property name="text">
+     <string>Sistemas de Ecuaciones por Eliminacion de Gauss</string>
+    </property>
+   </item>
+   <item row="8" column="1">
+    <property name="text">
+     <string/>
     </property>
    </item>
   </widget>

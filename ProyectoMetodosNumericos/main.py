@@ -8,10 +8,10 @@ import sys
 from PyQt4 import QtGui
 from Algoritmos.bisection import bis
 from Algoritmos.Newton import Newt
-from puntofijo import puntoFijo
+from Algoritmos.puntofijo import puntoFijo
 from Algoritmos.falsa_posicion import pos_f
-from muller import muller
-from secante import secante
+from Algoritmos.muller import muller
+from Algoritmos.secante import secante
 from Ventanas.visualFunctions import resetAll, hideAll
 
 from Ventanas.mwindow import Ui_MWindow

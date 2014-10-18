@@ -1,7 +1,9 @@
 eclipse.preferences.version=1
-encoding/Newton.py=utf-8
+encoding//Algoritmos/Newton.py=utf-8
+encoding//Algoritmos/muller.py=utf-8
+encoding//Algoritmos/puntofijo.py=utf-8
+encoding//Ventanas/examen.py=utf-8
+encoding//Ventanas/mwindow.py=utf-8
+encoding//Ventanas/mwindow2.py=utf-8
+encoding//Ventanas/windice.py=utf-8
 encoding/main.py=utf-8
-encoding/muller.py=utf-8
-encoding/mwindow.py=utf-8
-encoding/mwindow2.py=utf-8
-encoding/puntofijo.py=utf-8

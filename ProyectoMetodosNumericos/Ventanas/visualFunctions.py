@@ -5,9 +5,9 @@ Created on 08/05/2014
 '''
 import sys
 from PyQt4 import QtGui
-from bisection import bis
-from Newton import Newt
-from mwindow import Ui_MWindow
+from Algoritmos.bisection import bis
+from Algoritmos.Newton import Newt
+from Ventanas.mwindow import Ui_MWindow
 
 
 

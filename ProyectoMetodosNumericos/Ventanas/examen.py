@@ -7,15 +7,15 @@ Created on Wed Jun 18 17:02:05 2014
 import sys
 from PyQt4 import QtGui
 
-from wlineal import Ui_WLineal
-from wsimpson import Ui_WSimpson
-from wRungeEdo import Ui_WRungeEdo
-from wmenu import Ui_WMenu
-from windice import Ui_WIndice
+from Ventanas.wlineal import Ui_WLineal
+from Ventanas.wsimpson import Ui_WSimpson
+from Ventanas.wRungeEdo import Ui_WRungeEdo
+from Ventanas.wmenu import Ui_WMenu
+from Ventanas.windice import Ui_WIndice
 
-from runge_kutta_ecu_dif import runge_kutta_ecu_dif
-from lineal_diferencias_finitas import linealDifFinitas
-from simpson import simpson
+from Algoritmos.runge_kutta_ecu_dif import runge_kutta_ecu_dif
+from Algoritmos.lineal_diferencias_finitas import linealDifFinitas
+from Algoritmos.simpson import simpson
 
 class MainIndice(QtGui.QMainWindow):
         #Init
@@ -37,9 +37,8 @@ class MainMenu(QtGui.QMainWindow):
             #self.ui.pbIndice.clicked.connect(self.indice)
             
         def mWind2(self):
-            self.w2 = Main2()
-            self.w2.show()
-        
+           ''' self.w2 = Main2()'''
+           ''' self.w2.show()'''        
         def runge1(self):
             self.w2 = MainRungeEdo()
             self.w2.show()

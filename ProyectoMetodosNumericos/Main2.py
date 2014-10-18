@@ -3,7 +3,7 @@ Created on 15/06/2014
 
 @author: William
 '''
-from mwindow2 import Ui_MainWindow
+from Ventanas.mwindow2 import Ui_MainWindow
 from PyQt4 import QtGui
 import sys
 

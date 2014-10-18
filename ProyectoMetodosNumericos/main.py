@@ -6,15 +6,15 @@ Created on Mon May  5 15:03:54 2014
 """
 import sys
 from PyQt4 import QtGui
-from bisection import bis
-from Newton import Newt
+from Algoritmos.bisection import bis
+from Algoritmos.Newton import Newt
 from puntofijo import puntoFijo
-from falsa_posicion import pos_f
+from Algoritmos.falsa_posicion import pos_f
 from muller import muller
 from secante import secante
-from visualFunctions import resetAll, hideAll
+from Ventanas.visualFunctions import resetAll, hideAll
 
-from mwindow import Ui_MWindow
+from Ventanas.mwindow import Ui_MWindow
 from Main2 import Main2
 class Main(QtGui.QMainWindow):
         #Init

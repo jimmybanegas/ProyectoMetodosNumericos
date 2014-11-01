@@ -32,12 +32,12 @@ class CutePlot(QMainWindow):
 		
 		# Create main plot area + menus + status bar		
 		self.create_main_frame()
-		self.textbox.setText('')
+		self.textbox.setText('x**2')
 		self.LB_UB_defaults()
 		self.on_draw()
 	
 		self.statusBar()
-		self.setWindowTitle('CutePlot')
+		self.setWindowTitle('Graficador')
 		self.create_menu()
 
 	def LB_UB_defaults(self):

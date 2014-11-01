@@ -9,9 +9,6 @@ from Algoritmos.bisection import bis
 from Algoritmos.Newton import Newt
 from Ventanas.mwindow import Ui_MWindow
 
-
-
-
 def hideAll(self):
     self.ui.leParam1.setText("")
     self.ui.leParam2.setText("")

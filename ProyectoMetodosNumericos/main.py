@@ -14,30 +14,27 @@ from Algoritmos.muller import muller
 from Algoritmos.secante import secante
 from Ventanas.visualFunctions import resetAll, hideAll
 
-from Ventanas.mwindow import Ui_MWindow
+'''from Ventanas.mwindow import Ui_MWindow'''
+from Ventanas.login import Ui_MainWindow
 from Main2 import Main2
 class Main(QtGui.QMainWindow):
         #Init
         def __init__(self):
             QtGui.QMainWindow.__init__(self)
-            self.ui = Ui_MWindow()
+            self.ui = Ui_MainWindow()
             self.ui.setupUi(self)
             self.ui.cboMethod.currentIndexChanged.connect(self.checkIndex) 
             self.ui.leEquation.setText("")
             self.checkIndex()
             self.ui.pbCalculate_2.clicked.connect(self.limpiarHistorial)
             self.ui.pushButtonOtros.clicked.connect(self.mWind2)
-            self.w2=None
-            
+            self.w2=None            
             
         def mWind2(self):
             self.w2 = Main2()
             self.w2.show()
-            self.close()
-                
-            
-            
-            
+            self.close()             
+                                   
         def limpiarHistorial(self):
             self.ui.teSteps.clear()
             

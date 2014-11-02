@@ -14,7 +14,7 @@
    <string>Sistema de Resolución de Ecuaciones</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc">
+   <iconset>
     <normaloff>:/imagenes/calculator.png</normaloff>:/imagenes/calculator.png</iconset>
   </property>
   <property name="styleSheet">
@@ -24,8 +24,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>33</x>
-      <y>10</y>
+      <x>40</x>
+      <y>0</y>
       <width>551</width>
       <height>551</height>
      </rect>
@@ -40,7 +40,7 @@
      <item>
       <widget class="QLabel" name="label_3">
        <property name="styleSheet">
-        <string notr="true">border-image: url(:/imagenes/logo_header_jan.png)</string>
+        <string notr="true">border-image:url(:/logo_header_jan.png)</string>
        </property>
        <property name="text">
         <string/>
@@ -58,13 +58,23 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true">border-image:url(:/119499456854720557funct.svg.med.png)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
       <widget class="QLabel" name="label">
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../../../../Desktop/lylibrary-2.0/lylibrary/biblio.qrc">:/imagenes/119499456854720557funct.svg.med.png</pixmap>
+        <pixmap>:/imagenes/119499456854720557funct.svg.med.png</pixmap>
        </property>
       </widget>
      </item>
@@ -90,7 +100,7 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="icon">
          <iconset resource="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc">
-          <normaloff>:/imagenes/dialog-ok-apply.png</normaloff>:/imagenes/dialog-ok-apply.png</iconset>
+          <normaloff>:/dialog-close.png</normaloff>:/dialog-close.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="btnConfig">
@@ -106,14 +116,10 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Download aggiornamento&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image: url(:/imagenes/system-software-update.png)</string>
+         <string notr="true">border-image: url(:/system-software-update.png)</string>
         </property>
         <property name="text">
          <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc">
-          <normaloff>:/imagenes/system-software-update.png</normaloff>:/imagenes/system-software-update.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="btnIngresar">
@@ -133,7 +139,7 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="icon">
          <iconset resource="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc">
-          <normaloff>:/imagenes/start.png</normaloff>:/imagenes/start.png</iconset>
+          <normaloff>:/start.png</normaloff>:/start.png</iconset>
         </property>
        </widget>
       </widget>
@@ -154,7 +160,6 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../../../../Desktop/lylibrary-2.0/lylibrary/biblio.qrc"/>
   <include location="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc"/>
  </resources>
  <connections/>

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'login.ui'
 #
-# Created: Fri Oct 24 16:13:46 2014
+# Created: Sat Nov 01 11:19:22 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -34,14 +34,14 @@ class Ui_MainWindow(object):
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.groupBox = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(33, 10, 551, 551))
+        self.groupBox.setGeometry(QtCore.QRect(40, 0, 551, 551))
         self.groupBox.setStyleSheet(_fromUtf8("font: 16pt \"MS Shell Dlg 2\";"))
         self.groupBox.setTitle(_fromUtf8(""))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayout = QtGui.QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.label_3 = QtGui.QLabel(self.groupBox)
-        self.label_3.setStyleSheet(_fromUtf8("border-image: url(:/imagenes/logo_header_jan.png)"))
+        self.label_3.setStyleSheet(_fromUtf8("border-image:url(:/logo_header_jan.png)"))
         self.label_3.setText(_fromUtf8(""))
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.verticalLayout.addWidget(self.label_3)
@@ -50,6 +50,11 @@ class Ui_MainWindow(object):
 "font: 75 16pt \"MV Boli\";"))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.verticalLayout.addWidget(self.label_2)
+        self.label_4 = QtGui.QLabel(self.groupBox)
+        self.label_4.setStyleSheet(_fromUtf8("border-image:url(:/119499456854720557funct.svg.med.png)"))
+        self.label_4.setText(_fromUtf8(""))
+        self.label_4.setObjectName(_fromUtf8("label_4"))
+        self.verticalLayout.addWidget(self.label_4)
         self.label = QtGui.QLabel(self.groupBox)
         self.label.setText(_fromUtf8(""))
         self.label.setPixmap(QtGui.QPixmap(_fromUtf8(":/imagenes/119499456854720557funct.svg.med.png")))
@@ -62,22 +67,19 @@ class Ui_MainWindow(object):
         self.btnSalir = QtGui.QPushButton(self.groupBox_2)
         self.btnSalir.setGeometry(QtCore.QRect(380, 20, 131, 61))
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/imagenes/dialog-ok-apply.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/dialog-close.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSalir.setIcon(icon1)
         self.btnSalir.setObjectName(_fromUtf8("btnSalir"))
         self.btnConfig = QtGui.QPushButton(self.groupBox_2)
         self.btnConfig.setGeometry(QtCore.QRect(50, 20, 61, 61))
-        self.btnConfig.setStyleSheet(_fromUtf8("border-image: url(:/imagenes/system-software-update.png)"))
+        self.btnConfig.setStyleSheet(_fromUtf8("border-image: url(:/system-software-update.png)"))
         self.btnConfig.setText(_fromUtf8(""))
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/imagenes/system-software-update.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnConfig.setIcon(icon2)
         self.btnConfig.setObjectName(_fromUtf8("btnConfig"))
         self.btnIngresar = QtGui.QPushButton(self.groupBox_2)
         self.btnIngresar.setGeometry(QtCore.QRect(220, 20, 131, 61))
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/imagenes/start.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnIngresar.setIcon(icon3)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/start.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnIngresar.setIcon(icon2)
         self.btnIngresar.setObjectName(_fromUtf8("btnIngresar"))
         self.verticalLayout.addWidget(self.groupBox_2)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -100,5 +102,4 @@ class Ui_MainWindow(object):
         self.btnIngresar.setToolTip(_translate("MainWindow", "<html><head/><body><p>Installa aggiornamento</p></body></html>", None))
         self.btnIngresar.setText(_translate("MainWindow", "Ingresar", None))
 
-import biblio_rc
 import imagenes_rc

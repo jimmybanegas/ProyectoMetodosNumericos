@@ -1,0 +1,42 @@
+<RCC>
+  <qresource prefix="/">
+    <file>500px-N_math_physics.svg.png</file>
+    <file>119499456854720557funct.svg.med.png</file>
+    <file>accessories-dictionary.png</file>
+    <file>application-exit.png</file>
+    <file>backup_restor.png</file>
+    <file>calculadora.ico</file>
+    <file>calculator.png</file>
+    <file>dialog-close.png</file>
+    <file>dialog-ok-apply.png</file>
+    <file>documentation.png</file>
+    <file>document-edit.png</file>
+    <file>document-preview.png</file>
+    <file>document-print.png</file>
+    <file>document-save.png</file>
+    <file>edit-delete.png</file>
+    <file>edit-find.png</file>
+    <file>excel.png</file>
+    <file>exit.png</file>
+    <file>functions.png</file>
+    <file>install.png</file>
+    <file>list-remove.png</file>
+    <file>logo_header_jan.png</file>
+    <file>pagefold.png</file>
+    <file>pause.png</file>
+    <file>pdf.png</file>
+    <file>preferences-contact-list.png</file>
+    <file>preferences-system.png</file>
+    <file>start.png</file>
+    <file>svn_status.png</file>
+    <file>svn-commit.png</file>
+    <file>system-run.png</file>
+    <file>system-software-update.png</file>
+    <file>system-users.png</file>
+    <file>upgrade.png</file>
+    <file>user-group-properties.png</file>
+    <file>vcs_add.png</file>
+    <file>vcs_remove.png</file>
+    <file>view-refresh.png</file>
+  </qresource>
+</RCC>

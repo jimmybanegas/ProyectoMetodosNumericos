@@ -102,4 +102,4 @@ class Ui_MainWindow(object):
         self.btnIngresar.setToolTip(_translate("MainWindow", "<html><head/><body><p>Installa aggiornamento</p></body></html>", None))
         self.btnIngresar.setText(_translate("MainWindow", "Ingresar", None))
 
-import imagenes_rc
+import Ventanas.imagenes_rc

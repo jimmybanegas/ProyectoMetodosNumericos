@@ -14,14 +14,15 @@ from Algoritmos.muller import muller
 from Algoritmos.secante import secante
 from Ventanas.visualFunctions import resetAll, hideAll
 
-'''from Ventanas.mwindow import Ui_MWindow'''
-from Ventanas.login import Ui_MainWindow
+from Ventanas.mwindow import Ui_MWindow
+'''from Ventanas.login import Ui_MainWindow'''
 from Main2 import Main2
 class Main(QtGui.QMainWindow):
         #Init
         def __init__(self):
             QtGui.QMainWindow.__init__(self)
-            self.ui = Ui_MainWindow()
+            '''self.ui = Ui_MainWindow()'''
+            self.ui = Ui_MWindow()
             self.ui.setupUi(self)
             self.ui.cboMethod.currentIndexChanged.connect(self.checkIndex) 
             self.ui.leEquation.setText("")

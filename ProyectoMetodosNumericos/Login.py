@@ -5,7 +5,7 @@ Created on 2/11/2014
 '''
 import sys
 from PyQt4 import QtGui, QtCore
-from  Ventanas.login import Ui_MainWindow
+from  Ventanas.Historial import Ui_MainWindow
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):

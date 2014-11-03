@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Ingresar Función</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt;&quot;&gt;Ingrese Funcion&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt;&quot;&gt;Ingrese Función&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="Line" name="line">
@@ -134,7 +134,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Evaluar Funcion</string>
+     <string>Evaluar Función</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -153,7 +153,7 @@
     </property>
     <property name="text">
      <string>Nota: Asegurarse que la 
-funcion pase por el eje x.</string>
+función pase por el eje x.</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">

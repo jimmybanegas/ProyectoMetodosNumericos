@@ -1,17 +1,24 @@
 '''
 Created on 2/11/2014
 
-@author: Auditor3
+@author: Jimmy Ramos
 '''
 import sys
 from PyQt4 import QtGui, QtCore
-from  Ventanas.Historial import Ui_MainWindow
+from  Ventanas.login import Ui_MainWindow
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
-        self.setupUi(self)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.ui.btnSalir.clicked.connect(self.Salir)
+        
+    def Salir(self): 
+        self.close()
+        
+    
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

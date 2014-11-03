@@ -34,6 +34,7 @@ class MainMenu(QtGui.QMainWindow):
             self.ui.pbRungeEdo.clicked.connect(self.runge1)
             self.ui.pbSimpson.clicked.connect(self.simpson)
             self.ui.pbLineal.clicked.connect(self.lineal)
+           
             #self.ui.pbIndice.clicked.connect(self.indice)
             
         def mWind2(self):

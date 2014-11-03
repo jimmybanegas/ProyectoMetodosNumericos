@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>590</width>
-    <height>443</height>
+    <width>864</width>
+    <height>459</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,30 +35,475 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>100</y>
-      <width>421</width>
-      <height>211</height>
+      <x>20</x>
+      <y>80</y>
+      <width>811</width>
+      <height>241</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
-    <widget class="QWidget" name="tab">
+    <property name="currentIndex">
+     <number>5</number>
+    </property>
+    <widget class="QWidget" name="tab0">
+     <attribute name="title">
+      <string>Ceros</string>
+     </attribute>
+     <widget class="QCheckBox" name="t0_a1">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo de Biseccion</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t0_a2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo de Newton</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t0_a3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo de Secante</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t0_a4">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>20</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo de la Falsa Posicion</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t0_a5">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>80</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo de Muller</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab1">
      <attribute name="title">
       <string>Interpolacion</string>
      </attribute>
+     <widget class="QCheckBox" name="t1_a3">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>20</y>
+        <width>311</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interpolacion Mediante Trazadores 
+Cubicos Naturales</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t1_a2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interpolacion Polinomial 
+de Newton</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t1_a1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interpolacion de Lagrange</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t1_a4">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>110</y>
+        <width>311</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interpolacion Mediante Trazadores 
+Cubicos Sujetos</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab2">
      <attribute name="title">
-      <string>Zeros</string>
+      <string>Diferenciacion/Integracion</string>
      </attribute>
+     <widget class="QCheckBox" name="t2_a4">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>20</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Integracion Numerica: 
+Simpson</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t2_a2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Diferenciacion Numerica</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t2_a1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo de Punto Fijo</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t2_a3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Integracion Numerica: 
+Regla del Trapecio</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t2_a5">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>80</y>
+        <width>311</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Integracion Numerica Cuadraturas 
+de Gauss</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab3">
+     <attribute name="title">
+      <string>Ecuacion Diferencial Ordinaria</string>
+     </attribute>
+     <widget class="QCheckBox" name="t3_a2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>291</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Solucion de EDO: Runge Kutta</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t3_a1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Solucion de EDO: Metodo de Euler</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t3_a3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>291</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Sistemas de EDO: Runge Kutta</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab4">
+     <attribute name="title">
+      <string>Sistemas de Ecuaciones</string>
+     </attribute>
+     <widget class="QCheckBox" name="t4_a3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>421</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Sitemas de Ecuaciones Mediante La Inversa</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t4_a2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Sitemas de Ecuaciones Por Eliminacion de Gauss Jordan</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t4_a1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>441</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Sitemas de Ecuaciones Por Eliminacion de Gauss</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab5">
+     <attribute name="title">
+      <string>Otros</string>
+     </attribute>
+     <widget class="QCheckBox" name="t5_a3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo Lineal de Diferencias Finitas</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t5_a2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>291</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Regresion Lineal</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="t5_a1">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Descomposicion LU</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>200</x>
       <y>340</y>
       <width>111</width>
       <height>41</height>
@@ -66,7 +511,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>16</pointsize>
      </font>
     </property>
     <property name="text">
@@ -76,7 +521,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>520</x>
       <y>340</y>
       <width>111</width>
       <height>41</height>
@@ -97,7 +542,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>590</width>
+     <width>864</width>
      <height>21</height>
     </rect>
    </property>

@@ -99,7 +99,7 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
          <string>Salir</string>
         </property>
         <property name="icon">
-         <iconset resource="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc">
+         <iconset resource="imagenes/imagenes.qrc">
           <normaloff>:/dialog-close.png</normaloff>:/dialog-close.png</iconset>
         </property>
        </widget>
@@ -138,7 +138,7 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
          <string>Ingresar</string>
         </property>
         <property name="icon">
-         <iconset resource="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc">
+         <iconset resource="imagenes/imagenes.qrc">
           <normaloff>:/start.png</normaloff>:/start.png</iconset>
         </property>
        </widget>
@@ -160,7 +160,7 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../../../../Desktop/lylibrary-2.0/lylibrary/imagenes.qrc"/>
+  <include location="imagenes/imagenes.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -14,10 +14,14 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btnSalir.clicked.connect(self.Salir)
+        self.ui.btnConfig.clicked.connect(self.CambiarColor);
         
     def Salir(self): 
         self.close()
         
+    def CambiarColor(self):
+        color = QtGui.QColorDialog.getColor();
+        self.setStyleSheet("background-color: "+color.name());
     
 
 if __name__ == "__main__":

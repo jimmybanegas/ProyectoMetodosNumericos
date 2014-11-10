@@ -5,7 +5,7 @@ Created on 2/11/2014
 '''
 import sys
 from PyQt4 import QtGui, QtCore
-from Ventanas.Login import Ui_MainWindow
+from Ventanas.login import Ui_MainWindow
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -14,15 +14,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btnSalir.clicked.connect(self.Salir)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
         '''self.'''
->>>>>>> Manuel
-=======
-        '''self.'''
->>>>>>> Jimmy
         self.ui.btnConfig.clicked.connect(self.CambiarColor);
         
     def Salir(self): 

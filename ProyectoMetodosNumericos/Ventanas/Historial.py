@@ -49,14 +49,14 @@ class Ui_MainWindow(object):
         self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtGui.QFrame.Raised)
         self.frame.setObjectName(_fromUtf8("frame"))
-        self.label_2 = QtGui.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(380, 20, 311, 71))
+        self.lbResultados = QtGui.QLabel(self.centralwidget)
+        self.lbResultados.setGeometry(QtCore.QRect(380, 20, 311, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(False)
         font.setWeight(50)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.lbResultados.setFont(font)
+        self.lbResultados.setObjectName(_fromUtf8("lbResultados"))
         self.scrollArea = QtGui.QScrollArea(self.centralwidget)
         self.scrollArea.setGeometry(QtCore.QRect(370, 100, 321, 351))
         self.scrollArea.setWidgetResizable(True)
@@ -86,7 +86,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
         self.label.setText(_translate("MainWindow", "f(x) = ", None))
-        self.label_2.setText(_translate("MainWindow", "Resultados De Algoritmos \n"
+        self.lbResultados.setText(_translate("MainWindow", "Resultados De Algoritmos \n"
 "             Utilizados", None))
         self.pushButton.setText(_translate("MainWindow", "BACK", None))
 

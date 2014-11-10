@@ -4,6 +4,8 @@ Created on Mon May  5 15:03:54 2014
 
 @author: Juan Carlos Espinza, William Avila
 """
+import os
+
 import sys
 from PyQt4 import QtGui
 from Algoritmos.bisection import bis
@@ -14,9 +16,13 @@ from Algoritmos.muller import muller
 from Algoritmos.secante import secante
 from Ventanas.visualFunctions import resetAll, hideAll
 
+from Archivos import creartxt, grabartxt, leerultimotxt
+
 from Ventanas.mwindow import Ui_MWindow
 '''from Ventanas.login import Ui_MainWindow'''
 from Main2 import Main2
+from Ventanas.Steps import Steps
+
 class Main(QtGui.QMainWindow):
         #Init
         def __init__(self):
@@ -27,10 +33,17 @@ class Main(QtGui.QMainWindow):
             self.ui.cboMethod.currentIndexChanged.connect(self.checkIndex) 
             self.ui.leEquation.setText("")
             self.checkIndex()
-            self.ui.pbCalculate_2.clicked.connect(self.limpiarHistorial)
+            self.ui.pbClear.clicked.connect(self.limpiarHistorial)
             self.ui.pushButtonOtros.clicked.connect(self.mWind2)
-            self.w2=None            
+            self.ui.pbPasos.clicked.connect(self.showPasos)
+            self.w2=None
+            creartxt(self)            
             
+        def showPasos(self):
+            self.w2 = Steps()
+            self.w2.show()
+            self.close()
+        
         def mWind2(self):
             self.w2 = Main2()
             self.w2.show()
@@ -39,10 +52,14 @@ class Main(QtGui.QMainWindow):
         def limpiarHistorial(self):
             self.ui.teSteps.clear()
             
+            
         def pushbutton_ClickedBiseccion(self):
             lista=[]
+            
             #bis("x**2 +4*(x**2)-10",1,2,0.00005,50)
             #test=bis("2*(x**3)-4*(x**2)+4*(x)+4",-1,-2,0.00005,50)
+            
+            
             try:
                 resp=bis(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
                 for n in lista:
@@ -59,10 +76,12 @@ class Main(QtGui.QMainWindow):
             #Newton("cos(x)-x",1,0.00005,50,lista)
             try:
                 resp=Newt(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),int(str(self.ui.leParam3.text())),lista)
+                
                 for n in lista:
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -75,6 +94,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -87,6 +107,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -99,6 +120,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")

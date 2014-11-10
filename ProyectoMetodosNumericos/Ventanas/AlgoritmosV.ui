@@ -47,13 +47,13 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="tab0">
      <attribute name="title">
       <string>Ceros</string>
      </attribute>
-     <widget class="QCheckBox" name="t0_a1">
+     <widget class="QCheckBox" name="chBiseccion">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -71,7 +71,7 @@
        <string>Metodo de Biseccion</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t0_a2">
+     <widget class="QCheckBox" name="chNewton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -89,7 +89,7 @@
        <string>Metodo de Newton</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t0_a3">
+     <widget class="QCheckBox" name="chSecante">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -107,7 +107,7 @@
        <string>Metodo de Secante</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t0_a4">
+     <widget class="QCheckBox" name="chFalsa">
       <property name="geometry">
        <rect>
         <x>400</x>
@@ -125,7 +125,7 @@
        <string>Metodo de la Falsa Posicion</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t0_a5">
+     <widget class="QCheckBox" name="chMuller">
       <property name="geometry">
        <rect>
         <x>400</x>
@@ -148,7 +148,7 @@
      <attribute name="title">
       <string>Interpolacion</string>
      </attribute>
-     <widget class="QCheckBox" name="t1_a3">
+     <widget class="QCheckBox" name="chCubicosNaturales">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -167,7 +167,7 @@
 Cubicos Naturales</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t1_a2">
+     <widget class="QCheckBox" name="chPolinomialNewton">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -186,7 +186,7 @@ Cubicos Naturales</string>
 de Newton</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t1_a1">
+     <widget class="QCheckBox" name="chLagrage">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -204,7 +204,7 @@ de Newton</string>
        <string>Interpolacion de Lagrange</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t1_a4">
+     <widget class="QCheckBox" name="chCubicosSujetos">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -228,13 +228,13 @@ Cubicos Sujetos</string>
      <attribute name="title">
       <string>Diferenciacion/Integracion</string>
      </attribute>
-     <widget class="QCheckBox" name="t2_a4">
+     <widget class="QCheckBox" name="chInSimpson">
       <property name="geometry">
        <rect>
         <x>410</x>
         <y>20</y>
         <width>251</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -247,7 +247,7 @@ Cubicos Sujetos</string>
 Simpson</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t2_a2">
+     <widget class="QCheckBox" name="chDiferenciacion">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -265,7 +265,7 @@ Simpson</string>
        <string>Diferenciacion Numerica</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t2_a1">
+     <widget class="QCheckBox" name="chPuntoFijo">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -283,13 +283,13 @@ Simpson</string>
        <string>Metodo de Punto Fijo</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t2_a3">
+     <widget class="QCheckBox" name="chInTrapecio">
       <property name="geometry">
        <rect>
         <x>30</x>
         <y>140</y>
         <width>221</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -302,7 +302,7 @@ Simpson</string>
 Regla del Trapecio</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t2_a5">
+     <widget class="QCheckBox" name="chInGauss">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -326,7 +326,7 @@ de Gauss</string>
      <attribute name="title">
       <string>Ecuacion Diferencial Ordinaria</string>
      </attribute>
-     <widget class="QCheckBox" name="t3_a2">
+     <widget class="QCheckBox" name="checkBox">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -344,7 +344,7 @@ de Gauss</string>
        <string>Solucion de EDO: Runge Kutta</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t3_a1">
+     <widget class="QCheckBox" name="chSolucionEuler">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -362,7 +362,7 @@ de Gauss</string>
        <string>Solucion de EDO: Metodo de Euler</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t3_a3">
+     <widget class="QCheckBox" name="chSistemasRunge">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -385,7 +385,7 @@ de Gauss</string>
      <attribute name="title">
       <string>Sistemas de Ecuaciones</string>
      </attribute>
-     <widget class="QCheckBox" name="t4_a3">
+     <widget class="QCheckBox" name="chInversa">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -403,7 +403,7 @@ de Gauss</string>
        <string>Sitemas de Ecuaciones Mediante La Inversa</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t4_a2">
+     <widget class="QCheckBox" name="chEliGaussJordan">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -421,7 +421,7 @@ de Gauss</string>
        <string>Sitemas de Ecuaciones Por Eliminacion de Gauss Jordan</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t4_a1">
+     <widget class="QCheckBox" name="chEliGauss">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -444,7 +444,7 @@ de Gauss</string>
      <attribute name="title">
       <string>Otros</string>
      </attribute>
-     <widget class="QCheckBox" name="t5_a3">
+     <widget class="QCheckBox" name="chDiferencias">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -462,7 +462,7 @@ de Gauss</string>
        <string>Metodo Lineal de Diferencias Finitas</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t5_a2">
+     <widget class="QCheckBox" name="chRegresion">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -480,7 +480,7 @@ de Gauss</string>
        <string>Regresion Lineal</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="t5_a1">
+     <widget class="QCheckBox" name="chDescomposicion">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -500,7 +500,7 @@ de Gauss</string>
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pbHistorial">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -518,7 +518,7 @@ de Gauss</string>
      <string>Historial</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pbAlgoritmo">
     <property name="geometry">
      <rect>
       <x>520</x>

@@ -13,7 +13,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.btnSalir.clicked.connect(self.Salir)
+        self.ui.pbSalir.clicked.connect(self.Salir)
         
     def Salir(self): 
         self.close()

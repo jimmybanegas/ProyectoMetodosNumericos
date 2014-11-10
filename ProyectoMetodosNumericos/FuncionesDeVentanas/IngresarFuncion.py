@@ -12,9 +12,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        self.ui.btnBorrar.clicked.connect(self.Borrar)
-        #self.ui.btnContinuar.clicked.connect(self.Continuar)
+        self.ui.setupUi(self)     
+        self.ui.btnContinuar.clicked.connect(self.Continuar)
         #self.ui.btnEvaluar.clicked.connect(self.Evaluar)
     
     #Limpiar los datos del espacio para ingresar funciones
@@ -22,13 +21,13 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.ui.lnFuncion.clear()
         
     #Continuar me lleva a la pantalla de seleccionar el algoritmo con el cual resolvera la funcion
-    #def Continuar(self): 
-       # self.w2.show()
+    def Continuar(self): 
+        self.w2.show()
         
         
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
     #def Evaluar(self): 
-       #self.w2.show()    
+    #self.w2.show()    
         
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

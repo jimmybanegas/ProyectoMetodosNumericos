@@ -112,5 +112,8 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Nota: Asegurarse que la \n"
 "función pase por el eje x.", None))
         self.btnContinuar.setText(_translate("MainWindow", "Continuar", None))
+        
+    def Borrar(self): 
+        self.ui.lnFuncion.clear()       
 
 import imagenes_rc

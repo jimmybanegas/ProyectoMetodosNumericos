@@ -67,7 +67,7 @@
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="lnFuncion">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -85,7 +85,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnBorrar">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -119,7 +119,7 @@
       <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btnEvaluar">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -156,7 +156,7 @@
 función pase por el eje x.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="btnContinuar">
     <property name="geometry">
      <rect>
       <x>100</x>

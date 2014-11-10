@@ -12,6 +12,8 @@ from Ventanas import Historial
 from Ventanas import Input
 from Ventanas import Steps
 from Ventanas import Graph
+from Graficador import CutePlot
+import Graficador
 import Ventanas
 
 
@@ -44,7 +46,7 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.setupUi(self)
             self.ui.btnBorrar.clicked.connect(self.Borrar)
             self.ui.btnContinuar.clicked.connect(self.Continuar)
-            #self.ui.btnEvaluar.clicked.connect(self.Evaluar)
+            self.ui.btnEvaluar.clicked.connect(self.Evaluar)
     
     #Limpiar los datos del espacio para ingresar funciones
         def Borrar(self): 
@@ -57,8 +59,9 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
         
         
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
-        #def Evaluar(self): 
-            #self.w2.show()  
+        def Evaluar(self): 
+            self.w2 = Graficar()
+            self.w2.show()   
             
 class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -75,6 +78,18 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
         def VerHistorial(self): 
             self.w2 = Historial()
             self.w2.show() 
+            
+'''class Graficar():
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Graficador.CutePlot.CutePlot()
+            self.ui.setupUi(self)'''
+            
+class Graficar(QtGui.QMainWindow,Ui_MainWindow):
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Graficador.CutePlot.CutePlot()
+            #self.ui.setupUi(self)                          
 
 class Historial(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -85,7 +100,7 @@ class Historial(QtGui.QMainWindow,Ui_MainWindow):
         
         def Regresar(self): 
             self.close()                
-            
+        
             
 class Graph(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):

@@ -755,7 +755,7 @@ class CutePlot(QMainWindow):
 			self.axes_Q4.xaxis.tick_bottom()
 			self.axes_Q4.yaxis.tick_right()
 
-def main():
+'''def main():
 	# Check if QApplication already exists; if not, create it!
 	# (IPython compatibility)
 	app = QApplication.instance()
@@ -766,4 +766,10 @@ def main():
 	sys.exit(app.exec_())
 			
 if __name__ == '__main__':
-	main()
+	main()'''
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = CutePlot()
+    window.show()
+    sys.exit(app.exec_())

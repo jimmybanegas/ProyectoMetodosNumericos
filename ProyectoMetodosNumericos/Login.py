@@ -20,6 +20,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 =======
         self.ui.btnSalir.clicked.connect(self.Salir)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        '''self.'''
+>>>>>>> Manuel
         self.ui.btnConfig.clicked.connect(self.CambiarColor);
 >>>>>>> origin/master
 =======

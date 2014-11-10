@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Algoritmos.ui'
+# Form implementation generated from reading ui file 'AlgoritmosV.ui'
 #
-# Created: Sun Nov 02 21:55:24 2014
+# Created: Mon Nov 10 14:02:50 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
         self.tab2 = QtGui.QWidget()
         self.tab2.setObjectName(_fromUtf8("tab2"))
         self.chInSimpson = QtGui.QCheckBox(self.tab2)
-        self.chInSimpson.setGeometry(QtCore.QRect(410, 20, 251, 41))
+        self.chInSimpson.setGeometry(QtCore.QRect(410, 20, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.chInSimpson.setFont(font)
@@ -122,7 +122,7 @@ class Ui_MainWindow(object):
         self.chPuntoFijo.setFont(font)
         self.chPuntoFijo.setObjectName(_fromUtf8("chPuntoFijo"))
         self.chInTrapecio = QtGui.QCheckBox(self.tab2)
-        self.chInTrapecio.setGeometry(QtCore.QRect(30, 140, 221, 41))
+        self.chInTrapecio.setGeometry(QtCore.QRect(30, 140, 221, 51))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.chInTrapecio.setFont(font)
@@ -136,12 +136,12 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab2, _fromUtf8(""))
         self.tab3 = QtGui.QWidget()
         self.tab3.setObjectName(_fromUtf8("tab3"))
-        self.chSolucionRunge = QtGui.QCheckBox(self.tab3)
-        self.chSolucionRunge.setGeometry(QtCore.QRect(30, 80, 291, 31))
+        self.checkBox = QtGui.QCheckBox(self.tab3)
+        self.checkBox.setGeometry(QtCore.QRect(30, 80, 291, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
-        self.chSolucionRunge.setFont(font)
-        self.chSolucionRunge.setObjectName(_fromUtf8("chSolucionRunge"))
+        self.checkBox.setFont(font)
+        self.checkBox.setObjectName(_fromUtf8("checkBox"))
         self.chSolucionEuler = QtGui.QCheckBox(self.tab3)
         self.chSolucionEuler.setGeometry(QtCore.QRect(30, 20, 331, 31))
         font = QtGui.QFont()
@@ -203,12 +203,12 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.pbHistorial.setFont(font)
         self.pbHistorial.setObjectName(_fromUtf8("pbHistorial"))
-        self.pbHistorial_2 = QtGui.QPushButton(self.centralwidget)
-        self.pbHistorial_2.setGeometry(QtCore.QRect(520, 340, 111, 41))
+        self.pbAlgoritmo = QtGui.QPushButton(self.centralwidget)
+        self.pbAlgoritmo.setGeometry(QtCore.QRect(520, 340, 111, 41))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.pbHistorial_2.setFont(font)
-        self.pbHistorial_2.setObjectName(_fromUtf8("pbHistorial_2"))
+        self.pbAlgoritmo.setFont(font)
+        self.pbAlgoritmo.setObjectName(_fromUtf8("pbAlgoritmo"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 864, 21))
@@ -223,7 +223,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Seleccionar Algoritmo", None))
         self.label.setText(_translate("MainWindow", "Seleccione El Algoritmo Que Desea Probar", None))
         self.chBiseccion.setText(_translate("MainWindow", "Metodo de Biseccion", None))
         self.chNewton.setText(_translate("MainWindow", "Metodo de Newton", None))
@@ -248,7 +248,7 @@ class Ui_MainWindow(object):
         self.chInGauss.setText(_translate("MainWindow", "Integracion Numerica Cuadraturas \n"
 "de Gauss", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab2), _translate("MainWindow", "Diferenciacion/Integracion", None))
-        self.chSolucionRunge.setText(_translate("MainWindow", "Solucion de EDO: Runge Kutta", None))
+        self.checkBox.setText(_translate("MainWindow", "Solucion de EDO: Runge Kutta", None))
         self.chSolucionEuler.setText(_translate("MainWindow", "Solucion de EDO: Metodo de Euler", None))
         self.chSistemasRunge.setText(_translate("MainWindow", "Sistemas de EDO: Runge Kutta", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab3), _translate("MainWindow", "Ecuacion Diferencial Ordinaria", None))
@@ -261,5 +261,5 @@ class Ui_MainWindow(object):
         self.chDescomposicion.setText(_translate("MainWindow", "Descomposicion LU", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab5), _translate("MainWindow", "Otros", None))
         self.pbHistorial.setText(_translate("MainWindow", "Historial", None))
-        self.pbHistorial_2.setText(_translate("MainWindow", "Algoritmo", None))
+        self.pbAlgoritmo.setText(_translate("MainWindow", "Algoritmo", None))
 

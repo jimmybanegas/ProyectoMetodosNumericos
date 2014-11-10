@@ -65,8 +65,55 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ventanas.AlgoritmosV.Ui_MainWindow()
             self.ui.setupUi(self)
-                   
+            self.ui.pbAlgoritmo.clicked.connect(self.EjecutarAlgoritmo)
+            self.ui.pbHistorial.clicked.connect(self.VerHistorial)
+            
+        def EjecutarAlgoritmo(self): 
+            self.w2 = Input()
+            self.w2.show()     
 
+        def VerHistorial(self): 
+            self.w2 = Historial()
+            self.w2.show() 
+
+class Historial(QtGui.QMainWindow,Ui_MainWindow):
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ventanas.Historial.Ui_mainWindow()
+            self.ui.setupUi(self)
+            self.ui.btnRegresar.clicked.connect(self.Regresar)
+        
+        def Regresar(self): 
+            self.close()                
+            
+            
+class Graph(QtGui.QMainWindow,Ui_MainWindow):
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ventanas.Graph.Ui_MainWindow()
+            self.ui.setupUi(self)                               
+
+class Steps(QtGui.QMainWindow,Ui_MainWindow):
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ventanas.Steps.Ui_MainWindow()
+            self.ui.setupUi(self)
+            self.ui.btnCerrar.clicked.connect(self.Cerrar)
+          
+        def Cerrar(self): 
+            self.close()               
+            
+class Input(QtGui.QMainWindow,Ui_MainWindow):
+        def __init__(self):
+            QtGui.QMainWindow.__init__(self)
+            self.ui = Ventanas.Input.Ui_MainWindow()
+            self.ui.setupUi(self)
+            self.ui.pbCalculate.clicked.connect(self.Calcular) 
+            
+        def Calcular(self): 
+            self.w2 = Steps()
+            self.w2.show()                 
+            
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     window = MyApp()

@@ -113,13 +113,13 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnRegresar">
     <property name="geometry">
      <rect>
       <x>300</x>
       <y>480</y>
       <width>111</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -128,7 +128,7 @@
      </font>
     </property>
     <property name="text">
-     <string>BACK</string>
+     <string>Regresar</string>
     </property>
    </widget>
   </widget>

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'login.ui'
 #
-# Created: Sat Nov 01 11:19:22 2014
+# Created: Mon Nov 10 14:35:11 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(623, 595)
+        MainWindow.resize(626, 606)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/imagenes/calculator.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.groupBox = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(40, 0, 551, 551))
+        self.groupBox.setGeometry(QtCore.QRect(30, 10, 551, 551))
         self.groupBox.setStyleSheet(_fromUtf8("font: 16pt \"MS Shell Dlg 2\";"))
         self.groupBox.setTitle(_fromUtf8(""))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
@@ -84,7 +84,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.groupBox_2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 623, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 626, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -102,4 +102,4 @@ class Ui_MainWindow(object):
         self.btnIngresar.setToolTip(_translate("MainWindow", "<html><head/><body><p>Installa aggiornamento</p></body></html>", None))
         self.btnIngresar.setText(_translate("MainWindow", "Ingresar", None))
 
-import Ventanas.imagenes_rc
+import imagenes_rc

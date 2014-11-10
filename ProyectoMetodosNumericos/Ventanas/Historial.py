@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Historial.ui'
 #
-# Created: Sun Nov 02 19:20:04 2014
+# Created: Mon Nov 10 14:14:15 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,11 +23,11 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(715, 565)
-        self.centralwidget = QtGui.QWidget(MainWindow)
+class Ui_mainWindow(object):
+    def setupUi(self, mainWindow):
+        mainWindow.setObjectName(_fromUtf8("mainWindow"))
+        mainWindow.resize(715, 565)
+        self.centralwidget = QtGui.QWidget(mainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.line = QtGui.QFrame(self.centralwidget)
         self.line.setGeometry(QtCore.QRect(340, 10, 20, 451))
@@ -65,28 +65,28 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 319, 349))
         self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.pushButton = QtGui.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(300, 480, 111, 31))
+        self.btnRegresar = QtGui.QPushButton(self.centralwidget)
+        self.btnRegresar.setGeometry(QtCore.QRect(300, 480, 111, 41))
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.btnRegresar.setFont(font)
+        self.btnRegresar.setObjectName(_fromUtf8("btnRegresar"))
+        mainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(mainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 715, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtGui.QStatusBar(MainWindow)
+        mainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(mainWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
-        MainWindow.setStatusBar(self.statusbar)
+        mainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(mainWindow)
+        QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
-        self.label.setText(_translate("MainWindow", "f(x) = ", None))
-        self.lbResultados.setText(_translate("MainWindow", "Resultados De Algoritmos \n"
+    def retranslateUi(self, mainWindow):
+        mainWindow.setWindowTitle(_translate("mainWindow", "Historial", None))
+        self.label.setText(_translate("mainWindow", "f(x) = ", None))
+        self.lbResultados.setText(_translate("mainWindow", "Resultados De Algoritmos \n"
 "             Utilizados", None))
-        self.pushButton.setText(_translate("MainWindow", "BACK", None))
+        self.btnRegresar.setText(_translate("mainWindow", "Regresar", None))
 

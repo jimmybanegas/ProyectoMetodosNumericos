@@ -2,13 +2,13 @@
 
 # Form implementation generated from reading ui file 'Steps.ui'
 #
-# Created: Sun Nov 02 21:57:42 2014
+# Created: Mon Nov 10 14:30:55 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
-import sys
+
 from PyQt4 import QtCore, QtGui
-from Archivos import creartxt, grabartxt, leerultimotxt
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -23,8 +23,7 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Steps(QtGui.QMainWindow):
-    
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(546, 534)
@@ -41,13 +40,13 @@ class Steps(QtGui.QMainWindow):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
-        self.pbCerrar = QtGui.QPushButton(self.centralwidget)
-        self.pbCerrar.setGeometry(QtCore.QRect(220, 450, 91, 31))
+        self.btnCerrar = QtGui.QPushButton(self.centralwidget)
+        self.btnCerrar.setGeometry(QtCore.QRect(220, 450, 91, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.pbCerrar.setFont(font)
-        self.pbCerrar.setObjectName(_fromUtf8("pbCerrar"))
+        self.btnCerrar.setFont(font)
+        self.btnCerrar.setObjectName(_fromUtf8("btnCerrar"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 546, 21))
@@ -61,15 +60,7 @@ class Steps(QtGui.QMainWindow):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
-        self.label.setText(_translate("MainWindow", "Pasos para resolver la ecuacion", None))
-        self.pbCerrar.setText(_translate("MainWindow", "Cerrar", None))
-        
-    def limpiarHistorial(self):
-        self.ui.teSteps.clear()
+        MainWindow.setWindowTitle(_translate("MainWindow", "Pasos de la ecuacion", None))
+        self.label.setText(_translate("MainWindow", "Pasos para resolver la ecuacion:", None))
+        self.btnCerrar.setText(_translate("MainWindow", "Cerrar", None))
 
-if __name__ == '__main__':
-    app = QtGui.QApplication(sys.argv)
-    mwindow = Steps()
-    mwindow.show()
-    sys.exit(app.exec_())

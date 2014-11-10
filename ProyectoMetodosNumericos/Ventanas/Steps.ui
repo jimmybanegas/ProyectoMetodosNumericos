@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Pasos de la ecuacion</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextEdit" name="teSteps">
@@ -41,7 +41,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Pasos para resolver la ecuacion</string>
+     <string>Pasos para resolver la ecuacion:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnCerrar">

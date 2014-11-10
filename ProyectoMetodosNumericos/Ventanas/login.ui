@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>623</width>
-    <height>595</height>
+    <width>626</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,8 +24,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>0</y>
+      <x>30</x>
+      <y>10</y>
       <width>551</width>
       <height>551</height>
      </rect>
@@ -152,7 +152,7 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>623</width>
+     <width>626</width>
      <height>21</height>
     </rect>
    </property>

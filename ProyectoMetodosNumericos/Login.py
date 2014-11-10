@@ -14,6 +14,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btnSalir.clicked.connect(self.Salir)
+        '''self.'''
         self.ui.btnConfig.clicked.connect(self.CambiarColor);
         
     def Salir(self): 

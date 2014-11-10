@@ -44,7 +44,7 @@
      <string>Pasos para resolver la ecuacion</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnCerrar">
     <property name="geometry">
      <rect>
       <x>220</x>

@@ -1,7 +1,7 @@
 '''
 Created on 18/10/2014
 
-@author: Auditor3
+@author: Jimmy Ramos
 '''
 import parser
 from math import acos,asin,atan,atan2,cos,sin,tan,acosh,asinh,atanh,cosh,sinh,tanh,pi,e

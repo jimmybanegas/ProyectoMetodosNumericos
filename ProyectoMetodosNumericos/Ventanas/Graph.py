@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Graph.ui'
 #
-# Created: Sun Nov 02 21:56:31 2014
+# Created: Mon Nov 10 20:39:59 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -46,14 +46,14 @@ class Ui_MainWindow(object):
         self.lbResult.setFont(font)
         self.lbResult.setText(_fromUtf8(""))
         self.lbResult.setObjectName(_fromUtf8("lbResult"))
-        self.pbPasos = QtGui.QPushButton(self.centralwidget)
-        self.pbPasos.setGeometry(QtCore.QRect(360, 500, 161, 31))
+        self.btnVerPasos = QtGui.QPushButton(self.centralwidget)
+        self.btnVerPasos.setGeometry(QtCore.QRect(360, 500, 161, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
-        self.pbPasos.setFont(font)
-        self.pbPasos.setObjectName(_fromUtf8("pbPasos"))
+        self.btnVerPasos.setFont(font)
+        self.btnVerPasos.setObjectName(_fromUtf8("btnVerPasos"))
         self.wgResult = QtGui.QWidget(self.centralwidget)
         self.wgResult.setGeometry(QtCore.QRect(49, 59, 481, 381))
         self.wgResult.setObjectName(_fromUtf8("wgResult"))
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
         self.label_3.setText(_translate("MainWindow", "Resultado:", None))
-        self.pbPasos.setText(_translate("MainWindow", "Ver Pasos", None))
+        self.btnVerPasos.setText(_translate("MainWindow", "Ver Pasos", None))
         self.lbImage.setText(_translate("MainWindow", "Placeholder de la imagen de la grafica", None))
         self.label.setText(_translate("MainWindow", "Grafica de la funcion ingresada", None))
 

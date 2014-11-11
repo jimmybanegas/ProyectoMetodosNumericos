@@ -21,7 +21,7 @@ from Archivos import creartxt, grabartxt, leerultimotxt
 from Ventanas.mwindow import Ui_MWindow
 '''from Ventanas.login import Ui_MainWindow'''
 from Main2 import Main2
-from Ventanas.Steps import Steps
+from Ventanas.Steps import Ui_MainWindow
 
 class Main(QtGui.QMainWindow):
         #Init
@@ -40,7 +40,7 @@ class Main(QtGui.QMainWindow):
             creartxt(self)            
             
         def showPasos(self):
-            self.w2 = Steps()
+            self.w2 = Ui_MainWindow()
             self.w2.show()
             self.close()
         

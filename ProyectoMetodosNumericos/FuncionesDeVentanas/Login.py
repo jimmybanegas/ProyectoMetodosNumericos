@@ -63,11 +63,9 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.w2 = ElegirAlgoritmo()
             self.w2.show()      
         
-        
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
         def Evaluar(self): 
             self.w2 = Graficar()
-            self.w2.show()   
             
 class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -96,7 +94,8 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
 class Graficar(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
             QtGui.QMainWindow.__init__(self)
-            self.ui = Graficador.CutePlot.CutePlot()
+            self = Graficador.CutePlot.CutePlot()
+            self.show()
             #self.ui.setupUi(self)                          
 
 class Historial(QtGui.QMainWindow,Ui_MainWindow):
@@ -118,7 +117,12 @@ class Graph(QtGui.QMainWindow,Ui_MainWindow):
             self.ui = Ventanas.Graph.Ui_MainWindow()
             self.ui.setupUi(self)
             global colorFondo
-            self.setStyleSheet("background-color: "+colorFondo);                            
+            self.setStyleSheet("background-color: "+colorFondo);
+            self.ui.btnVerPasos.clicked.connect(self.VerPasos)
+        
+        def VerPasos(self): 
+            self.w2 = Steps()
+            self.w2.show()                             
 
 class Steps(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -142,7 +146,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.setStyleSheet("background-color: "+colorFondo);
             
         def Calcular(self): 
-            self.w2 = Steps()
+            self.w2 = Graph()
             self.w2.show()                 
             
 if __name__ == "__main__":

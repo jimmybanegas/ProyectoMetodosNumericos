@@ -15,7 +15,9 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
+from serial.tools.miniterm import console
 
+colorFondo = ""
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -36,7 +38,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         
     def CambiarColor(self):
         color = QtGui.QColorDialog.getColor();
-        self.setStyleSheet("background-color: "+color.name());
+        global colorFondo
+        colorFondo = color.name();
+        self.setStyleSheet("background-color: "+colorFondo);
         
         
 class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
@@ -47,6 +51,8 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.btnBorrar.clicked.connect(self.Borrar)
             self.ui.btnContinuar.clicked.connect(self.Continuar)
             self.ui.btnEvaluar.clicked.connect(self.Evaluar)
+            global colorFondo
+            self.setStyleSheet("background-color: "+colorFondo);
     
     #Limpiar los datos del espacio para ingresar funciones
         def Borrar(self): 
@@ -70,6 +76,8 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.setupUi(self)
             self.ui.pbAlgoritmo.clicked.connect(self.EjecutarAlgoritmo)
             self.ui.pbHistorial.clicked.connect(self.VerHistorial)
+            global colorFondo
+            self.setStyleSheet("background-color: "+colorFondo);
             
         def EjecutarAlgoritmo(self): 
             self.w2 = Input()
@@ -97,6 +105,8 @@ class Historial(QtGui.QMainWindow,Ui_MainWindow):
             self.ui = Ventanas.Historial.Ui_mainWindow()
             self.ui.setupUi(self)
             self.ui.btnRegresar.clicked.connect(self.Regresar)
+            global colorFondo
+            self.setStyleSheet("background-color: "+colorFondo);
         
         def Regresar(self): 
             self.close()                
@@ -106,7 +116,9 @@ class Graph(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ventanas.Graph.Ui_MainWindow()
-            self.ui.setupUi(self)                               
+            self.ui.setupUi(self)
+            global colorFondo
+            self.setStyleSheet("background-color: "+colorFondo);                            
 
 class Steps(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -114,6 +126,8 @@ class Steps(QtGui.QMainWindow,Ui_MainWindow):
             self.ui = Ventanas.Steps.Ui_MainWindow()
             self.ui.setupUi(self)
             self.ui.btnCerrar.clicked.connect(self.Cerrar)
+            global colorFondo
+            self.setStyleSheet("background-color: "+colorFondo);
           
         def Cerrar(self): 
             self.close()               
@@ -123,7 +137,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ventanas.Input.Ui_MainWindow()
             self.ui.setupUi(self)
-            self.ui.pbCalculate.clicked.connect(self.Calcular) 
+            self.ui.pbCalculate.clicked.connect(self.Calcular)
+            global colorFondo
+            self.setStyleSheet("background-color: "+colorFondo);
             
         def Calcular(self): 
             self.w2 = Steps()

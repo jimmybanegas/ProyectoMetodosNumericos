@@ -21,6 +21,7 @@ from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 from matplotlib.figure import Figure
 
+
 class CutePlot(QMainWindow):
     
 	def __init__(self, parent=None):
@@ -29,10 +30,9 @@ class CutePlot(QMainWindow):
 		# Default values for lower and upper bound
 		self.LB_default = -10
 		self.UB_default = 10
-		
-		# Create main plot area + menus + status bar		
-		self.create_main_frame()
-		self.textbox.setText('x**2')
+		# Create main plot area + menus + status bar
+   		self.create_main_frame()
+		#self.textbox.setText()
 		self.LB_UB_defaults()
 		self.on_draw()
 	
@@ -763,6 +763,7 @@ def main():
 		app2 = QApplication(sys.argv)
 	cp = CutePlot()
 	cp.show()
+
 	app2.exec_()
 			
 if __name__ == '__main__':

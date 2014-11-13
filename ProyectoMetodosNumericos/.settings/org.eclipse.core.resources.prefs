@@ -1,11 +1,15 @@
 eclipse.preferences.version=1
+encoding//Algoritmos/CuadraturaGaussiana.py=utf-8
+encoding//Algoritmos/MatrizInversa.py=utf-8
 encoding//Algoritmos/Newton.py=utf-8
 encoding//Algoritmos/derivPlagrange.py=utf-8
 encoding//Algoritmos/erickEval.py=utf-8
 encoding//Algoritmos/factocrout.py=utf-8
 encoding//Algoritmos/lagrange2.py=utf-8
+encoding//Algoritmos/lineal_diferencias_finitas.py=utf-8
 encoding//Algoritmos/muller.py=utf-8
 encoding//Algoritmos/puntofijo.py=utf-8
+encoding//Algoritmos/trapezoide.py=utf-8
 encoding//Ventanas/AlgoritmosV.py=utf-8
 encoding//Ventanas/Graph.py=utf-8
 encoding//Ventanas/Historial.py=utf-8

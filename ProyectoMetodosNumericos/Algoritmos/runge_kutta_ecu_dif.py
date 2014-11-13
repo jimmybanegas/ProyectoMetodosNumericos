@@ -1,6 +1,6 @@
 import parser
 import math
-from math import cos
+from math import *
 
 def runge_kutta_ecu_dif(formula, a, b, alfa, N):
     
@@ -61,4 +61,4 @@ def runge_kutta_ecu_dif(formula, a, b, alfa, N):
     return x_list
 
 if __name__ == '__main__':
-    runge_kutta_ecu_dif("x - t**2 + 1",0,2,0.5,10)
+    runge_kutta_ecu_dif("t*exp(3*t)-2*x",0,1,0.5,10)

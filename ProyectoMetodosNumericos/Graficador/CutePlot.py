@@ -755,21 +755,21 @@ class CutePlot(QMainWindow):
 			self.axes_Q4.xaxis.tick_bottom()
 			self.axes_Q4.yaxis.tick_right()
 
-'''def main():
+def main():
 	# Check if QApplication already exists; if not, create it!
 	# (IPython compatibility)
-	app = QApplication.instance()
-	if not app:
-		app = QApplication(sys.argv)
+	app2 = QApplication.instance()
+	if not app2:
+		app2 = QApplication(sys.argv)
 	cp = CutePlot()
 	cp.show()
-	sys.exit(app.exec_())
+	app2.exec_()
 			
 if __name__ == '__main__':
-	main()'''
+	main()
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
+'''if __name__ == "__main__":
+    app2 = QApplication(sys.argv)
     window = CutePlot()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app2.exec_())'''

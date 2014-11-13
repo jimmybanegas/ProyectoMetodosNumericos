@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Graficador</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -87,7 +87,7 @@
     <property name="geometry">
      <rect>
       <x>570</x>
-      <y>20</y>
+      <y>13</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -164,7 +164,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Grind</string>
+     <string>Grid</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget" native="true">
@@ -176,7 +176,7 @@
       <height>411</height>
      </rect>
     </property>
-    <widget class="MatplotlibWidget" name="matplotlibwidget">
+    <widget class="MatplotlibWidget" name="matplotlibwidget" native="true">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -197,7 +197,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="Y_POS">
@@ -210,7 +210,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -223,7 +223,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Reset</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -239,7 +239,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Move</string>
     </property>
    </widget>
   </widget>

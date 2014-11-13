@@ -15,7 +15,9 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
+import subprocess
 from serial.tools.miniterm import console
+from multiprocessing import Queue, Process
 
 colorFondo = ""
 
@@ -43,7 +45,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.setStyleSheet("background-color: "+colorFondo);
         
         
-class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
+class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow,Process):
         def __init__(self):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ventanas.IngresarFuncion.Ui_MainWindow()
@@ -65,7 +67,10 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
         
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
         def Evaluar(self): 
-            self.w2 = Graficar()
+            #execfile("CutePlot.py")     
+            #subprocess.call("CutePlot.py", shell=True)
+            self.w2 = CutePlot.CutePlot()
+            self.w2.show()           
             
 class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -83,20 +88,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
 
         def VerHistorial(self): 
             self.w2 = Historial()
-            self.w2.show() 
-            
-'''class Graficar():
-        def __init__(self):
-            QtGui.QMainWindow.__init__(self)
-            self.ui = Graficador.CutePlot.CutePlot()
-            self.ui.setupUi(self)'''
-            
-class Graficar(QtGui.QMainWindow,Ui_MainWindow):
-        def __init__(self):
-            QtGui.QMainWindow.__init__(self)
-            self = Graficador.CutePlot.CutePlot()
-            self.show()
-            #self.ui.setupUi(self)                          
+            self.w2.show()        
 
 class Historial(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):

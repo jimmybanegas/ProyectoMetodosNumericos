@@ -3,6 +3,8 @@ Created on 09/11/2014
 
 @author: Javier
 '''
+import os
+
 def creartxt(self):
     try: 
         archi = open('datos.txt','r')
@@ -12,7 +14,7 @@ def creartxt(self):
         archi.write('0\n')
         archi.close()
       
-        
+    
 def ubicar (self, jumps):
     archi=open('datos.txt','r+')
             
@@ -22,7 +24,8 @@ def ubicar (self, jumps):
     archi.close()
             
 def grabartxt(self, lista, respuesta):
-    archi=open('datos.txt','r+')
+    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    archi=open(fn,'r+')
             
     numero_de_registros = archi.readline()
     number = int(numero_de_registros)+1
@@ -48,24 +51,43 @@ def grabartxt(self, lista, respuesta):
     archi.write('#\n')
     archi.close()
 
-def leerultimotxt(self, lista, respuesta):
+def leerultimotxt(self):
     lista = []
-    archi=open('datos.txt','r')
+    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    archi=open(fn,'r')
     archi.seek(0,0)
-    archi.readline()
+    numero_registros = archi.readline()
     pos = archi.readline()
-    archi.seek(int(pos),0)
-            
-    activo = archi.readline()
-            
-    if activo == '1' :
-        respuesta = archi.readline()
-        linea=archi.readline()
-        while linea!='#':
-            lista.append(linea)
-            linea=archi.readline()
-            archi.close()
-    else:
-        respuesta = '0'
-        lista.append('')
     
+    if numero_registros != '0' :
+        archi.seek(int(pos),0)
+            
+        activo = archi.readline()
+            
+        if activo == '1\n' :
+            resp = archi.readline()
+            linea=archi.readline()
+            while linea!='#\n':
+                lista.append(linea)
+                linea=archi.readline()
+            archi.close()
+        else:
+            lista.append('El ultimo procedimiento fue borrado')
+    else:
+        lista.append('none')
+    return lista
+    
+def leerultimarespuesta(self):
+    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    archi=open(fn,'r+')
+    archi.seek(0,0)
+    numero_registros = archi.readline()
+    
+    if numero_registros != '0' :
+        pos = int(archi.readline())
+        archi.seek(pos,0)
+        archi.readline()
+        respuesta = archi.readline()
+        return respuesta
+    else:
+        return 'none'

@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from Archivos import leerultimarespuesta, leerultimotxt
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -86,4 +87,6 @@ class Ui_MainWindow(object):
         self.btnVerPasos.setText(_translate("MainWindow", "Ver Pasos", None))
         self.lbImage.setText(_translate("MainWindow", "Placeholder de la imagen de la grafica", None))
         self.label.setText(_translate("MainWindow", "Grafica de la funcion ingresada", None))
+        self.lbResult.setText(_translate("MainWindow",leerultimarespuesta(self), None))
+        
 

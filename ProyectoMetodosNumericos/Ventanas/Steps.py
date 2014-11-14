@@ -6,9 +6,9 @@
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
-
+from collections import namedtuple
 from PyQt4 import QtCore, QtGui
-
+from Archivos import leerultimotxt
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -63,4 +63,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Pasos de la ecuacion", None))
         self.label.setText(_translate("MainWindow", "Pasos para resolver la ecuacion:", None))
         self.btnCerrar.setText(_translate("MainWindow", "Cerrar", None))
+        lista = leerultimotxt(self)
+        for n in lista:
+            self.teSteps.append(n)
 

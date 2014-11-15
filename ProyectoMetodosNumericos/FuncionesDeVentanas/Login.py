@@ -238,7 +238,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
 #self.ui.lbEjemplo.setPixmap(QPixmap("Ventanas\imagenes\Biseccion.JPG"))      
         
         def Biseccion(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\biseccion.png/>")
             self.ui.lbParam1.setText("Limite inferior A")
             self.ui.lbParam2.setText("Limite superior B")
             self.ui.lbParam3.setText("Tolerancia")
@@ -254,7 +254,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide() 
         def Newton(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\newton.png />")
             self.ui.lbParam1.setText("Aproximacion Inicial")
             self.ui.lbParam2.setText("Tolerancia")
             self.ui.lbParam3.setText("No. Iteraciones")
@@ -269,7 +269,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
         def Secante(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\secante.png />")
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
             self.ui.lbParam2.setText("Aproximacion Inicial P1")
             self.ui.lbParam3.setText("Tolerancia")
@@ -285,7 +285,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
         def Falsa(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\posicionFalsa.png />")
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
             self.ui.lbParam2.setText("Aproximacion Inicial P1")
             self.ui.lbParam3.setText("Tolerancia")
@@ -301,11 +301,12 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
         def Muller(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
-            self.ui.lbParam1.setText("Aproximacion Inicial P0")
-            self.ui.lbParam2.setText("Aproximacion Inicial P1")
-            self.ui.lbParam3.setText("Tolerancia")
-            self.ui.lbParam4.setText("No. Iteraciones")
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Aproximacion Inicial 0")
+            self.ui.lbParam2.setText("Aproximacion Inicial 1")
+            self.ui.lbParam3.setText("Aproximacion Inicial 2")
+            self.ui.lbParam4.setText("Tolerancia")
+            self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -314,8 +315,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
             
         def Calcular(self): 
             self.w2 = Graph()

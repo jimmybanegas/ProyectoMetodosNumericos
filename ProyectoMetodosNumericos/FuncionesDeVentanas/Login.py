@@ -5,6 +5,8 @@ Created on 2/11/2014
 '''
 import sys
 from PyQt4 import QtGui, QtCore
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 from Ventanas.login import Ui_MainWindow
 from Ventanas import IngresarFuncion
 from Ventanas import AlgoritmosV
@@ -18,6 +20,8 @@ import Ventanas
 from serial.tools.miniterm import console
 
 colorFondo = ""
+metodoSeleccionado =""
+funcion = ""
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -66,17 +70,25 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.close()     
         
     #Continuar me lleva a la pantalla de seleccionar el algoritmo con el cual resolvera la funcion
-        def Continuar(self): 
-            self.w2 = ElegirAlgoritmo()
-            self.w2.show()
-            self.close()      
+        def Continuar(self):
+            if(str(self.ui.lnFuncion.text())==''):
+                QMessageBox.information(self, 'Advertencia', ''' No ha ingresado datos para graficar''',QMessageBox.Ok)
+            else:     
+                global funcion 
+                funcion = str(self.ui.lnFuncion.text())
+                self.w2 = ElegirAlgoritmo()
+                self.w2.show()
+                self.close()      
         
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
         def Evaluar(self): 
-            self.w2 = CutePlot.CutePlot()
-            self.w2.textbox.setText(str(self.ui.lnFuncion.text()))
-            self.w2.on_draw()
-            self.w2.show()
+            if(str(self.ui.lnFuncion.text())==''):
+                QMessageBox.information(self, 'Advertencia', ''' No ha ingresado datos para graficar''',QMessageBox.Ok)
+            else: 
+                self.w2 = CutePlot.CutePlot()
+                self.w2.textbox.setText(str(self.ui.lnFuncion.text()))
+                self.w2.on_draw()
+                self.w2.show()
                  
             
 class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
@@ -95,12 +107,15 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             self.w2 = IngresarFuncion()
             self.w2.show()
             self.close()  
-        
             
         def EjecutarAlgoritmo(self): 
             self.SeleccionarMetodo() 
-            self.w2 = Input()
-            self.w2.show()
+            if(metodoSeleccionado ==''):
+                QMessageBox.information(self, 'Advertencia', ''' No ha seleccioando algoritmo''',QMessageBox.Ok)
+            else:                
+                self.SeleccionarMetodo() 
+                self.w2 = Input()
+                self.w2.show()
             
         def Regresar(self): 
             self.close()
@@ -152,8 +167,9 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             elif self.ui.chRegresion.isChecked():
                 metodoSeleccionado = "Regresion"
             elif self.ui.chDiferencias.isChecked():
-                metodoSeleccionado = "Diferencias"                            
-     
+                metodoSeleccionado = "Diferencias"
+            else:
+                metodoSeleccionado = ""                                 
 
         def VerHistorial(self): 
             self.w2 = Historial()
@@ -212,6 +228,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.setupUi(self)
             self.ui.pbCalculate.clicked.connect(self.Calcular)
             self.ui.pbRegresar.clicked.connect(self.Regresar)
+            self.ui.leEquation.setText(funcion)
+            self.ui.leEquation.setEnabled(False)
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);

@@ -4,6 +4,8 @@ Created on 2/11/2014
 @author: Jimmy Ramos
 '''
 import sys
+from Archivos import leerultimarespuesta, leerultimotxt
+from collections import namedtuple
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -198,6 +200,7 @@ class Graph(QtGui.QMainWindow,Ui_MainWindow):
             self.setStyleSheet("background-color: "+colorFondo);
             self.ui.btnVerPasos.clicked.connect(self.VerPasos)
             self.ui.btnRegresar.clicked.connect(self.Regresar)
+            self.ui.lbResult.setText(leerultimarespuesta(self))
         
         def VerPasos(self): 
             self.w2 = Steps()
@@ -215,6 +218,9 @@ class Steps(QtGui.QMainWindow,Ui_MainWindow):
             self.ui = Ventanas.Steps.Ui_MainWindow()
             self.ui.setupUi(self)
             self.ui.btnCerrar.clicked.connect(self.Cerrar)
+            lista = leerultimotxt(self)
+            for n in lista:
+                self.ui.teSteps.append(n)
             global colorFondo
             self.setStyleSheet("background-color: "+colorFondo);
           

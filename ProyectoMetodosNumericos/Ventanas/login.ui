@@ -14,8 +14,8 @@
    <string>Sistema de Resolución de Ecuaciones</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/imagenes/calculator.png</normaloff>:/imagenes/calculator.png</iconset>
+   <iconset resource="imagenes/imagenes.qrc">
+    <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">border-image: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))</string>
@@ -35,6 +35,9 @@
     </property>
     <property name="title">
      <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
@@ -66,6 +69,9 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
        <property name="text">
         <string/>
        </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
@@ -83,8 +89,17 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(0, 0, 0);</string>
+       </property>
        <property name="title">
         <string/>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
        <widget class="QPushButton" name="btnSalir">
         <property name="geometry">

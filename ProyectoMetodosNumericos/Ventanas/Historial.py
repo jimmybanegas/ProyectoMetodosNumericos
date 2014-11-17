@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Historial.ui'
 #
-# Created: Mon Nov 10 14:14:15 2014
+# Created: Mon Nov 17 13:40:54 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -27,10 +27,13 @@ class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName(_fromUtf8("mainWindow"))
         mainWindow.resize(715, 565)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/119499456854720557funct.svg.med.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        mainWindow.setWindowIcon(icon)
         self.centralwidget = QtGui.QWidget(mainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.line = QtGui.QFrame(self.centralwidget)
-        self.line.setGeometry(QtCore.QRect(340, 10, 20, 451))
+        self.line.setGeometry(QtCore.QRect(340, 20, 20, 451))
         self.line.setFrameShadow(QtGui.QFrame.Plain)
         self.line.setLineWidth(3)
         self.line.setFrameShape(QtGui.QFrame.VLine)
@@ -68,8 +71,11 @@ class Ui_mainWindow(object):
         self.btnRegresar = QtGui.QPushButton(self.centralwidget)
         self.btnRegresar.setGeometry(QtCore.QRect(300, 480, 111, 41))
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(14)
         self.btnRegresar.setFont(font)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/view-refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnRegresar.setIcon(icon1)
         self.btnRegresar.setObjectName(_fromUtf8("btnRegresar"))
         mainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(mainWindow)
@@ -90,3 +96,4 @@ class Ui_mainWindow(object):
 "             Utilizados", None))
         self.btnRegresar.setText(_translate("mainWindow", "Regresar", None))
 
+import imagenes_rc

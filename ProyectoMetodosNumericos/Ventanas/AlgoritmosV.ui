@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Seleccionar Algoritmo</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="imagenes/imagenes.qrc">
+    <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -47,7 +51,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab0">
      <attribute name="title">
@@ -503,10 +507,10 @@ de Gauss</string>
    <widget class="QPushButton" name="pbHistorial">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>360</x>
       <y>340</y>
-      <width>111</width>
-      <height>41</height>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -517,14 +521,18 @@ de Gauss</string>
     <property name="text">
      <string>Historial</string>
     </property>
+    <property name="icon">
+     <iconset resource="imagenes/imagenes.qrc">
+      <normaloff>:/documentation.png</normaloff>:/documentation.png</iconset>
+    </property>
    </widget>
    <widget class="QPushButton" name="pbAlgoritmo">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>580</x>
       <y>340</y>
-      <width>111</width>
-      <height>41</height>
+      <width>131</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -534,6 +542,32 @@ de Gauss</string>
     </property>
     <property name="text">
      <string>Algoritmo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagenes/imagenes.qrc">
+      <normaloff>:/calculator.png</normaloff>:/calculator.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbRegresar">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>340</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Regresar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagenes/imagenes.qrc">
+      <normaloff>:/view-refresh.png</normaloff>:/view-refresh.png</iconset>
     </property>
    </widget>
   </widget>
@@ -549,6 +583,11 @@ de Gauss</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <includes>
+  <include location="local">Qt::WindowTitleHint</include>
+ </includes>
+ <resources>
+  <include location="imagenes/imagenes.qrc"/>
+ </resources>
  <connections/>
 </ui>

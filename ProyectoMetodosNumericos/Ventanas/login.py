@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'login.ui'
 #
-# Created: Mon Nov 10 14:35:11 2014
+# Created: Mon Nov 17 11:40:02 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(626, 606)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/imagenes/calculator.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/119499456854720557funct.svg.med.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(_fromUtf8("border-image: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))"))
         self.centralwidget = QtGui.QWidget(MainWindow)
@@ -37,6 +37,7 @@ class Ui_MainWindow(object):
         self.groupBox.setGeometry(QtCore.QRect(30, 10, 551, 551))
         self.groupBox.setStyleSheet(_fromUtf8("font: 16pt \"MS Shell Dlg 2\";"))
         self.groupBox.setTitle(_fromUtf8(""))
+        self.groupBox.setFlat(True)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayout = QtGui.QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
@@ -53,6 +54,7 @@ class Ui_MainWindow(object):
         self.label_4 = QtGui.QLabel(self.groupBox)
         self.label_4.setStyleSheet(_fromUtf8("border-image:url(:/119499456854720557funct.svg.med.png)"))
         self.label_4.setText(_fromUtf8(""))
+        self.label_4.setScaledContents(False)
         self.label_4.setObjectName(_fromUtf8("label_4"))
         self.verticalLayout.addWidget(self.label_4)
         self.label = QtGui.QLabel(self.groupBox)
@@ -62,7 +64,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.label)
         self.groupBox_2 = QtGui.QGroupBox(self.groupBox)
         self.groupBox_2.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.groupBox_2.setAutoFillBackground(False)
+        self.groupBox_2.setStyleSheet(_fromUtf8("border-color: rgb(0, 0, 0);"))
         self.groupBox_2.setTitle(_fromUtf8(""))
+        self.groupBox_2.setFlat(True)
         self.groupBox_2.setObjectName(_fromUtf8("groupBox_2"))
         self.btnSalir = QtGui.QPushButton(self.groupBox_2)
         self.btnSalir.setGeometry(QtCore.QRect(380, 20, 131, 61))

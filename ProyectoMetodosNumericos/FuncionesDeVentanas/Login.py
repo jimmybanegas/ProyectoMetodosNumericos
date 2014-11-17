@@ -34,7 +34,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
     
     def Ingresar(self): 
         self.w2 = IngresarFuncion()
-        self.w2.show()           
+        self.w2.show()
+        self.close()           
         
     def CambiarColor(self):
         color = QtGui.QColorDialog.getColor();
@@ -51,25 +52,32 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.btnBorrar.clicked.connect(self.Borrar)
             self.ui.btnContinuar.clicked.connect(self.Continuar)
             self.ui.btnEvaluar.clicked.connect(self.Evaluar)
+            self.ui.btnSalir.clicked.connect(self.Salir)
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);
+            #self.ui.graphLayout.addWidget()
     
     #Limpiar los datos del espacio para ingresar funciones
         def Borrar(self): 
             self.ui.lnFuncion.clear()
+            
+        def Salir(self): 
+            self.close()     
         
     #Continuar me lleva a la pantalla de seleccionar el algoritmo con el cual resolvera la funcion
         def Continuar(self): 
             self.w2 = ElegirAlgoritmo()
-            self.w2.show()      
+            self.w2.show()
+            self.close()      
         
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
         def Evaluar(self): 
             self.w2 = CutePlot.CutePlot()
             self.w2.textbox.setText(str(self.ui.lnFuncion.text()))
             self.w2.on_draw()
-            self.w2.show()           
+            self.w2.show()
+                 
             
 class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -78,14 +86,24 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.setupUi(self)
             self.ui.pbAlgoritmo.clicked.connect(self.EjecutarAlgoritmo)
             self.ui.pbHistorial.clicked.connect(self.VerHistorial)
+            self.ui.pbRegresar.clicked.connect(self.Regresar)
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);
+            
+        def closeEvent(self, evnt):
+            self.w2 = IngresarFuncion()
+            self.w2.show()
+            self.close()  
+        
             
         def EjecutarAlgoritmo(self): 
             self.SeleccionarMetodo() 
             self.w2 = Input()
             self.w2.show()
+            
+        def Regresar(self): 
+            self.close()
             
         def SeleccionarMetodo(self):
             global metodoSeleccionado
@@ -162,10 +180,17 @@ class Graph(QtGui.QMainWindow,Ui_MainWindow):
             global colorFondo
             self.setStyleSheet("background-color: "+colorFondo);
             self.ui.btnVerPasos.clicked.connect(self.VerPasos)
+            self.ui.btnRegresar.clicked.connect(self.Regresar)
         
         def VerPasos(self): 
             self.w2 = Steps()
-            self.w2.show()                             
+            self.w2.show()
+            self.close() 
+       
+        def Regresar(self): 
+            self.close() 
+            self.w2 = Input()
+            self.w2.show()                                
 
 class Steps(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -177,7 +202,8 @@ class Steps(QtGui.QMainWindow,Ui_MainWindow):
             self.setStyleSheet("background-color: "+colorFondo);
           
         def Cerrar(self): 
-            self.close()               
+            self.close()
+                           
             
 class Input(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -185,6 +211,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui = Ventanas.Input.Ui_MainWindow()
             self.ui.setupUi(self)
             self.ui.pbCalculate.clicked.connect(self.Calcular)
+            self.ui.pbRegresar.clicked.connect(self.Regresar)
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);
@@ -320,7 +347,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             
         def Calcular(self): 
             self.w2 = Graph()
-            self.w2.show()                 
+            self.w2.show()
+            self.close()  
+        
+        def Regresar(self):
+            self.close()                         
             
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

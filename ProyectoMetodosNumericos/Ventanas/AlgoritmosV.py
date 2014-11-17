@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'AlgoritmosV.ui'
 #
-# Created: Mon Nov 10 14:02:50 2014
+# Created: Mon Nov 17 13:33:10 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -27,6 +27,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(864, 459)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/119499456854720557funct.svg.med.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.label = QtGui.QLabel(self.centralwidget)
@@ -198,17 +201,32 @@ class Ui_MainWindow(object):
         self.chDescomposicion.setObjectName(_fromUtf8("chDescomposicion"))
         self.tabWidget.addTab(self.tab5, _fromUtf8(""))
         self.pbHistorial = QtGui.QPushButton(self.centralwidget)
-        self.pbHistorial.setGeometry(QtCore.QRect(200, 340, 111, 41))
+        self.pbHistorial.setGeometry(QtCore.QRect(360, 340, 121, 51))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pbHistorial.setFont(font)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/documentation.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pbHistorial.setIcon(icon1)
         self.pbHistorial.setObjectName(_fromUtf8("pbHistorial"))
         self.pbAlgoritmo = QtGui.QPushButton(self.centralwidget)
-        self.pbAlgoritmo.setGeometry(QtCore.QRect(520, 340, 111, 41))
+        self.pbAlgoritmo.setGeometry(QtCore.QRect(580, 340, 131, 51))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pbAlgoritmo.setFont(font)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/calculator.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pbAlgoritmo.setIcon(icon2)
         self.pbAlgoritmo.setObjectName(_fromUtf8("pbAlgoritmo"))
+        self.pbRegresar = QtGui.QPushButton(self.centralwidget)
+        self.pbRegresar.setGeometry(QtCore.QRect(140, 340, 121, 51))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.pbRegresar.setFont(font)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/view-refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pbRegresar.setIcon(icon3)
+        self.pbRegresar.setObjectName(_fromUtf8("pbRegresar"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 864, 21))
@@ -219,7 +237,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(5)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -262,4 +280,6 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab5), _translate("MainWindow", "Otros", None))
         self.pbHistorial.setText(_translate("MainWindow", "Historial", None))
         self.pbAlgoritmo.setText(_translate("MainWindow", "Algoritmo", None))
+        self.pbRegresar.setText(_translate("MainWindow", "Regresar", None))
 
+import imagenes_rc

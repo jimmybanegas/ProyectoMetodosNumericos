@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>712</width>
-    <height>463</height>
+    <width>808</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Ingreso de Parámetros</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="imagenes/imagenes.qrc">
+    <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="leEquation">
@@ -34,7 +38,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Ecuacion:</string>
+     <string>Ecuación:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -45,12 +49,12 @@
      <rect>
       <x>20</x>
       <y>70</y>
-      <width>661</width>
-      <height>341</height>
+      <width>761</width>
+      <height>391</height>
      </rect>
     </property>
     <property name="title">
-     <string>Parametros</string>
+     <string>Parámetros</string>
     </property>
     <widget class="QLineEdit" name="leParam4">
      <property name="geometry">
@@ -170,10 +174,10 @@
     <widget class="QPushButton" name="pbCalculate">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>250</y>
-       <width>231</width>
-       <height>31</height>
+       <x>230</x>
+       <y>270</y>
+       <width>121</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
@@ -184,13 +188,17 @@
       </font>
      </property>
      <property name="text">
-      <string>Ver Resultado</string>
+      <string>Resultado</string>
+     </property>
+     <property name="icon">
+      <iconset resource="imagenes/imagenes.qrc">
+       <normaloff>:/excel.png</normaloff>:/excel.png</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="lbEjemplo">
      <property name="geometry">
       <rect>
-       <x>300</x>
+       <x>410</x>
        <y>10</y>
        <width>321</width>
        <height>301</height>
@@ -207,6 +215,30 @@
       <string>Ejemplo</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pbRegresar">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>270</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Regresar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="imagenes/imagenes.qrc">
+       <normaloff>:/view-refresh.png</normaloff>:/view-refresh.png</iconset>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -214,13 +246,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>712</width>
-     <height>31</height>
+     <width>808</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="imagenes/imagenes.qrc"/>
+ </resources>
  <connections/>
 </ui>

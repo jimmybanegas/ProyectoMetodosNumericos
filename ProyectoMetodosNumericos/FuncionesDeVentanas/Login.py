@@ -57,6 +57,7 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.btnContinuar.clicked.connect(self.Continuar)
             self.ui.btnEvaluar.clicked.connect(self.Evaluar)
             self.ui.btnSalir.clicked.connect(self.Salir)
+            self.ui.lnFuncion.setText(funcion)
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);

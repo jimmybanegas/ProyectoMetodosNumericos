@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Historial.ui'
 #
-# Created: Mon Nov 17 13:40:54 2014
+# Created: Mon Nov 17 20:50:16 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,77 +23,39 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_mainWindow(object):
-    def setupUi(self, mainWindow):
-        mainWindow.setObjectName(_fromUtf8("mainWindow"))
-        mainWindow.resize(715, 565)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/119499456854720557funct.svg.med.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        mainWindow.setWindowIcon(icon)
-        self.centralwidget = QtGui.QWidget(mainWindow)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        MainWindow.resize(415, 561)
+        self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
-        self.line = QtGui.QFrame(self.centralwidget)
-        self.line.setGeometry(QtCore.QRect(340, 20, 20, 451))
-        self.line.setFrameShadow(QtGui.QFrame.Plain)
-        self.line.setLineWidth(3)
-        self.line.setFrameShape(QtGui.QFrame.VLine)
-        self.line.setFrameShadow(QtGui.QFrame.Sunken)
-        self.line.setObjectName(_fromUtf8("line"))
-        self.label = QtGui.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(50, 10, 211, 41))
+        self.cbfx = QtGui.QComboBox(self.centralwidget)
+        self.cbfx.setGeometry(QtCore.QRect(160, 30, 201, 41))
+        self.cbfx.setObjectName(_fromUtf8("cbfx"))
+        self.teSteps = QtGui.QTextEdit(self.centralwidget)
+        self.teSteps.setGeometry(QtCore.QRect(30, 100, 361, 401))
+        self.teSteps.setObjectName(_fromUtf8("teSteps"))
+        self.lbfx = QtGui.QLabel(self.centralwidget)
+        self.lbfx.setGeometry(QtCore.QRect(40, 30, 71, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName(_fromUtf8("label"))
-        self.frame = QtGui.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(10, 60, 321, 401))
-        self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtGui.QFrame.Raised)
-        self.frame.setObjectName(_fromUtf8("frame"))
-        self.lbResultados = QtGui.QLabel(self.centralwidget)
-        self.lbResultados.setGeometry(QtCore.QRect(380, 20, 311, 71))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(False)
-        font.setWeight(50)
-        self.lbResultados.setFont(font)
-        self.lbResultados.setObjectName(_fromUtf8("lbResultados"))
-        self.scrollArea = QtGui.QScrollArea(self.centralwidget)
-        self.scrollArea.setGeometry(QtCore.QRect(370, 100, 321, 351))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
-        self.scrollAreaWidgetContents = QtGui.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 319, 349))
-        self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.btnRegresar = QtGui.QPushButton(self.centralwidget)
-        self.btnRegresar.setGeometry(QtCore.QRect(300, 480, 111, 41))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.btnRegresar.setFont(font)
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/view-refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnRegresar.setIcon(icon1)
-        self.btnRegresar.setObjectName(_fromUtf8("btnRegresar"))
-        mainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtGui.QMenuBar(mainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 715, 21))
+        self.lbfx.setFont(font)
+        self.lbfx.setObjectName(_fromUtf8("lbfx"))
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 415, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
-        mainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtGui.QStatusBar(mainWindow)
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
-        mainWindow.setStatusBar(self.statusbar)
+        MainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(mainWindow)
-        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, mainWindow):
-        mainWindow.setWindowTitle(_translate("mainWindow", "Historial", None))
-        self.label.setText(_translate("mainWindow", "f(x) = ", None))
-        self.lbResultados.setText(_translate("mainWindow", "Resultados De Algoritmos \n"
-"             Utilizados", None))
-        self.btnRegresar.setText(_translate("mainWindow", "Regresar", None))
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
+        self.lbfx.setText(_translate("MainWindow", "f(x) =", None))
 
-import imagenes_rc

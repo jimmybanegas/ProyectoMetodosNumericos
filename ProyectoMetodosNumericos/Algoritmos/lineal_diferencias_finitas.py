@@ -7,6 +7,10 @@ Created on Thu Jun 12 13:48:15 2014
 
 #663
 import numpy
+import parser
+import math 
+from math import *
+from array import *
 
 def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
     A = [0 for i in range(N+1)]
@@ -84,7 +88,7 @@ def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
 if(__name__ == "__main__"):
     fx = "-2/x"
     qx = "2/(x*x)"
-    rx = "(sin( log(x) )) / (x*x)"
+    rx = "(sin( log(x, e) )) / (x*x)"
     exa = 1
     exb = 2
     alp = 1

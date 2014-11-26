@@ -45,6 +45,13 @@
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> border: 2px solid gray;
+     border-radius: 10px;
+     padding: 0 8px;
+     background: white;
+     selection-background-color: darkgray;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -57,6 +64,13 @@
       <width>51</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     </string>
     </property>
     <property name="text">
      <string/>
@@ -96,6 +110,13 @@
      <font>
       <pointsize>16</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;</string>
     </property>
     <property name="text">
      <string>Evaluar Función</string>
@@ -138,6 +159,13 @@ función pase por el eje x.</string>
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;</string>
+    </property>
     <property name="text">
      <string>Continuar</string>
     </property>
@@ -178,6 +206,13 @@ función pase por el eje x.</string>
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;</string>
     </property>
     <property name="text">
      <string>Salir</string>

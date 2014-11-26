@@ -27,6 +27,13 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> border: 2px solid gray;
+     border-radius: 10px;
+     padding: 0 8px;
+     background: white;
+     selection-background-color: darkgray;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -52,6 +59,15 @@
       <width>761</width>
       <height>391</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	 border: 2px solid gray;
+     border-radius: 10px;
+     padding: 0 8px;
+     background: white;
+     selection-background-color: darkgray;
+}</string>
     </property>
     <property name="title">
      <string>Parámetros</string>
@@ -187,6 +203,14 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true"> border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ </string>
+     </property>
      <property name="text">
       <string>Resultado</string>
      </property>
@@ -211,6 +235,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true"> border: 2px solid gray;
+     border-radius: 10px;
+     padding: 0 8px;</string>
+     </property>
      <property name="text">
       <string>Ejemplo</string>
      </property>
@@ -230,6 +259,14 @@
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ </string>
      </property>
      <property name="text">
       <string>Regresar</string>

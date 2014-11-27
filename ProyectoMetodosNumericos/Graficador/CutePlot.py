@@ -35,10 +35,10 @@ class CutePlot(QMainWindow):
         #self.textbox.setText()
         self.LB_UB_defaults()
         self.on_draw()
-    
         self.statusBar()
         self.setWindowTitle('Graficador')
         self.create_menu()
+        self.guardarImagen()
 
     def LB_UB_defaults(self):
         # Set default values for lower bound and upper bound
@@ -47,12 +47,12 @@ class CutePlot(QMainWindow):
         
     def create_main_frame(self):
         self.main_frame = QWidget()
-        
         # 7x5 inches, 80 dots-per-inch
         self.dpi = 80
         self.fig = Figure((7, 5), dpi = self.dpi)
         self.canvas = FigureCanvas(self.fig)
         self.canvas.setParent(self.main_frame)
+        self.guardarImagen()
         self.is_data = False
         
         self.axes = self.fig.add_subplot(111)
@@ -146,10 +146,12 @@ class CutePlot(QMainWindow):
                     
         self.main_frame.setLayout(vbox)
         self.setCentralWidget(self.main_frame)
+       
     
     def on_minor_change(self):
         self.on_draw(self.is_data)
-    
+       
+        
     def on_draw(self, *args):
         # Get x-domain from user input
         self.LB_input = unicode(self.lowerbound.text())
@@ -414,7 +416,8 @@ class CutePlot(QMainWindow):
                 Q3 = True
             elif self.input_x[j] > 0 and self.y[j] < 0:
                 Q4 = True
-        
+      
+      
         if (Q3 or (Q2 and Q4) or ((Q2 or Q4) and self.axis_state == 3)) and self.logx_cb.isChecked() and self.logy_cb.isChecked():
             new_state = 3
         elif (Q2 and self.logx_cb.isChecked()) or (self.hold_cb.isChecked() and self.axis_state == 1):
@@ -505,7 +508,7 @@ class CutePlot(QMainWindow):
                 self.axes_Q2.set_xticklabels(Q2_xlabels)
             self.axes_Q2.xaxis.tick_bottom()
             self.axes_Q2.yaxis.tick_left()
-    
+          
     def trunc_logy(self):
         # Q = quadrant
         Q1_x = []
@@ -585,6 +588,7 @@ class CutePlot(QMainWindow):
                 self.axes_Q4.set_yticklabels(Q4_ylabels)
             self.axes_Q4.xaxis.tick_bottom()
             self.axes_Q4.yaxis.tick_right()
+          
         
     def trunc_loglog(self):
         # Q = quadrant
@@ -758,9 +762,11 @@ class CutePlot(QMainWindow):
             
     
     def guardarImagen(self):
-        path = os.path.abspath("untitled.png")       
+        path = os.path.abspath("untitled.png")  
+        self.canvas.resize(460,261 )     
         self.canvas.print_figure(path, dpi = self.dpi)
         self.statusBar().showMessage('Saved to %s' % path, 2000)
+        self.canvas.resize(560,361 ) 
          
 def main():
     # Check if QApplication already exists; if not, create it!
@@ -770,7 +776,7 @@ def main():
         app2 = QApplication(sys.argv)
     cp = CutePlot()
     cp.show()
-
+   
     app2.exec_()
             
 if __name__ == '__main__':

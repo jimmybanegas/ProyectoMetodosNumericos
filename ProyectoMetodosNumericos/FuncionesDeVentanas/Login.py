@@ -4,6 +4,7 @@ Created on 2/11/2014
 @author: Jimmy Ramos
 '''
 import sys
+import os
 from Archivos import leerultimarespuesta, leerultimotxt
 from collections import namedtuple
 from PyQt4 import QtGui, QtCore
@@ -92,6 +93,7 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.textbox.setText(str(self.ui.lnFuncion.text()))
                 self.w2.on_draw()
                 self.w2.show()
+                self.w2.guardarImagen()
                  
             
 class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
@@ -201,7 +203,8 @@ class Graph(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.btnVerPasos.clicked.connect(self.VerPasos)
             self.ui.btnRegresar.clicked.connect(self.Regresar)
             self.ui.lbResult.setText(leerultimarespuesta(self))
-        
+            self.ui.lbImage.setText( "<img src=..\FuncionesDeVentanas\untitled.png />" )
+            
         def VerPasos(self): 
             self.w2 = Steps()
             self.w2.show()
@@ -308,7 +311,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam5.hide() 
         def Newton(self):
             self.ui.lbEjemplo.clear()
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\newton.png />")
+            self.ui.lbEjemplo.setText("")
             self.ui.lbParam1.setText("Aproximacion Inicial")
             self.ui.lbParam2.setText("Tolerancia")
             self.ui.lbParam3.setText("No. Iteraciones")

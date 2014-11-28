@@ -166,7 +166,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             elif self.ui.chInversa.isChecked():
                 metodoSeleccionado = "Inversa"
             elif self.ui.chDescomposicion.isChecked():
-                metodoSeleccionado = "Descompasicion"
+                metodoSeleccionado = "Descomposicion"
             elif self.ui.chRegresion.isChecked():
                 metodoSeleccionado = "Regresion"
             elif self.ui.chDiferencias.isChecked():
@@ -251,7 +251,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "Muller":
                 self.Muller()
             elif metodoSeleccionado == "Lagrage":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />") 
+                self.Lagrage() 
             elif metodoSeleccionado == "PolinomialNewton":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "CubitosNaturales":
@@ -265,32 +265,32 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "InTrapecio":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "InSimpson":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.InSimpson()
             elif metodoSeleccionado == "InGauss":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.InGauss()
             elif metodoSeleccionado == "SolucionEuler":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.SolucionEuler()
             elif metodoSeleccionado == "SolucionRunge":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "SistemaRunge":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "EliGauss":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.EliGauss()
             elif metodoSeleccionado == "EliGaussJordan":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.EliGaussJordan()
             elif metodoSeleccionado == "Inversa":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
-            elif metodoSeleccionado == "Descompasicion":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+            elif metodoSeleccionado == "Descomposicion":
+                self.Descomposicion()
             elif metodoSeleccionado == "Regresion":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.Regresion
             elif metodoSeleccionado == "Diferencias":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />") 
                 
 #self.ui.lbEjemplo.setPixmap(QPixmap("Ventanas\imagenes\Biseccion.JPG"))      
         
         def Biseccion(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\biseccion.png/>")
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\newton.png />")
             self.ui.lbParam1.setText("Limite inferior A")
             self.ui.lbParam2.setText("Limite superior B")
             self.ui.lbParam3.setText("Tolerancia")
@@ -369,7 +369,166 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam4.show()
             self.ui.lbParam5.show()
             self.ui.leParam5.show()
+        def Lagrage(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Aproximacion Inicial 0")
+            self.ui.lbParam2.setText("Aproximacion Inicial 1")
+            self.ui.lbParam3.setText("Aproximacion Inicial 2")
+            self.ui.lbParam4.setText("Tolerancia")
+            self.ui.lbParam5.setText("No. Iteraciones")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
+        def PolinomialNewton(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Aproximacion Inicial 0")
+            self.ui.lbParam2.setText("Aproximacion Inicial 1")
+            self.ui.lbParam3.setText("Aproximacion Inicial 2")
+            self.ui.lbParam4.setText("Tolerancia")
+            self.ui.lbParam5.setText("No. Iteraciones")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
+        def SolucionEuler(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Extremo A")
+            self.ui.lbParam2.setText("Extremo B")
+            self.ui.lbParam3.setText("Condicion Inicial")
+            self.ui.lbParam4.setText("Numero Subintervalos N")
+            self.ui.lbParam5.setText("No. Iteraciones")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()  
+        def InGauss(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Numeros de Puntos a Utilizar")
+            self.ui.lbParam2.setText("Limite Inferior A")
+            self.ui.lbParam3.setText("Limite Superior B")
+            self.ui.lbParam4.setText("Numero Subintervalos N")
+            self.ui.lbParam5.setText("No. Iteraciones")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide() 
+        def EliGauss(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Numero de Filas")
+            self.ui.lbParam2.setText("Numero de Columnas")
+            self.ui.lbParam3.setText("Fila 1")
+            self.ui.lbParam4.setText("Fila 2")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
+        def EliGaussJordan(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Numero de Filas")
+            self.ui.lbParam2.setText("Numero de Columnas")
+            self.ui.lbParam3.setText("Fila 1")
+            self.ui.lbParam4.setText("Fila 2")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()    
+        def Regresion(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Valores de X")
+            self.ui.lbParam2.setText("Valores de Y")
+            self.ui.lbParam3.setText("X a Aproximar")
+            self.ui.lbParam4.setText("Fila 2")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+        def Descomposicion(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Dimension de la Matriz")
+            self.ui.lbParam2.setText("Matriz A")
+            self.ui.lbParam3.setText("Matriz L")
+            self.ui.lbParam4.setText("Matriz U")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+        def InSimpson(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Abscisa Inicial")
+            self.ui.lbParam2.setText("Abscisa Final")
+            self.ui.lbParam3.setText("Numero de Intervalos")
+            self.ui.lbParam4.setText("Matriz U")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+        
             
+        
+        
+        
+        
+        
         def Calcular(self): 
             self.w2 = Graph()
             self.w2.show()

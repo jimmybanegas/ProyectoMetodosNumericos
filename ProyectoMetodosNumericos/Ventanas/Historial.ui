@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>mainWindow</class>
- <widget class="QMainWindow" name="mainWindow">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>715</width>
-    <height>565</height>
+    <width>415</width>
+    <height>561</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Historial</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="imagenes/imagenes.qrc">
-    <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="Line" name="line">
+   <widget class="QComboBox" name="cbfx">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
+      <x>160</x>
+      <y>30</y>
+      <width>201</width>
+=======
       <x>340</x>
       <y>20</y>
       <width>20</width>
       <height>451</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+   
+ </string>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
@@ -43,65 +49,26 @@
       <x>50</x>
       <y>10</y>
       <width>211</width>
+>>>>>>> master
       <height>41</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>f(x) = </string>
-    </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QTextEdit" name="teSteps">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>321</width>
+      <x>30</x>
+      <y>100</y>
+      <width>361</width>
       <height>401</height>
      </rect>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbResultados">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>20</y>
-      <width>311</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Resultados De Algoritmos 
-             Utilizados</string>
-    </property>
-   </widget>
-   <widget class="QScrollArea" name="scrollArea">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>100</y>
-      <width>321</width>
-      <height>351</height>
-     </rect>
+<<<<<<< HEAD
+=======
+    <property name="styleSheet">
+     <string notr="true"> border: 2px solid #8f8f91;
+     border-radius: 6px;
+ </string>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -111,32 +78,39 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>319</width>
-       <height>349</height>
+       <width>317</width>
+       <height>347</height>
       </rect>
      </property>
     </widget>
+>>>>>>> master
    </widget>
-   <widget class="QPushButton" name="btnRegresar">
+   <widget class="QLabel" name="lbfx">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>480</y>
-      <width>111</width>
-      <height>41</height>
+      <x>40</x>
+      <y>30</y>
+      <width>71</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
-    <property name="text">
-     <string>Regresar</string>
+    <property name="styleSheet">
+     <string notr="true"> border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ </string>
     </property>
-    <property name="icon">
-     <iconset resource="imagenes/imagenes.qrc">
-      <normaloff>:/view-refresh.png</normaloff>:/view-refresh.png</iconset>
+    <property name="text">
+     <string>f(x) =</string>
     </property>
    </widget>
   </widget>
@@ -145,15 +119,13 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>715</width>
+     <width>415</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="imagenes/imagenes.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

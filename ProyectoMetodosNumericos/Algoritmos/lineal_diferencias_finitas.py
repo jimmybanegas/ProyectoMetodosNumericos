@@ -1,98 +1,117 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun 12 13:48:15 2014
+'''
+Created on 13/11/2014
 
-@author: Juan Carlos
-"""
+@author: manuel
+'''
+import parser
+import math 
+from math import *
+from array import *
 
-#663
-import numpy
 
-def linealDifFinitas(px, qx, rx, exa, exb, alpha, beta, N, lista):
-    A = [0 for i in range(N+1)]
-    B = [0 for i in range(N+1)]
-    C = [0 for i in range(N+1)]
-    D = [0 for i in range(N+1)]
-    L = [0 for i in range(N+1)]
-    U = [0 for i in range(N+1)]
-    Z = [0 for i in range(N+1)]
-    X = [0 for i in range(N+2)]
-    W = [0 for i in range(N+2)]
+
+def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N):
+    
+    funcP = parser.expr(px).compile()
+    funcQ = parser.expr(qx).compile()
+    funcR = parser.expr(rx).compile()
     
     def p(x):
-        return eval(px)
+        return eval(funcP)
     def q(x):
-        return eval(qx)
+        return eval(funcQ)
     def r(x):
-        return eval(rx)
+        return eval(funcR)
     
-    a = exa
-    b = exb
+    u = [ [ 0 for i in range(N+1) ] for j in range(3) ]
+    v = [ [ 0 for i in range(N+1) ] for j in range(3) ]
     
-    h = (b - a)/(N + 1)
-    x = a + h
-    A[0] = 2 + h*h*q(x)
-    B[0] = -1 + (h/2)*p(x)
-    D[0] = -h*h*r(x) + (1 + (h/2)*p(x))*alpha
-    
-    for i in range(1, N - 1):
-        x = a + i*h
-        A[i] = 2 + h*h*q(x)
-        B[i] = -1 + (h/2)*p(x)
-        C[i] = -1 - (h/2)*p(x)
-        D[i] = -h*h*r(x)
-        
-    x = b - h
-    A[N-1] = 2 + h*h*q(x)
-    C[N-1] = -1 - (h/2)*p(x)
-    D[N-1] = -h*h*r(x) + (1 - (h/2)*p(x))*beta
-    
-    L[0] = A[0]
-    U[0] = B[0]/A[0]
-    Z[0] = D[0]/L[0]
-    
-    for i in range(1, N-1):
-        L[i] = A[i] - C[i]*U[i-1]
-        U[i] = B[i]/L[i]
-        Z[i] = (D[i]-C[i]*Z[i-1])/L[i]
-        
-    L[N-1] = A[N-1] - C[N-1]*U[N-2]
-    Z[N-1] = (D[N-1] - C[N-1]*Z[N-2])/L[N-1]
-
-    Y = [0 for i in range(N+2)]
-    Y[0] = alpha
-    Y[N+1] = beta
-    Y[N] = Z[N-1]
-
-    W[0] = alpha
-    W[N+1] = beta
-    
-    for i in range(N-1, -1, -1):
-        Y[i] = Z[i] - U[i]*Y[i+1]
-        W[i+1] = Y[i]
-    
-    retArray = [[0 for i in range(2)] for i in range(N+2)]
-    
-    for i in range(N+2):
-        X[i] = a + i*h
-        print(str(i-1) + " x, w - " + str(X[i]) + ", " + str(W[i])) #changed from algorithm W[i]
-        retArray[i][0] = X[i]
-        retArray[i][1] = W[i]
-    
-    return retArray
-    
-if(__name__ == "__main__"):
-    fx = "-2/x"
-    qx = "2/(x*x)"
-    rx = "(sin( log(x) )) / (x*x)"
-    exa = 1
-    exb = 2
-    alp = 1
-    bet = 2
     lista = []
-    N = 9 
-    #print( "REsult: " + str(linealDifFinitas(fx,qx,rx, exa, exb, alp, bet, N, lista)))
-    res = linealDifFinitas(fx,qx,rx, exa, exb, alp, bet, N, lista)
     
-    for i in range(res.__len__()):
-        print(res[i])
+    lista.append ('METODO LINEAL DE DIFERENCIAS FINITAS(METODO DEL DISPARO LINEAL)')
+    
+    lista.append (' ')
+    
+    #Paso 1
+    lista.append ("Paso #1")
+    
+    h = float((b-a))/N 
+    u[1][0] = float(alpha)
+    u[2][0] = float(0)
+    v[1][0] = float(0)
+    v[2][0] = float(1)
+    lista.append("h = "+str(h))
+    lista.append("u1,0 = "+str(u[1][0]))
+    lista.append("u2,0 = "+str(u[2][0]))
+    lista.append("v1,0 = "+str(v[1][0]))
+    lista.append("v2,0 = "+str(v[2][0]))
+    
+    
+    lista.append ("")
+    lista.append ("Paso #2")
+    lista.append ("Mientras i sea menor o igual al numero de iteraciones")
+    lista.append ("Hacer los pasos 3 y 4")
+    lista.append ("")
+    
+    for i in range(N):
+        lista.append ("------------------ i = " + str(i) + " ------------------")
+        x = a + i*h 
+        lista.append ("Paso #3")
+        lista.append ("Tome x = " + str(x))
+        k = [ [ 1 for l in range(3) ] for j in range(5) ]
+        k[1][1] = h * u[2][i]
+        k[1][2] = h*( p(x) * u[2][i] + q(x) * u[1][i] + r(x))
+        k[2][1] = h * (u[2][i] + 0.5 * k[1][2])
+        k[2][2] = h*(p(x + h/2) * (u[2][i] + 0.5*k[1][2])
+                     + q(x + h/2) * (u[1][i] + 0.5*k[1][1]) + r(x + h/2))
+        k[3][1] = h* (u[2][i] + 0.5*k[2][2])
+        k[3][2] = h* (p(x + h/2) * (u[2][i] + 0.5*k[2][2]) 
+                     + q(x + h/2) * (u[1][i] + 0.5*k[2][1]) + r(x + h/2))
+        k[4][1] = h* (u[2][i] + k[3][2])
+        k[4][2] = h* (p(x + h) * (u[2][i] + k[3][2]) 
+                     + q(x + h) * (u[1][i] + k[3][1]) + r(x + h))
+        u[1][i+1] = u[1][i] + (float(1)/6)*(k[1][1] + 2*k[2][1] + 2*k[3][1] + k[4][1])
+        u[2][i+1] = u[2][i] + (float(1)/6)*(k[1][2] + 2*k[2][2] + 2*k[3][2] + k[4][2])
+        
+        lista.append("u1,"+str(i+1)+"= "+str(u[1][i+1]))
+        lista.append("u2,"+str(i+1)+" = "+str(u[2][i+1]))
+        k[1][1] = h * v[2][i]
+        k[1][2] = h * (p(x)*v[2][i] + q(x)*v[1][i])
+        k[2][1] = h * (v[2][i] + (0.5)*k[1][2])
+        k[2][2] = h * (p(x + h/2) * (v[2][i] + 0.5*k[1][2]) 
+                     + q(x + h/2) * (v[1][i] + 0.5*k[1][1]))
+        k[3][1] = h * (v[2][i] + (0.5)*k[2][2])
+        k[3][2] = h * (p(x + h/2) * (v[2][i] + 0.5*k[2][2]) 
+                     + q(x + h/2) * (v[1][i] + 0.5*k[2][1]))
+        k[4][1] = h * (v[2][i] + k[3][2] )
+        k[4][2] = h *(p(x + h) * (v[2][i] + k[3][2]) + q(x+h)*(v[1][i] + k[3][1]))
+        v[1][i+1] = v[1][i] + (float(1)/6)*(k[1][1] + 2*k[2][1] + 2*k[3][1] + k[4][1])
+        v[2][i+1] = v[2][i] + (float(1)/6)*(k[1][2] + 2*k[2][2] + 2*k[3][2] + k[4][2])
+        lista.append("v1,"+str(i+1)+"= "+str(v[1][i+1]))
+        lista.append("v2,"+str(i+1)+" = "+str(v[2][i+1]))
+        
+        
+        
+        
+    #Paso 5
+    w2 = (beta -u[1][N])/v[1][N]
+    lista.append("")
+    lista.append ("Paso #5")
+    lista.append ("w2 = " + str(w2))
+    
+    #Paso 6
+    lista.append ("")
+    lista.append ("Paso #6")
+    lista.append ("Mientras i sea menor o igual al numero de iteraciones")
+    for i in range(N+1):
+        lista.append ("------------------ i = " + str(i) + " ------------------")
+        W1 = u[1][i] + w2*v[1][i]
+        W2 = u[2][i] + w2*v[2][i]
+        x = a + i*h
+        lista.append ("W1 = " + str(W1))
+        print W1
+        
+    #for c in lista:
+    #    print(c)
+    
+linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10)

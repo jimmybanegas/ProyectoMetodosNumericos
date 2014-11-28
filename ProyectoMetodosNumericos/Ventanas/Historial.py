@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Historial.ui'
+# Form implementation generated from reading ui file 'C:\Users\manuel\Documents\ProyectoMetodos\ProyectoMetodosNumericos\ProyectoMetodosNumericos\Ventanas\Historial.ui'
 #
-# Created: Mon Nov 17 13:40:54 2014
+# Created: Tue Nov 25 19:29:10 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -34,6 +34,9 @@ class Ui_mainWindow(object):
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.line = QtGui.QFrame(self.centralwidget)
         self.line.setGeometry(QtCore.QRect(340, 20, 20, 451))
+        self.line.setStyleSheet(_fromUtf8("\n"
+"   \n"
+" "))
         self.line.setFrameShadow(QtGui.QFrame.Plain)
         self.line.setLineWidth(3)
         self.line.setFrameShape(QtGui.QFrame.VLine)
@@ -62,10 +65,13 @@ class Ui_mainWindow(object):
         self.lbResultados.setObjectName(_fromUtf8("lbResultados"))
         self.scrollArea = QtGui.QScrollArea(self.centralwidget)
         self.scrollArea.setGeometry(QtCore.QRect(370, 100, 321, 351))
+        self.scrollArea.setStyleSheet(_fromUtf8(" border: 2px solid #8f8f91;\n"
+"     border-radius: 6px;\n"
+" "))
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
         self.scrollAreaWidgetContents = QtGui.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 319, 349))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 317, 347))
         self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.btnRegresar = QtGui.QPushButton(self.centralwidget)
@@ -73,6 +79,12 @@ class Ui_mainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.btnRegresar.setFont(font)
+        self.btnRegresar.setStyleSheet(_fromUtf8(" border: 2px solid #8f8f91;\n"
+"     border-radius: 6px;\n"
+"     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                       stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"     min-width: 80px;\n"
+" "))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/view-refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnRegresar.setIcon(icon1)
@@ -97,3 +109,4 @@ class Ui_mainWindow(object):
         self.btnRegresar.setText(_translate("mainWindow", "Regresar", None))
 
 import imagenes_rc
+

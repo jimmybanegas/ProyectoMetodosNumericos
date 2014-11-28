@@ -18,7 +18,8 @@
     <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">border-image: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))</string>
+   <string notr="true">border-image: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
@@ -110,6 +111,15 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
           <height>61</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ </string>
+        </property>
         <property name="text">
          <string>Salir</string>
         </property>
@@ -148,6 +158,15 @@ font: 75 16pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="toolTip">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Installa aggiornamento&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ </string>
         </property>
         <property name="text">
          <string>Ingresar</string>

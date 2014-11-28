@@ -24,7 +24,7 @@ def Lagrange(ecuacion,lx,xin):
                 print "Paso #1"
                 print "hacer Fxint  = 0"
     		y = 0
-		print ""
+		print ""		
                 print "Paso #2"
                 print "hacer i  = 0"
     		i = 0  

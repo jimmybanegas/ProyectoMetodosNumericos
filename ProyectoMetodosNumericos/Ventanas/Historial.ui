@@ -1,39 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>mainWindow</class>
- <widget class="QMainWindow" name="mainWindow">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>451</width>
     <height>565</height>
+=======
+    <width>415</width>
+    <height>561</height>
+>>>>>>> master
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Historial</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+<<<<<<< HEAD
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>0</y>
       <width>101</width>
+=======
+   <widget class="QComboBox" name="cbfx">
+    <property name="geometry">
+     <rect>
+<<<<<<< HEAD
+      <x>160</x>
+      <y>30</y>
+      <width>201</width>
+=======
+      <x>340</x>
+      <y>20</y>
+      <width>20</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+   
+ </string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>10</y>
+      <width>211</width>
+>>>>>>> master
+>>>>>>> master
       <height>41</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>f(x) = </string>
-    </property>
    </widget>
+<<<<<<< HEAD
    <widget class="QPushButton" name="btnRegresar">
     <property name="geometry">
      <rect>
@@ -71,6 +106,66 @@
       <height>401</height>
      </rect>
     </property>
+=======
+   <widget class="QTextEdit" name="teSteps">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>361</width>
+      <height>401</height>
+     </rect>
+    </property>
+<<<<<<< HEAD
+=======
+    <property name="styleSheet">
+     <string notr="true"> border: 2px solid #8f8f91;
+     border-radius: 6px;
+ </string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>317</width>
+       <height>347</height>
+      </rect>
+     </property>
+    </widget>
+>>>>>>> master
+   </widget>
+   <widget class="QLabel" name="lbfx">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ </string>
+    </property>
+    <property name="text">
+     <string>f(x) =</string>
+    </property>
+>>>>>>> master
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -78,7 +173,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
      <width>451</width>
+=======
+     <width>415</width>
+>>>>>>> master
      <height>21</height>
     </rect>
    </property>

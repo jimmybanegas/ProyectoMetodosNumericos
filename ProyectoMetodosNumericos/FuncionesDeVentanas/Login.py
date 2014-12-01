@@ -515,9 +515,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam5.hide()
         def InSimpson(self):
             self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Abscisa Inicial")
-            self.ui.lbParam2.setText("Abscisa Final")
-            self.ui.lbParam3.setText("Numero de Intervalos")
+            self.ui.lbParam1.setText("Extremo A")
+            self.ui.lbParam2.setText("Extremo B")
+            self.ui.lbParam3.setText("Entero Positivo")
             self.ui.lbParam4.setText("Matriz U")
             self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
@@ -597,12 +597,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam3.show()
             self.ui.lbParam4.hide()
             self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()    
-            
-        
-        
-        
-        
+            self.ui.leParam5.hide()          
         
         def Calcular(self): 
             self.w2 = Graph()

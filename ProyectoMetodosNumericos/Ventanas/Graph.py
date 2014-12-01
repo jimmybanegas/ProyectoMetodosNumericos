@@ -23,8 +23,9 @@ try:
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
-
-class Ui_MainWindow(object):
+#NOTA: ESTE TemporalName se llamaba Ui_MainWindow pero tiraba error porque hay otro ui_mainwindow mas abajo
+# le cambie el nombre a temporalname para que no mostrara ese error
+class TemporalName(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(581, 600)

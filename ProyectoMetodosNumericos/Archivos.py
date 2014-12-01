@@ -4,26 +4,31 @@ Created on 09/11/2014
 @author: Javier
 '''
 import os
+import collections
 
 def creartxt(self):
     try: 
-        archi = open('datos.txt','r')
+        temp = os.path.join(os.path.dirname(__file__), 'datos.txt')
+        archi = open(temp,'r')
         archi.close() 
     except: 
-        archi=open('datos.txt','w')
+        temp = os.path.join(os.path.dirname(__file__), 'datos.txt')
+        archi=open(temp,'w')
         archi.write('0\n')
         archi.close()
+        
+def creartxtfunciones(self):
+    try: 
+        temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+        archi = open(temp,'r')
+        archi.close() 
+    except: 
+        temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+        archi=open(temp,'w')
+        archi.close()
       
-    
-def ubicar (self, jumps):
-    archi=open('datos.txt','r+')
             
-    archi.seek(0,2)
-    size = archi.tell()
-    archi.seek(0,0)
-    archi.close()
-            
-def grabartxt(self, lista, respuesta):
+def grabartxt(self, lista, respuesta, funcion):
     fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
     archi=open(fn,'r+')
             
@@ -50,6 +55,44 @@ def grabartxt(self, lista, respuesta):
                 
     archi.write('#\n')
     archi.close()
+    
+    temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+    arch2=open(temp,'a')
+    
+    arch2.write(str(funcion)+'\n')
+    arch2.write(str(pos_ultimo)+'\n')
+    
+    arch2.close()
+    
+    
+def leerresueltos(self):
+    lista = []
+    fn = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+    archi=open(fn,'r')
+    archi.seek(0,0)
+    linea=archi.readline()
+    while linea!="":
+        lista.append(linea)
+        linea=archi.readline()
+        linea = archi.readline()
+    archi.close()
+    return lista
+
+def leerposiciones(self):
+    lista = []
+    fn = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+    archi=open(fn,'r')
+    archi.seek(0,0)
+    archi.readline()
+    linea=archi.readline()
+    while linea!="":
+        lista.append(linea)
+        linea=archi.readline()
+        if linea != "":
+            linea = archi.readline()
+    archi.close()
+    return lista
+
 
 def leerultimotxt(self):
     lista = []
@@ -70,11 +113,12 @@ def leerultimotxt(self):
             while linea!='#\n':
                 lista.append(linea)
                 linea=archi.readline()
-            archi.close()
+            
         else:
             lista.append('El ultimo procedimiento fue borrado')
     else:
         lista.append('none')
+    archi.close()
     return lista
     
 def leerultimarespuesta(self):
@@ -88,6 +132,21 @@ def leerultimarespuesta(self):
         archi.seek(pos,0)
         archi.readline()
         respuesta = archi.readline()
+        archi.close()
         return respuesta
     else:
+        archi.close()
         return 'none'
+    
+def leerespecifico(self, posicion):
+    lista = []
+    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    archi=open(fn,'r+')
+    archi.seek(int(posicion), 0)
+    linea=archi.readline()
+    while linea!="#\n":
+        lista.append(linea)
+        linea=archi.readline()
+    archi.close()
+    return lista
+    

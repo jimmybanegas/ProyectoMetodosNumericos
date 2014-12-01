@@ -5,7 +5,7 @@ Created on 2/11/2014
 '''
 import sys
 import os
-from Archivos import leerultimarespuesta, leerultimotxt
+from Archivos import *
 from collections import namedtuple
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import *
@@ -21,6 +21,7 @@ from Graficador import CutePlot
 import Graficador
 import Ventanas
 from serial.tools.miniterm import console
+from Algoritmos.FactorizacionLUMarco import pasos
 
 colorFondo = ""
 metodoSeleccionado =""
@@ -35,6 +36,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.ui.btnSalir.clicked.connect(self.Salir)
         self.ui.btnIngresar.clicked.connect(self.Ingresar)
         self.ui.btnConfig.clicked.connect(self.CambiarColor);
+        creartxt(self)
+        creartxtfunciones(self)
         
     def Salir(self): 
         self.close()
@@ -181,17 +184,40 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             self.w2.show()        
 
 class Historial(QtGui.QMainWindow,Ui_MainWindow):
+        funciones = []
+        index = 0
+        new_index = 0
+        pasos = []
         def __init__(self):
             QtGui.QMainWindow.__init__(self)
-            self.ui = Ventanas.Historial.Ui_mainWindow()
+            self.ui = Ventanas.Historial.Ui_MainWindow()
             self.ui.setupUi(self)
             self.ui.btnRegresar.clicked.connect(self.Regresar)
             global colorFondo
             self.setStyleSheet("background-color: "+colorFondo);
+            
+            funciones = leerresueltos(self)
+            self.ui.cbFx.addItems(funciones)  
+            index = self.ui.cbFx.currentIndex()
+            posiciones = leerposiciones(self)
+            pasos = leerespecifico(self, posiciones[index])
+            self.ui.teSteps.clear()
+            for n in pasos:
+                self.ui.teSteps.append(n)
+            self.ui.cbFx.currentIndexChanged.connect(self.IngresarPasos)
+            
+            
+        def IngresarPasos(self):
+            index = self.ui.cbFx.currentIndex()
+            posiciones = leerposiciones(self)
+            pasos = leerespecifico(self, posiciones[index])
+            self.ui.teSteps.clear()
+            for n in pasos:
+                self.ui.teSteps.append(n)
         
         def Regresar(self): 
-            self.close()                
-        
+            self.close()  
+            
             
 class Graph(QtGui.QMainWindow,Ui_MainWindow):
         def __init__(self):
@@ -745,4 +771,4 @@ class Ui_MainWindow(object):
         self.btnIngresar.setToolTip(_translate("MainWindow", "<html><head/><body><p>Installa aggiornamento</p></body></html>", None))
         self.btnIngresar.setText(_translate("MainWindow", "Ingresar", None))
 
-import imagenes_rc
+#import imagenes_rc

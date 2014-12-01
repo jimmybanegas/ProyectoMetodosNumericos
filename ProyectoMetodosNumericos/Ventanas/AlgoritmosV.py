@@ -3,8 +3,6 @@
 # Form implementation generated from reading ui file 'AlgoritmosV.ui'
 #
 # Created: Tue Nov 18 20:43:45 2014
-<<<<<<< HEAD
-=======
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -291,7 +289,7 @@ import imagenes_rc
 # Form implementation generated from reading ui file 'C:\Users\manuel\Documents\ProyectoMetodos\ProyectoMetodosNumericos\ProyectoMetodosNumericos\Ventanas\AlgoritmosV.ui'
 #
 # Created: Tue Nov 25 19:31:23 2014
->>>>>>> master
+
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!

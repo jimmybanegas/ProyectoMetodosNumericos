@@ -262,11 +262,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "CubitosSujetos":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "PuntoFijo":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.PuntoFijo()
             elif metodoSeleccionado == "Diferenciacion":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "InTrapecio":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.InTrapecio()
             elif metodoSeleccionado == "InSimpson":
                 self.InSimpson()
             elif metodoSeleccionado == "InGauss":
@@ -274,7 +274,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "SolucionEuler":
                 self.SolucionEuler()
             elif metodoSeleccionado == "SolucionRunge":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.SolucionRunge()
             elif metodoSeleccionado == "SistemaRunge":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "EliGauss":
@@ -282,7 +282,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "EliGaussJordan":
                 self.EliGaussJordan()
             elif metodoSeleccionado == "Inversa":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.Inversa()
             elif metodoSeleccionado == "Descomposicion":
                 self.Descomposicion()
             elif metodoSeleccionado == "Regresion":
@@ -293,12 +293,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
 #self.ui.lbEjemplo.setPixmap(QPixmap("Ventanas\imagenes\Biseccion.JPG"))      
         
         def Biseccion(self):
-<<<<<<< HEAD
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\newton.png />")
-=======
             self.ui.lbEjemplo.clear()
             self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\biseccion.png />")
->>>>>>> master
             self.ui.lbParam1.setText("Limite inferior A")
             self.ui.lbParam2.setText("Limite superior B")
             self.ui.lbParam3.setText("Tolerancia")
@@ -534,7 +530,74 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam4.hide()
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
-        
+        def SolucionRunge(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Extremo A")
+            self.ui.lbParam2.setText("Extremo B")
+            self.ui.lbParam3.setText("Condicion Inicial")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()  
+        def Inversa(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Matriz")
+            self.ui.lbParam2.setText("Matriz A")
+            self.ui.lbParam3.setText("Matriz B")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide() 
+        def PuntoFijo(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Aproximacion Inicial")
+            self.ui.lbParam2.setText("Tolerancia")
+            self.ui.lbParam3.setText("Numero Iteraciones")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()  
+        def InTrapecio(self):
+            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbParam1.setText("Numero de Trapecios")
+            self.ui.lbParam2.setText("Limite Inferior")
+            self.ui.lbParam3.setText("Limite Superior")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()    
             
         
         

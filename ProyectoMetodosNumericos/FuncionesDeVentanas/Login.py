@@ -59,11 +59,12 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ventanas.IngresarFuncion.Ui_MainWindow()
             self.ui.setupUi(self)
-            self.ui.btnBorrar.clicked.connect(self.Borrar)
+            self.ui.btnContinuar.hide()
             self.ui.btnContinuar.clicked.connect(self.Continuar)
+            self.ui.btnBorrar.clicked.connect(self.Borrar)
             self.ui.btnEvaluar.clicked.connect(self.Evaluar)
             self.ui.btnSalir.clicked.connect(self.Salir)
-            self.ui.lnFuncion.setText(funcion)
+            self.ui.lnFuncion.setText(funcion)                      
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);
@@ -92,6 +93,7 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             if(str(self.ui.lnFuncion.text())==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha ingresado datos para graficar''',QMessageBox.Ok)
             else: 
+                self.ui.btnContinuar.show()
                 self.w2 = CutePlot.CutePlot()
                 self.w2.textbox.setText(str(self.ui.lnFuncion.text()))
                 self.w2.on_draw()
@@ -325,7 +327,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"LIMITE SUPERIOR : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
                                       +"LIMITE SUPERIOR : 3 \n \t debe de ser de signo contrario a limite inferior \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
                                       +"NO.ITERACIONES : 100")
             
             self.ui.lbParam1.setText("Limite inferior A")
@@ -346,7 +348,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.clear()
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL : 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
                                       +"NO.ITERACIONES : 100")
              
             self.ui.lbParam1.setText("Aproximacion Inicial")
@@ -367,7 +369,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL P0 : 0 \n\n"
                                       +"APROXIMACION INICIAL P1: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
@@ -389,7 +391,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL P0 : 0 \n\n"
                                       +"APROXIMACION INICIAL P1: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
@@ -408,7 +410,13 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam5.hide()
         def Muller(self):
             self.ui.lbEjemplo.clear()
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"APROXIMACION INICIAL 0 : 5 \n\n"
+                                      +"APROXIMACION INICIAL 1: -5 \n\n"
+                                      +"APROXIMACION INICIAL 2: 0 \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"NO.ITERACIONES : 100")
+           
             self.ui.lbParam1.setText("Aproximacion Inicial 0")
             self.ui.lbParam2.setText("Aproximacion Inicial 1")
             self.ui.lbParam3.setText("Aproximacion Inicial 2")
@@ -426,10 +434,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam5.show()
         def Lagrage(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"APROXIMACION INICIAL P0 : -1 \n\n"
-                                      +"APROXIMACION INICIAL P1: 0 \n\n"
-                                      +"APROXIMACION INICIAL P2: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"APROXIMACION INICIAL P0 : 2 \n\n"
+                                      +"APROXIMACION INICIAL P1: 2.5 \n\n"
+                                      +"APROXIMACION INICIAL P2: 4 \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial 0")
@@ -564,7 +572,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"VALOR DE X : 4 \n\n"
                                       +"VALOR DE Y : 4 \n\n"
-                                      +"X A AROXIMAR : 0  \n\n"
+                                      +"X A APROXIMAR : 0  \n\n"
                                        )
             self.ui.lbParam1.setText("Valores de X")
             self.ui.lbParam2.setText("Valores de Y")

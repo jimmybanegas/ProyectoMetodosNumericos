@@ -5,6 +5,10 @@ Created on 2/11/2014
 '''
 import sys
 import os
+import parser
+import math
+from parser import ParserError
+from math import *
 from Archivos import *
 from collections import namedtuple
 from PyQt4 import QtGui, QtCore
@@ -22,6 +26,10 @@ import Graficador
 import Ventanas
 from serial.tools.miniterm import console
 from Algoritmos.FactorizacionLUMarco import pasos
+from sqlalchemy.sql.expression import except_
+from sphinx.ext.pngmath import MathExtError
+from _elementtree import ParseError
+import code
 
 colorFondo = ""
 metodoSeleccionado =""
@@ -59,12 +67,11 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             QtGui.QMainWindow.__init__(self)
             self.ui = Ventanas.IngresarFuncion.Ui_MainWindow()
             self.ui.setupUi(self)
-            self.ui.btnContinuar.hide()
-            self.ui.btnContinuar.clicked.connect(self.Continuar)
             self.ui.btnBorrar.clicked.connect(self.Borrar)
             self.ui.btnEvaluar.clicked.connect(self.Evaluar)
             self.ui.btnSalir.clicked.connect(self.Salir)
-            self.ui.lnFuncion.setText(funcion)                      
+            self.ui.lnFuncion.setText(funcion)  
+            self.ui.btnContinuar.clicked.connect(self.Continuar)                    
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);
@@ -79,21 +86,27 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
         
     #Continuar me lleva a la pantalla de seleccionar el algoritmo con el cual resolvera la funcion
         def Continuar(self):
-            if(str(self.ui.lnFuncion.text())==''):
-                QMessageBox.information(self, 'Advertencia', ''' No ha ingresado datos para graficar''',QMessageBox.Ok)
-            else:     
-                global funcion 
-                funcion = str(self.ui.lnFuncion.text())
+            global funcion
+            funcion = str(self.ui.lnFuncion.text())     
+            if  funcion != "" :
+                try:
+                    x=1
+                    eval(funcion)
+                    self.w2 = ElegirAlgoritmo()
+                    self.w2.show()
+                    self.close()             
+                except (MathExtError,NameError) :
+                    QMessageBox.information(self, 'Advertencia', ''' No ha ingresado la funcion correctamente ''',QMessageBox.Ok)
+            else:
                 self.w2 = ElegirAlgoritmo()
                 self.w2.show()
-                self.close()      
-        
+                self.close()             
+            
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
         def Evaluar(self): 
             if(str(self.ui.lnFuncion.text())==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha ingresado datos para graficar''',QMessageBox.Ok)
             else: 
-                self.ui.btnContinuar.show()
                 self.w2 = CutePlot.CutePlot()
                 self.w2.textbox.setText(str(self.ui.lnFuncion.text()))
                 self.w2.on_draw()
@@ -120,13 +133,26 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             
         def EjecutarAlgoritmo(self): 
             self.SeleccionarMetodo() 
+            global funcion
             if(metodoSeleccionado ==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha seleccioando algoritmo''',QMessageBox.Ok)
-            else:                
-                self.SeleccionarMetodo() 
-                self.w2 = Input()
-                self.w2.show()
-            
+            else:
+                if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
+                     self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
+                     self.ui.chPolinomialNewton.isChecked() or self.ui.chSolucionEuler.isChecked() or self.ui.chInGauss.isChecked() or
+                     self.ui.chInSimpson.isChecked() or self.ui.chSistemasRunge.isChecked() or self.ui.chPuntoFijo.isChecked() or
+                     self.ui.chInTrapecio.isChecked()):
+                    if funcion == "": 
+                        QMessageBox.information(self, 'Advertencia', ''' Estos algoritmos nesecitan de una funcion''',QMessageBox.Ok) 
+                        self.w2 = IngresarFuncion()
+                        self.w2.show()
+                        self.close()    
+                else:                    
+                   self.SeleccionarMetodo() 
+                   self.w2 = Input()
+                   self.w2.show()
+                        
+                        
         def Regresar(self): 
             self.close()
             
@@ -524,11 +550,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam5.hide() 
         def EliGauss(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"NUMERO DE FILAS : 4 \n\n"
-                                      +"NUMERO DE COLUMNAS : 4 \n\n"
-                                      +"FILA 1 :  \n \n\n"
-                                      +"FILA 2 :  \n \n\n"
-                                      +"FILA 3 :  \n \n\n"
+                                      +"NUMERO DE FILAS : 3 \n\n"
+                                      +"NUMERO DE COLUMNAS : 3 \n\n"
+                                      +"FILA 1 :3 4 6 \n \n\n"
+                                      +"FILA 2 :2 4 6 \n \n\n"
+                                      +"FILA 3 :3 6 8 \n \n\n"
                                        )
             self.ui.lbParam1.setText("Numero de Filas")
             self.ui.lbParam2.setText("Numero de Columnas")
@@ -547,11 +573,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam5.show()
         def EliGaussJordan(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"NUMERO DE FILAS : 4 \n\n"
-                                      +"NUMERO DE COLUMNAS : 4 \n\n"
-                                      +"FILA 1 :  \n \n\n"
-                                      +"FILA 2 :  \n \n\n"
-                                      +"FILA 3 :  \n \n\n"
+                                      +"NUMERO DE FILAS : 3 \n\n"
+                                      +"NUMERO DE COLUMNAS : 3 \n\n"
+                                      +"FILA 1 : 2 3 5 \n \n\n"
+                                      +"FILA 2 : 3 5 6 \n \n\n"
+                                      +"FILA 3 : 3 5 7  \n \n\n"
                                        )
             self.ui.lbParam1.setText("Numero de Filas")
             self.ui.lbParam2.setText("Numero de Columnas")

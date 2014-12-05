@@ -202,7 +202,6 @@ class CutePlot(QMainWindow):
                     fx = fx.replace('x', '(x + 10**(-6))')
                     self.y = [eval(fx) for x in self.input_x]        
             self.plot_symbol = '-'
-            
         if self.is_data:
             self.plot_symbol = 'o'
         
@@ -297,9 +296,9 @@ class CutePlot(QMainWindow):
         
         self.axes.set_xlabel('$x$')
         self.axes.set_ylabel('$f(x)$')
-        
         self.canvas.draw()
         self.guardarImagen()
+        
         
     def remove_subplots(self):
         # Remove all subplots and axis flip flags

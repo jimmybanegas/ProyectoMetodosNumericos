@@ -134,7 +134,6 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             global funcion
             if(metodoSeleccionado ==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha seleccioando algoritmo''',QMessageBox.Ok)
-<<<<<<< HEAD
             else:
                 if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
                      self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
@@ -146,22 +145,19 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                         self.w2 = IngresarFuncion()
                         self.w2.show()
                         self.close()    
-                else:                    
-                   self.SeleccionarMetodo() 
-                   self.w2 = Input()
-                   self.w2.show()
-                        
-                        
-=======
-            else:                
-                self.SeleccionarMetodo() 
-                self.w2 = Input()
-                self.w2.show()
-                self.close()                
+                    else:                    
+                        self.SeleccionarMetodo() 
+                        self.w2 = Input()
+                        self.w2.show()
+
+                else:                
+                    self.SeleccionarMetodo() 
+                    self.w2 = Input()
+                    self.w2.show()
+                    self.close()                
                 
                 
             
->>>>>>> Franklin
         def Regresar(self): 
             self.w2 = IngresarFuncion()
             self.w2.show()
@@ -382,7 +378,16 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         
         
         def Diferencias(self):            
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"FUNCION P(X) : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
+                                      +"FUNCION Q(X) : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
+                                      +"FUNCION R(X) : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
+                                      +"EXTREMO A : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
+                                      +"EXTREMO B : 3 \n \t debe de ser de signo contrario a limite inferior \n\n"
+                                      +"CONDICION DE FRONTERA A : 0 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"CONDICION DE FRONTERA B : 0 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"NO. DE SUBINTERVALOS N : 100")
+            
             self.ui.lbParam1.setText("Funcion P(x)")
             self.ui.lbParam2.setText("Funcion Q(x)")
             self.ui.lbParam3.setText("Funcion R(x)")
@@ -549,16 +554,16 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def Lagrage(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"APROXIMACION INICIAL P0 : 2 \n\n"
-                                      +"APROXIMACION INICIAL P1: 2.5 \n\n"
-                                      +"APROXIMACION INICIAL P2: 4 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+                                      +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
+                                      +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
+                                      +"TOLERANCIA : 4 \n \t entre menor sea la repuesta sera mas exacta \n\n"
                                       +"NO.ITERACIONES : 100")
            
-            self.ui.lbParam1.setText("Aproximacion Inicial 0")
-            self.ui.lbParam2.setText("Aproximacion Inicial 1")
-            self.ui.lbParam3.setText("Aproximacion Inicial 2")
-            self.ui.lbParam4.setText("Tolerancia")
+            self.ui.lbParam1.setText("GRADON")
+            self.ui.lbParam2.setText(" LISTA X ")
+            self.ui.lbParam3.setText("LISTA F(X)")
+            self.ui.lbParam4.setText("X DERIVADA")
             self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
@@ -568,8 +573,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.show()
-            self.ui.leParam5.show()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
@@ -723,9 +728,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()    
         def Regresion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"VALOR DE X : 4 \n\n"
-                                      +"VALOR DE Y : 4 \n\n"
-                                      +"X A APROXIMAR : 0  \n\n"
+                                      +"VALOR DE X :  1 10 15 24 70 \n\n"
+                                      +"VALOR DE Y : 14 23 28 37 83 \n\n"
+                                      +"X A APROXIMAR : 100  \n\n"
                                        )
             self.ui.lbParam1.setText("Valores de X")
             self.ui.lbParam2.setText("Valores de Y")
@@ -752,9 +757,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         def Descomposicion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"Dimension de la Matriz : \n\n"
-                                      +"MATRIZ A: [[3,4],[2,5]] \n\n"
-                                      +"MATRIZ L :[[4,3],[2]]  \n\n"
-                                      +"MATRIZ U :[[4,6],[2,8]] \n\n"
+                                      +"MATRIZ A: [[3,4],[2,5]] \n\t la matriz debe de ser de n x n \n\n"
+                                      +"MATRIZ L :[[4,3],[2]] \n\t la matriz debe de ser de n x n  \n\n"
+                                      +"MATRIZ U :[[4,6],[2,8]] \n\t la matriz debe de ser de n x n \n\n"
                                       
                                       )
             self.ui.lbParam1.setText("Dimension de la Matriz")
@@ -892,10 +897,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()  
         def InTrapecio(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"NUMERO DE TRAPECIOS : 4 \n\n"
-                                      +"LIMITE INFERIOR : -3 \n \t debe de ser menor a limite superior b \n\n"
-                                      +"LIMITE SUPERIOR : 3 \n \t debe de ser mayot a limite inferior a \n\n"
-                                      +"NUMERO DE ITERACIONES : 100 \n\n"
+                                      +"NUMERO DE TRAPECIOS : 5 \n\n"
+                                      +"LIMITE INFERIOR : 1 \n \t debe de ser menor a limite superior b \n\n"
+                                      +"LIMITE SUPERIOR : 2 \n \t debe de ser mayot a limite inferior a \n\n"
                                        )
             self.ui.lbParam1.setText("Numero de Trapecios")
             self.ui.lbParam2.setText("Limite Inferior")

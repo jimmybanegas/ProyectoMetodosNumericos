@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>864</width>
-    <height>459</height>
+    <width>907</width>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Seleccionar Algoritmo</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="imagenes/imagenes.qrc">
+    <normaloff>:/119499456854720557funct.svg.med.png</normaloff>:/119499456854720557funct.svg.med.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -35,8 +39,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>80</y>
+      <x>30</x>
+      <y>70</y>
       <width>811</width>
       <height>241</height>
      </rect>
@@ -46,6 +50,35 @@
       <pointsize>11</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> QTabBar::tab {
+    min-height: 24px;
+border-top: 1px solid palette(mid);
+border-left: 1px solid palette(mid);
+border-bottom: 0px;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+margin-top: -1px;
+margin-right: 4px;
+padding-left: 5px;
+background: rgb(210, 221, 239);
+ }
+
+ QTabBar::tab:selected, QTabBar::tab:hover {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                 stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+ }
+
+ QTabBar::tab:selected {
+     border-color: #9B9B9B;
+     border-bottom-color: #C2C7CB; /* same as pane color */
+ }
+
+ QTabBar::tab:!selected {
+     margin-top: 2px; /* make non-selected tabs look smaller */
+ }</string>
+    </property>
     <property name="currentIndex">
      <number>5</number>
     </property>
@@ -53,13 +86,13 @@
      <attribute name="title">
       <string>Ceros</string>
      </attribute>
-     <widget class="QCheckBox" name="chBiseccion">
+     <widget class="QRadioButton" name="chBiseccion">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
-        <width>201</width>
-        <height>31</height>
+        <y>30</y>
+        <width>291</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
@@ -68,16 +101,16 @@
        </font>
       </property>
       <property name="text">
-       <string>Metodo de Biseccion</string>
+       <string>Metodo Biseccion</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chNewton">
+     <widget class="QRadioButton" name="chNewton">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>80</y>
-        <width>201</width>
-        <height>31</height>
+        <y>90</y>
+        <width>291</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
@@ -86,16 +119,16 @@
        </font>
       </property>
       <property name="text">
-       <string>Metodo de Newton</string>
+       <string>Metodo Newton</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chSecante">
+     <widget class="QRadioButton" name="chSecante">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>150</y>
-        <width>201</width>
-        <height>31</height>
+        <width>291</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
@@ -104,16 +137,16 @@
        </font>
       </property>
       <property name="text">
-       <string>Metodo de Secante</string>
+       <string>Metodo Secante</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chFalsa">
+     <widget class="QRadioButton" name="chFalsa">
       <property name="geometry">
        <rect>
         <x>400</x>
-        <y>20</y>
-        <width>251</width>
-        <height>31</height>
+        <y>30</y>
+        <width>381</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
@@ -125,13 +158,13 @@
        <string>Metodo de la Falsa Posicion</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chMuller">
+     <widget class="QRadioButton" name="chMuller">
       <property name="geometry">
        <rect>
         <x>400</x>
-        <y>80</y>
-        <width>251</width>
-        <height>31</height>
+        <y>90</y>
+        <width>381</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
@@ -148,50 +181,12 @@
      <attribute name="title">
       <string>Interpolacion</string>
      </attribute>
-     <widget class="QCheckBox" name="chCubicosNaturales">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>20</y>
-        <width>311</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Interpolacion Mediante Trazadores 
-Cubicos Naturales</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chPolinomialNewton">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>110</y>
-        <width>321</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Interpolacion Polinomial 
-de Newton</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chLagrage">
+     <widget class="QRadioButton" name="chLagrage">
       <property name="geometry">
        <rect>
         <x>30</x>
         <y>30</y>
-        <width>261</width>
+        <width>361</width>
         <height>31</height>
        </rect>
       </property>
@@ -204,13 +199,13 @@ de Newton</string>
        <string>Interpolacion de Lagrange</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chCubicosSujetos">
+     <widget class="QRadioButton" name="chPolinomialNewton">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>110</y>
-        <width>311</width>
-        <height>41</height>
+        <x>30</x>
+        <y>90</y>
+        <width>471</width>
+        <height>71</height>
        </rect>
       </property>
       <property name="font">
@@ -219,8 +214,46 @@ de Newton</string>
        </font>
       </property>
       <property name="text">
-       <string>Interpolacion Mediante Trazadores 
-Cubicos Sujetos</string>
+       <string>Interpolacion Polinomial
+de Newton</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chCubicosNaturales">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>20</y>
+        <width>471</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interpolacion Mediante
+Cubitos Naturales</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chCubicosSujetos">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>110</y>
+        <width>471</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interpolacion Mediante
+Cubitos Sujetos</string>
       </property>
      </widget>
     </widget>
@@ -228,49 +261,12 @@ Cubicos Sujetos</string>
      <attribute name="title">
       <string>Diferenciacion/Integracion</string>
      </attribute>
-     <widget class="QCheckBox" name="chInSimpson">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>20</y>
-        <width>251</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Integracion Numerica: 
-Simpson</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chDiferenciacion">
+     <widget class="QRadioButton" name="chPuntoFijo">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>80</y>
-        <width>231</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Diferenciacion Numerica</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chPuntoFijo">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>201</width>
+        <y>30</y>
+        <width>361</width>
         <height>31</height>
        </rect>
       </property>
@@ -283,55 +279,12 @@ Simpson</string>
        <string>Metodo de Punto Fijo</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chInTrapecio">
+     <widget class="QRadioButton" name="chDiferenciacion">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>140</y>
-        <width>221</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Integracion Numerica: 
-Regla del Trapecio</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chInGauss">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>80</y>
-        <width>311</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Integracion Numerica Cuadraturas 
-de Gauss</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab3">
-     <attribute name="title">
-      <string>Ecuacion Diferencial Ordinaria</string>
-     </attribute>
-     <widget class="QCheckBox" name="checkBox">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>80</y>
-        <width>291</width>
+        <y>90</y>
+        <width>361</width>
         <height>31</height>
        </rect>
       </property>
@@ -341,15 +294,78 @@ de Gauss</string>
        </font>
       </property>
       <property name="text">
-       <string>Solucion de EDO: Runge Kutta</string>
+       <string>Diferenciacion Numerica</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chSolucionEuler">
+     <widget class="QRadioButton" name="chInTrapecio">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>20</y>
-        <width>331</width>
+        <y>130</y>
+        <width>361</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Integracion Numerica:
+Regla del Trapecio</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chInSimpson">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>10</y>
+        <width>361</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Integracion Numerica:
+Simpsons</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chInGauss">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>100</y>
+        <width>391</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Integracion Numerica
+Cuadratura:
+Gauss</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab3">
+     <attribute name="title">
+      <string>Ecuacion Diferencial Ordinaria</string>
+     </attribute>
+     <widget class="QRadioButton" name="chSolucionEuler">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>481</width>
         <height>31</height>
        </rect>
       </property>
@@ -362,12 +378,12 @@ de Gauss</string>
        <string>Solucion de EDO: Metodo de Euler</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chSistemasRunge">
+     <widget class="QRadioButton" name="checkBox">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>150</y>
-        <width>291</width>
+        <y>90</y>
+        <width>481</width>
         <height>31</height>
        </rect>
       </property>
@@ -377,7 +393,25 @@ de Gauss</string>
        </font>
       </property>
       <property name="text">
-       <string>Sistemas de EDO: Runge Kutta</string>
+       <string>Solucion de EDO: Runge Kutta</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chSistemasRunge">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>541</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Sistema de EDO: Runge Kutta</string>
       </property>
      </widget>
     </widget>
@@ -385,12 +419,12 @@ de Gauss</string>
      <attribute name="title">
       <string>Sistemas de Ecuaciones</string>
      </attribute>
-     <widget class="QCheckBox" name="chInversa">
+     <widget class="QRadioButton" name="chEliGauss">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>150</y>
-        <width>421</width>
+        <y>30</y>
+        <width>691</width>
         <height>31</height>
        </rect>
       </property>
@@ -400,15 +434,15 @@ de Gauss</string>
        </font>
       </property>
       <property name="text">
-       <string>Sitemas de Ecuaciones Mediante La Inversa</string>
+       <string>Sistemas de Ecuaciones Por Eliminacion de Gauss</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chEliGaussJordan">
+     <widget class="QRadioButton" name="chEliGaussJordan">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>80</y>
-        <width>501</width>
+        <y>90</y>
+        <width>751</width>
         <height>31</height>
        </rect>
       </property>
@@ -418,15 +452,15 @@ de Gauss</string>
        </font>
       </property>
       <property name="text">
-       <string>Sitemas de Ecuaciones Por Eliminacion de Gauss Jordan</string>
+       <string>Sistemas de Ecuaciones Por Eliminacion de Gauss Jordan</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="chEliGauss">
+     <widget class="QRadioButton" name="chInversa">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>20</y>
-        <width>441</width>
+        <y>140</y>
+        <width>751</width>
         <height>31</height>
        </rect>
       </property>
@@ -436,7 +470,7 @@ de Gauss</string>
        </font>
       </property>
       <property name="text">
-       <string>Sitemas de Ecuaciones Por Eliminacion de Gauss</string>
+       <string>Sistemas de Ecuaciones Mediante La Inversa</string>
       </property>
      </widget>
     </widget>
@@ -444,48 +478,12 @@ de Gauss</string>
      <attribute name="title">
       <string>Otros</string>
      </attribute>
-     <widget class="QCheckBox" name="chDiferencias">
+     <widget class="QRadioButton" name="chDescomposicion">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>150</y>
-        <width>331</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Metodo Lineal de Diferencias Finitas</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chRegresion">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>80</y>
-        <width>291</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Regresion Lineal</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="chDescomposicion">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>331</width>
+        <y>30</y>
+        <width>691</width>
         <height>31</height>
        </rect>
       </property>
@@ -498,15 +496,51 @@ de Gauss</string>
        <string>Descomposicion LU</string>
       </property>
      </widget>
+     <widget class="QRadioButton" name="chRegresion">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>691</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Regresion Lineal</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chDiferencias">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>140</y>
+        <width>691</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Metodo Lineal de Diferencias Finitas</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QPushButton" name="pbHistorial">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>360</x>
       <y>340</y>
-      <width>111</width>
-      <height>41</height>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -514,17 +548,28 @@ de Gauss</string>
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;</string>
+    </property>
     <property name="text">
      <string>Historial</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagenes/imagenes.qrc">
+      <normaloff>:/documentation.png</normaloff>:/documentation.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="pbAlgoritmo">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>570</x>
       <y>340</y>
-      <width>111</width>
-      <height>41</height>
+      <width>141</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -532,8 +577,48 @@ de Gauss</string>
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;</string>
+    </property>
     <property name="text">
      <string>Algoritmo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagenes/imagenes.qrc">
+      <normaloff>:/calculator.png</normaloff>:/calculator.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbRegresar">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>350</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;</string>
+    </property>
+    <property name="text">
+     <string>Regresar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="imagenes/imagenes.qrc">
+      <normaloff>:/view-refresh.png</normaloff>:/view-refresh.png</iconset>
     </property>
    </widget>
   </widget>
@@ -542,13 +627,18 @@ de Gauss</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>864</width>
-     <height>21</height>
+     <width>907</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <includes>
+  <include location="local">Qt::WindowTitleHint</include>
+ </includes>
+ <resources>
+  <include location="imagenes/imagenes.qrc"/>
+ </resources>
  <connections/>
 </ui>

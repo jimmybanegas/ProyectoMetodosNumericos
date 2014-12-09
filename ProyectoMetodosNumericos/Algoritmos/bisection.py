@@ -4,7 +4,7 @@ from  math import*
 def bis(formula, a, b, tol, n_iter,lista):
     p = 0.00001
     code = parser.expr(formula).compile()
-
+    
     lista.append("Paso #1")
     itera = 1
     lista.append( "Tome i = "+str(itera))

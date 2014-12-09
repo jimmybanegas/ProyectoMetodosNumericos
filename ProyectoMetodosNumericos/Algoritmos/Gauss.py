@@ -1,65 +1,64 @@
-'''
-Created on 27/11/2014
+def pprint(A):
+    n = len(A)
+    for i in range(0, n):
+        line = ""
+        for j in range(0, n+1):
+            line += str(A[i][j]) + "\t"
+            if j == n-1:
+                line += "| "
+        print(line)
+    print("")
 
-@author: Javier
-'''
-def IngresarValores(matrizV, numfil, numcol):
-        s = 0
-        while s < numfil:
-            sp = s + 1
-            sri = "Ingrese la fila " + str(sp)
-            fila = map(int, raw_input(sri).split())
-            matrizV.append(fila)
-            s = s + 1
-            
-'''n = numero de ecuaciones, a = matriz, b = vector de terminos '''
-def Reduccion_Gauss(n, a , b):
-    det = 1
-    x = []
-    i = 1
-    while i <= n - 1:
-        det = det*a[i,i]
-        if det == 0  :
-            print "HAY UN CERO EN LA DIAGONAL PRINCIPAL"
-            return -1
-        k = i+1
-        while k<=n :
-            j = i + i
-            while j<=n :
-                a[k,j] = a[k,j]-(a[k,i] * a[i,j] / a[i,i])
-                j = j+i
-            b [k] = b[k] - (a[k,i] * b[i] / a[i,i])
-            k = k+1
-        i = i+1
-    det = det * a [n,n]
-    if det == 0:
-        print 'HAY UN CERO EN LA DIAGONAL'
-        return -1
-    x[n] = b[n] / a[n,n]
-    i = n - 1 
-    while i >= 1:
-        x[i] = b[i]
-        j = i + 1 
-        while j <= n :
-            x[i] = x[i] - a[i,j]*x[j]
-            j = j + 1
-    print det
+
+def gauss(A):
+    n = len(A)
+
+    for i in range(0, n):
+        # Search for maximum in this column
+        maxEl = abs(A[i][i])
+        maxRow = i
+        for k in range(i+1, n):
+            if abs(A[k][i]) > maxEl:
+                maxEl = abs(A[k][i])
+                maxRow = k
+
+        # Swap maximum row with current row (column by column)
+        for k in range(i, n+1):
+            tmp = A[maxRow][k]
+            A[maxRow][k] = A[i][k]
+            A[i][k] = tmp
+
+        # Make all rows below this one 0 in current column
+        for k in range(i+1, n):
+            c = -A[k][i]/A[i][i]
+            for j in range(i, n+1):
+                if i == j:
+                    A[k][j] = 0
+                else:
+                    A[k][j] += c * A[i][j]
+
+    # Solve equation Ax=b for an upper triangular matrix A
+    x = [0 for i in range(n)]
+    for i in range(n-1, -1, -1):
+        x[i] = A[i][n]/A[i][i]
+        for k in range(i-1, -1, -1):
+            A[k][n] -= A[k][i] * x[i]
     return x
-        
-if __name__ == '__main__':
-    print "SISTEMAS DE ECUACIONES POR ELIMINACION DE GAUSS"
-    n = int(raw_input('Ingrese el numero de filas de la matriz a reducir: '))
-    m = int(raw_input('Ingrese el numero de columnas de la matriz a reducir: '))
+
+
+if __name__ == "__main__":
     
-    matrizA = [[]]
-    i = 0
-    j = 0
-    while i < n :
-        while j < m :
-            matrizA.append(int(raw_input('ingrese un valor de la fila' + str(n))))
-    b = []
-    print "Reduciendo Matriz"
-    Reduccion_Gauss(matrizA, n, b)
-    print b[1]
-    raw_input("Presione una tecla para finalizar")
-    
+    A = [[1, 1, 1, 3], [2, 3, 7, 0], [1, 3, -2, 17]]
+    n = 3
+
+    # Print input
+    pprint(A)
+
+    # Calculate solution
+    x = gauss(A)
+
+    # Print result
+    line = "Result:\t"
+    for i in range(0, n):
+        line += str(x[i]) + "\t"
+    print(line)

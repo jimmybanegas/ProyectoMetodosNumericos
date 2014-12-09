@@ -5,6 +5,7 @@ Created on 09/11/2014
 '''
 import os
 import collections
+from docx import Document
 
 def creartxt(self):
     try: 
@@ -149,4 +150,13 @@ def leerespecifico(self, posicion):
         linea=archi.readline()
     archi.close()
     return lista
+    
+def deployaword (self, texto, nombre):
+    document = Document()
+    
+    for n in texto:
+        document.add_paragraph(
+        str(n), style='ListBullet')
+        
+    document.save(nombre+'.docx')
     

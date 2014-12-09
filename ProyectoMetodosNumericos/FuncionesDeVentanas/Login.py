@@ -221,6 +221,7 @@ class Historial(QtGui.QMainWindow,Ui_MainWindow):
             self.ui = Ventanas.Historial.Ui_MainWindow()
             self.ui.setupUi(self)
             self.ui.btnRegresar.clicked.connect(self.Regresar)
+            self.ui.btnWord.clicked.connect(self.Escribir)
             global colorFondo
             self.setStyleSheet("background-color: "+colorFondo);
             
@@ -242,9 +243,23 @@ class Historial(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.teSteps.clear()
             for n in pasos:
                 self.ui.teSteps.append(n)
+            self.ui.lblExito.setText(" ")
         
         def Regresar(self): 
             self.close()  
+        
+        def Escribir(self):
+            texto = []
+            nombre = str(self.ui.cbFx.currentIndex()+1)
+            
+            index = self.ui.cbFx.currentIndex()
+            posiciones = leerposiciones(self)
+            pasos = leerespecifico(self, posiciones[index])
+            for n in pasos:
+                texto.append(n)
+                
+            deployaword(self, texto, "Ejejercicio "+nombre)
+            self.ui.lblExito.setText("Creado!")
             
             
 class Graph(QtGui.QMainWindow,Ui_MainWindow):

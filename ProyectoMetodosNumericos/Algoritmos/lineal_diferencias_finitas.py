@@ -99,16 +99,24 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
     lista.append ("w2 = " + str(w2))
     
     #Paso 6
+    W1 =  [ 0 for r in range(N+1) ]
+    W2 =  [ 0 for t in range(N+1) ]
     lista.append ("")
     lista.append ("Paso #6")
     lista.append ("Mientras i sea menor o igual al numero de iteraciones")
     for i in range(N+1):
         lista.append ("------------------ i = " + str(i) + " ------------------")
-        W1 = u[1][i] + w2*v[1][i]
-        W2 = u[2][i] + w2*v[2][i]
+        W1[i] = u[1][i] + w2*v[1][i]
+        W2[i] = u[2][i] + w2*v[2][i]
         x = a + i*h
-        lista.append ("W1 = " + str(W1))
+        lista.append ("W1 = " + str(W1[i]))
+        lista.append ("W2 = " + str(W2[i]))
     
+    lista.append("------------- RESULTADOS ------------------")
+    lista.append("\tx \tW1 \t\tW2 \t\tu1 \t\tv1")
+    for i in range(N+1):
+        x = a + i*h
+        lista.append("\t"+str(x)+"\t"+str(W1[i])+"\t"+str(W2[i])+"\t"+str(u[1][i])+"\t"+str(v[1][i]))
         
     for c in lista:
         print(c)

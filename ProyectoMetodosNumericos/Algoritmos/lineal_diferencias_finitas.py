@@ -10,7 +10,7 @@ from array import *
 
 
 
-def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N):
+def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
     
     funcP = parser.expr(px).compile()
     funcQ = parser.expr(qx).compile()
@@ -26,7 +26,6 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N):
     u = [ [ 0 for i in range(N+1) ] for j in range(3) ]
     v = [ [ 0 for i in range(N+1) ] for j in range(3) ]
     
-    lista = []
     
     lista.append ('METODO LINEAL DE DIFERENCIAS FINITAS(METODO DEL DISPARO LINEAL)')
     
@@ -109,9 +108,10 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N):
         W2 = u[2][i] + w2*v[2][i]
         x = a + i*h
         lista.append ("W1 = " + str(W1))
-        print W1
-        
-    #for c in lista:
-    #    print(c)
     
-linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10)
+        
+    for c in lista:
+        print(c)
+
+lista = []    
+linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)

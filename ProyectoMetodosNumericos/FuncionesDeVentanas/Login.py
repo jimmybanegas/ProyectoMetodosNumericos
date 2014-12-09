@@ -127,8 +127,6 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             self.setStyleSheet("background-color: "+colorFondo);
             
         def closeEvent(self, evnt):
-            self.w2 = IngresarFuncion()
-            self.w2.show()
             self.close()  
             
         def EjecutarAlgoritmo(self): 
@@ -136,6 +134,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             global funcion
             if(metodoSeleccionado ==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha seleccioando algoritmo''',QMessageBox.Ok)
+<<<<<<< HEAD
             else:
                 if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
                      self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
@@ -153,9 +152,27 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                    self.w2.show()
                         
                         
+=======
+            else:                
+                self.SeleccionarMetodo() 
+                self.w2 = Input()
+                self.w2.show()
+                self.close()                
+                
+                
+            
+>>>>>>> Franklin
         def Regresar(self): 
+            self.w2 = IngresarFuncion()
+            self.w2.show()
             self.close()
             
+            
+      
+            
+            
+            
+                
         def SeleccionarMetodo(self):
             global metodoSeleccionado
             if self.ui.chBiseccion.isChecked():
@@ -927,6 +944,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
            
+        def closeEvent(self, evnt):
+            self.w2 = ElegirAlgoritmo()
+            self.w2.show()
+            self.close()   
             
         
         def Calcular(self): 
@@ -935,6 +956,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.close()  
         
         def Regresar(self):
+            self.w2 = ElegirAlgoritmo()
+            self.w2.show()
             self.close()
             
 if __name__ == "__main__":

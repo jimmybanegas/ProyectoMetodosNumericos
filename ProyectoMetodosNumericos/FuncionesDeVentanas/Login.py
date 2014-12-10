@@ -25,6 +25,29 @@ from Graficador import CutePlot
 import Graficador
 import Ventanas
 from Algoritmos import bisection
+from Algoritmos import Newton
+#from Algoritmos import CuadraturaGaussiana
+from Algoritmos import derivPlagrange
+from Algoritmos import euler_ec_dif
+from Algoritmos import factocrout
+from Algoritmos import FactorizacionLUMarco
+from Algoritmos import falsa_posicion
+from Algoritmos import Gauss
+from Algoritmos import lagrangeMarco
+from Algoritmos import lineal_diferencias_finitas
+from Algoritmos import MatrizInversa
+from Algoritmos import minimos_cuadrado
+from Algoritmos import minimos_cuadrado
+from Algoritmos import muller
+from Algoritmos import puntofijo
+from Algoritmos import Reduccion_Matrices_Gauss
+from Algoritmos import RegresionLineal
+from Algoritmos import runge_kutta_ecu_dif
+from Algoritmos import secante
+from Algoritmos import simpson
+from Algoritmos import sistema_edo_kutta
+from Algoritmos import trapezoide
+#from Algoritmos import Trazador_cubico_natural
 from serial.tools.miniterm import console
 from Algoritmos.FactorizacionLUMarco import pasos
 from sqlalchemy.sql.expression import except_
@@ -966,33 +989,72 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             
         def Calcular(self): 
             lista=[]            
-            if metodoSeleccionado == "Biseccion":               
-                #try:
+            if metodoSeleccionado == "Biseccion":              
                     resp=bisection.bis(str(funcion),float(str(self.ui.leParam1.text()))
                                                   ,float(str(self.ui.leParam2.text()))
                                                   ,float(str(self.ui.leParam3.text()))
                                                   ,int(str(self.ui.leParam4.text())),lista)
-                    #for n in lista:
-                     #   print n
-                
-                    #self.ui.lbResult.setText(str(resp))
+
                     grabartxt(self, lista, str(resp), str(funcion))
                     self.w2 = Graph()
                     self.w2.show()    
-                #except:
-                    #self.ui.teSteps.clear()
-                    #self.ui.teSteps.setText("Ingrese los datos corectamente")   
                                                           
-            elif metodoSeleccionado == "Newton":
-                self.Newton()                 
+            elif metodoSeleccionado == "Newton":          
+                    resp=Newton.Newt(str(funcion)
+                                     ,float(str(self.ui.leParam1.text()))
+                                     ,float(str(self.ui.leParam2.text()))
+                                    ,int(str(self.ui.leParam3.text())),lista)
+                    
+                    grabartxt(self, lista, str(resp), str(funcion))
+                    self.w2 = Graph()
+                    self.w2.show()
+                               
             elif metodoSeleccionado == "Secante":
-                self.Secante()
+                    resp=secante(str(funcion),
+                              float(str(self.ui.leParam1.text())),
+                              float(str(self.ui.leParam2.text())),
+                              float(str(self.ui.leParam3.text())),
+                              int(str(self.ui.leParam4.text())),lista)              
+        
+                    grabartxt(self, lista, str(resp), str(funcion))
+                    self.w2 = Graph()
+                    self.w2.show()
+                
             elif metodoSeleccionado == "Falsa":
-                self.Falsa()
+                resp=falsa_posicion.pos_f(str(funcion)
+                           ,float(str(self.ui.leParam1.text())),
+                           float(str(self.ui.leParam2.text())),
+                           float(str(self.ui.leParam3.text())),
+                           int(str(self.ui.leParam4.text())),lista)
+
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
             elif metodoSeleccionado == "Muller":
-                self.Muller()
+                resp=muller(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
             elif metodoSeleccionado == "Lagrage":
-                self.Lagrage() 
+                resp=lagrangeMarco(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show() 
+                
             elif metodoSeleccionado == "PolinomialNewton":
                 self.PolinomialNewton()
             elif metodoSeleccionado == "CubitosNaturales":

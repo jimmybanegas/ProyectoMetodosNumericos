@@ -136,11 +136,27 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             global funcion
             if(metodoSeleccionado ==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha seleccioando algoritmo''',QMessageBox.Ok)
-            else:                
-                self.SeleccionarMetodo() 
-                self.w2 = Input()
-                self.w2.show()
-                self.close()              
+            else:
+                if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
+                     self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
+                     self.ui.chPolinomialNewton.isChecked() or self.ui.chSolucionEuler.isChecked() or self.ui.chInGauss.isChecked() or
+                     self.ui.chInSimpson.isChecked() or self.ui.chSistemasRunge.isChecked() or self.ui.chPuntoFijo.isChecked() or
+                     self.ui.chInTrapecio.isChecked()):
+                    if funcion == "": 
+                        QMessageBox.information(self, 'Advertencia', ''' Estos algoritmos nesecitan de una funcion''',QMessageBox.Ok) 
+                        self.w2 = IngresarFuncion()
+                        self.w2.show()
+                        self.close()    
+                    else:                    
+                        self.SeleccionarMetodo() 
+                        self.w2 = Input()
+                        self.w2.show()
+
+                else:                
+                    self.SeleccionarMetodo() 
+                    self.w2 = Input()
+                    self.w2.show()
+                    self.close()                
                 
         def Regresar(self):             
             self.w2 = IngresarFuncion()
@@ -363,12 +379,43 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.Diferencias() 
                 
 #self.ui.lbEjemplo.setPixmap(QPixmap("Ventanas\imagenes\Biseccion.JPG"))      
+        def Diferencias(self):            
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"FUNCION P(X) :x*2 \n  \n\n"
+                                      +"FUNCION Q(X) : x*4 \n  \n\n"
+                                      +"FUNCION R(X) : x*4 \n  \n\n"
+                                      +"EXTREMO A : -3 \n \n\n"
+                                      +"EXTREMO B : 3 \n  \n\n"
+                                      +"CONDICION DE FRONTERA A : 0 \n  \n\n"
+                                      +"CONDICION DE FRONTERA B : 0 \n \n\n"
+                                      +"NO. DE SUBINTERVALOS N : 100")
+            
+            self.ui.lbParam1.setText("Funcion P(x)")
+            self.ui.lbParam2.setText("Funcion Q(x)")
+            self.ui.lbParam3.setText("Funcion R(x)")
+            self.ui.lbParam4.setText("Extremo a")
+            self.ui.lbParam5.setText("Extremo b")
+            self.ui.lbParam6.setText("condicion de frontera A")
+            self.ui.lbParam7.setText("condicion de frontera B")
+            self.ui.lbParam8.setText("numero de subintervalos N")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.show()
+            self.ui.leParam6.show()
+            self.ui.leParam7.show()
+            self.ui.leParam8.show()   
         def Biseccion(self):
             self.ui.lbEjemplo.clear()
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"LIMITE SUPERIOR : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
-                                      +"LIMITE SUPERIOR : 3 \n \t debe de ser de signo contrario a limite inferior \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"LIMITE SUPERIOR A: -3 \n \t debe de ser de signo contrario a limite superior \n\n"
+                                      +"LIMITE INFERIOR B: 3 \n \t debe de ser de signo contrario a limite inferior \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
             
             self.ui.lbParam1.setText("Limite inferior A")
@@ -396,7 +443,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.clear()
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL : 1 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \n\n"
                                       +"NO.ITERACIONES : 100")
              
             self.ui.lbParam1.setText("Aproximacion Inicial")
@@ -424,7 +471,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL P0 : 0 \n\n"
                                       +"APROXIMACION INICIAL P1: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
@@ -453,7 +500,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL P0 : 0 \n\n"
                                       +"APROXIMACION INICIAL P1: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
@@ -483,7 +530,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"APROXIMACION INICIAL 0 : 5 \n\n"
                                       +"APROXIMACION INICIAL 1: -5 \n\n"
                                       +"APROXIMACION INICIAL 2: 0 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial 0")
@@ -508,12 +555,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
         def Lagrage(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Grado N")
-            self.ui.lbParam2.setText("Lista x")
-            self.ui.lbParam3.setText("Lista Fx")
-            self.ui.lbParam4.setText("x derivada")
-            self.ui.lbParam5.setText("")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+                                      +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
+                                      +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
+                                      +"X DERIVADA : 4  \n\n"
+                                      +"NO.ITERACIONES : 100")
+           
+            self.ui.lbParam1.setText("GRADON")
+            self.ui.lbParam2.setText(" LISTA X ")
+            self.ui.lbParam3.setText("LISTA F(X)")
+            self.ui.lbParam4.setText("X DERIVADA")
+            self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -531,60 +584,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
         def PolinomialNewton(self):
-            #no encuentro algoritmo de este y no se ha quien le toco ya que son de los primeros
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("")
-            self.ui.lbParam2.setText("")
-            self.ui.lbParam3.setText("")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
-            self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.hide()
-            self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.hide()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam6.setText("")
-            self.ui.lbParam7.setText("")
-            self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
-            self.ui.leParam7.hide()
-            self.ui.leParam8.hide()
-        def PuntoFijo(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Aproximacion Inicial")
-            self.ui.lbParam2.setText("Tolerancia")
-            self.ui.lbParam3.setText("No Iteraciones")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
-            self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.hide()
-            self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.hide()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
-            self.ui.lbParam6.setText("")
-            self.ui.lbParam7.setText("")
-            self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
-            self.ui.leParam7.hide()
-            self.ui.leParam8.hide()
-        def Diferenciacion(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Grado N")
-            self.ui.lbParam2.setText("Lista x")
-            self.ui.lbParam3.setText("Lista Fx")
-            self.ui.lbParam4.setText("x derivada")
-            self.ui.lbParam5.setText("")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"APROXIMACION INICIAL P0 : -1 \n\n"
+                                      +"APROXIMACION INICIAL P1: 0 \n\n"
+                                      +"APROXIMACION INICIAL P2: 1 \n\n"
+                                      +"TOLERANCIA : 0.0000005 \n  \n\n"
+                                      +"NO.ITERACIONES : 100")
+           
+            self.ui.lbParam1.setText("Aproximacion Inicial 0")
+            self.ui.lbParam2.setText("Aproximacion Inicial 1")
+            self.ui.lbParam3.setText("Aproximacion Inicial 2")
+            self.ui.lbParam4.setText("Tolerancia")
+            self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -593,93 +604,26 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
             self.ui.leParam6.hide()
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
-        def InTrapecio(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Numero de Trapecios")
-            self.ui.lbParam2.setText("Limite Inferior")
-            self.ui.lbParam3.setText("Limite Superior")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
-            self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.hide()
-            self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.hide()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
-            self.ui.lbParam6.setText("")
-            self.ui.lbParam7.setText("")
-            self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
-            self.ui.leParam7.hide()
-            self.ui.leParam8.hide()
-        def InSimpson(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Extremo A")
-            self.ui.lbParam2.setText("Extremo B")
-            self.ui.lbParam3.setText("Entero Positivo")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
-            self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.hide()
-            self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.hide()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
-            self.ui.lbParam6.setText("")
-            self.ui.lbParam7.setText("")
-            self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
-            self.ui.leParam7.hide()
-            self.ui.leParam8.hide()
-        def InGauss(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Numeros de Puntos a Utilizar")
-            self.ui.lbParam2.setText("Limite Inferior A")
-            self.ui.lbParam3.setText("Limite Superior B")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
-            self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.hide()
-            self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.hide()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
-            self.ui.lbParam6.setText("")
-            self.ui.lbParam7.setText("")
-            self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
-            self.ui.leParam7.hide()
-            self.ui.leParam8.hide()          
         def SolucionEuler(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"Extremo A : -3 \n \t debe de ser de menor al extremo B \n\n"
+                                      +"Extremo B : 3 \n \t debe de ser de mayor al extremo A \n\n"
+                                      +"Condicion Inicial : 0 \n \t es el valor de f(A) \n\n"
+                                      +"Numero Subintervalos N : 100")
+            
             self.ui.lbParam1.setText("Extremo A")
             self.ui.lbParam2.setText("Extremo B")
             self.ui.lbParam3.setText("Condicion Inicial")
             self.ui.lbParam4.setText("Numero Subintervalos N")
-            self.ui.lbParam5.setText("")
+            self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -696,47 +640,27 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam8.setText("")
             self.ui.leParam6.hide()
             self.ui.leParam7.hide()
-            self.ui.leParam8.hide()                        
-        def SolucionRunge(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Extremo A")
-            self.ui.lbParam2.setText("Extremo B")
-            self.ui.lbParam3.setText("Condicion Inicial")
-            self.ui.lbParam4.setText("Numero de Iteraciones")
-            self.ui.lbParam5.setText("")
+            self.ui.leParam8.hide()  
+        def InGauss(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"NUMERO DE PUNTOS A UTILIZAR : 4 \n\n"
+                                      +"LIMITE INFERIOR A : -3 \n \t debe de ser menor a limite superior b \n\n"
+                                      +"LIMITE SUPERIOR B : 3 \n \t debe de ser mayot a limite inferior a \n\n"
+                                       )
+            
+            self.ui.lbParam1.setText("Numeros de Puntos a Utilizar")
+            self.ui.lbParam2.setText("Limite Inferior A")
+            self.ui.lbParam3.setText("Limite Superior B")
+            self.ui.lbParam4.setText("Numero Subintervalos N")
+            self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
-            self.ui.leParam4.show()
+            self.ui.leParam4.hide()
             self.ui.lbParam1.show()
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
-            self.ui.lbParam4.show()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
-            self.ui.lbParam6.setText("")
-            self.ui.lbParam7.setText("")
-            self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
-            self.ui.leParam7.hide()
-            self.ui.leParam8.hide()
-        def SistemaRunge(self):
-            #hace falta ya que era de rafa
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("")
-            self.ui.lbParam2.setText("")
-            self.ui.lbParam3.setText("")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
-            self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.show()
-            self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.show()
+            self.ui.lbParam4.hide()
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
             self.ui.lbParam5.setText("")
@@ -747,7 +671,13 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide() 
         def EliGauss(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"NUMERO DE FILAS : 3 \n\n"
+                                      +"NUMERO DE COLUMNAS : 3 \n\n"
+                                      +"FILA 1 :3 4 6 \n \n\n"
+                                      +"FILA 2 :2 4 6 \n \n\n"
+                                      +"FILA 3 :3 6 8 \n \n\n"
+                                       )
             self.ui.lbParam1.setText("Numero de Filas")
             self.ui.lbParam2.setText("Numero de Columnas")
             self.ui.lbParam3.setText("Fila 1")
@@ -770,7 +700,13 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
         def EliGaussJordan(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"NUMERO DE FILAS : 3 \n\n"
+                                      +"NUMERO DE COLUMNAS : 3 \n\n"
+                                      +"FILA 1 : 2 3 5 \n \n\n"
+                                      +"FILA 2 : 3 5 6 \n \n\n"
+                                      +"FILA 3 : 3 5 7  \n \n\n"
+                                       )
             self.ui.lbParam1.setText("Numero de Filas")
             self.ui.lbParam2.setText("Numero de Columnas")
             self.ui.lbParam3.setText("Fila 1")
@@ -791,14 +727,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam8.setText("")
             self.ui.leParam6.hide()
             self.ui.leParam7.hide()
-            self.ui.leParam8.hide()             
-        def Inversa(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Matriz")
-            self.ui.lbParam2.setText("Matriz A")
-            self.ui.lbParam3.setText("Matriz B")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
+            self.ui.leParam8.hide()    
+        def Regresion(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"VALOR DE X :  1 10 15 24 70 \n\n"
+                                      +"VALOR DE Y : 14 23 28 37 83 \n\n"
+                                      +"X A APROXIMAR : 100  \n\n"
+                                       )
+            self.ui.lbParam1.setText("Valores de X")
+            self.ui.lbParam2.setText("Valores de Y")
+            self.ui.lbParam3.setText("X a Aproximar")
+            self.ui.lbParam4.setText("Fila 2")
+            self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -817,12 +757,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
         def Descomposicion(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"Dimension de la Matriz : \n\n"
+                                      +"MATRIZ A: [[3,4],[2,5]] \n\t la matriz debe de ser de n x n \n\n"
+                                      +"MATRIZ L :[[4,3],[2]] \n\t la matriz debe de ser de n x n  \n\n"
+                                      +"MATRIZ U :[[4,6],[2,8]] \n\t la matriz debe de ser de n x n \n\n"
+                                      
+                                      )
             self.ui.lbParam1.setText("Dimension de la Matriz")
             self.ui.lbParam2.setText("Matriz A")
             self.ui.lbParam3.setText("Matriz L")
             self.ui.lbParam4.setText("Matriz U")
-            self.ui.lbParam5.setText("")
+            self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -839,14 +785,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam8.setText("")
             self.ui.leParam6.hide()
             self.ui.leParam7.hide()
-            self.ui.leParam8.hide() 
-        def Regresion(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Valores de X")
-            self.ui.lbParam2.setText("Valores de Y")
-            self.ui.lbParam3.setText("X a Aproximar")
-            self.ui.lbParam4.setText("")
-            self.ui.lbParam5.setText("")
+            self.ui.leParam8.hide()
+        def InSimpson(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"EXTREMO A: -1 \n\n"
+                                      +"EXTREMO B L :5  \n\n"
+                                      +"ENTERO POSITIVO : 9 \n\n"
+                                      )
+            self.ui.lbParam1.setText("Extremo A")
+            self.ui.lbParam2.setText("Extremo B")
+            self.ui.lbParam3.setText("Entesro Positivo")
+            self.ui.lbParam4.setText("Matriz U")
+            self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -863,17 +813,19 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam8.setText("")
             self.ui.leParam6.hide()
             self.ui.leParam7.hide()
-            self.ui.leParam8.hide()        
-        def Diferencias(self):            
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
-            self.ui.lbParam1.setText("Funcion P(x)")
-            self.ui.lbParam2.setText("Funcion Q(x)")
-            self.ui.lbParam3.setText("Funcion R(x)")
-            self.ui.lbParam4.setText("Extremo a")
-            self.ui.lbParam5.setText("Extremo b")
-            self.ui.lbParam6.setText("condicion de frontera A")
-            self.ui.lbParam7.setText("condicion de frontera B")
-            self.ui.lbParam8.setText("numero de subintervalos N")
+            self.ui.leParam8.hide()
+        def SolucionRunge(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"Extremo A : -3 \n \t debe de ser de menor al extremo B \n\n"
+                                      +"Extremo B : 3 \n \t debe de ser de mayor al extremo A \n\n"
+                                      +"Condicion Inicial : 0 \n \t es el valor de f(A) \n\n"
+                                      +"Numero de Itereaciones : 100")
+            
+            self.ui.lbParam1.setText("Extremo A")
+            self.ui.lbParam2.setText("Extremo B")
+            self.ui.lbParam3.setText("Condicion Inicial")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -882,10 +834,126 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.show()
-            self.ui.leParam6.show()
-            self.ui.leParam7.show()
-            self.ui.leParam8.show()  
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+            self.ui.lbParam5.setText("")
+            self.ui.lbParam6.setText("")
+            self.ui.lbParam7.setText("")
+            self.ui.lbParam8.setText("")
+            self.ui.leParam6.hide()
+            self.ui.leParam7.hide()
+            self.ui.leParam8.hide()  
+        def Inversa(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"MATRIZ A: [[3,4],[2,5]] \n\t la matriz debe de ser de n x n \n\n"
+                                      +"MATRIZ B :[[4],[2]] \n\t la matriz debe de ser de n x 1 \n\n"
+                                      )
+            self.ui.lbParam1.setText("Matriz")
+            self.ui.lbParam2.setText("Matriz A")
+            self.ui.lbParam3.setText("Matriz B")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.hide()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.hide
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+            self.ui.lbParam5.setText("")
+            self.ui.lbParam6.setText("")
+            self.ui.lbParam7.setText("")
+            self.ui.lbParam8.setText("")
+            self.ui.leParam6.hide()
+            self.ui.leParam7.hide()
+            self.ui.leParam8.hide() 
+        def PuntoFijo(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"APROXIMACION INICIAL : 1 \n\n"
+                                      +"TOLERANCIA : 0.0000005 \n \n\n"
+                                      +"NO.ITERACIONES : 100")
+            self.ui.lbParam1.setText("Aproximacion Inicial")
+            self.ui.lbParam2.setText("Tolerancia")
+            self.ui.lbParam3.setText("Numero Iteraciones")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+            self.ui.lbParam5.setText("")
+            self.ui.lbParam6.setText("")
+            self.ui.lbParam7.setText("")
+            self.ui.lbParam8.setText("")
+            self.ui.leParam6.hide()
+            self.ui.leParam7.hide()
+            self.ui.leParam8.hide()  
+        def InTrapecio(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"NUMERO DE TRAPECIOS : 5 \n\n"
+                                      +"LIMITE INFERIOR : 1 \n \t debe de ser menor a limite superior b \n\n"
+                                      +"LIMITE SUPERIOR : 2 \n \t debe de ser mayot a limite inferior a \n\n"
+                                       )
+            self.ui.lbParam1.setText("Numero de Trapecios")
+            self.ui.lbParam2.setText("Limite Inferior")
+            self.ui.lbParam3.setText("Limite Superior")
+            self.ui.lbParam4.setText("Numero de Iteraciones")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.hide()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+            self.ui.lbParam5.setText("")
+            self.ui.lbParam6.setText("")
+            self.ui.lbParam7.setText("")
+            self.ui.lbParam8.setText("")
+            self.ui.leParam6.hide()
+            self.ui.leParam7.hide()
+            self.ui.leParam8.hide()
+        def Diferenciacion(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+                                      +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
+                                      +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
+                                      +"X DERIVADA : 4  \n\n"
+                                      +"NO.ITERACIONES : 100")
+            self.ui.lbParam1.setText("Grado N")
+            self.ui.lbParam2.setText("Lista x")
+            self.ui.lbParam3.setText("Lista FX")
+            self.ui.lbParam4.setText("X Derivada")
+            self.ui.lbParam5.setText("Fila 3")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
+            self.ui.lbParam5.setText("")
+            self.ui.lbParam6.setText("")
+            self.ui.lbParam7.setText("")
+            self.ui.lbParam8.setText("")
+            self.ui.leParam6.hide()
+            self.ui.leParam7.hide()
+            self.ui.leParam8.hide()
            
         def closeEvent(self, evnt):
             self.w2 = ElegirAlgoritmo()

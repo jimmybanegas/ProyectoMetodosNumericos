@@ -24,42 +24,14 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
-from Algoritmos import bisection, Trazador_cubico_natural
-from Algoritmos import Newton
-#from Algoritmos import CuadraturaGaussiana
-from Algoritmos import derivPlagrange
-from Algoritmos import euler_ec_dif
-from Algoritmos import factocrout
-from Algoritmos import FactorizacionLUMarco
-from Algoritmos import falsa_posicion
-from Algoritmos import Gauss
-from Algoritmos import lagrangeMarco
-from Algoritmos import lineal_diferencias_finitas
-from Algoritmos import MatrizInversa
-from Algoritmos import minimos_cuadrado
-from Algoritmos import minimos_cuadrado
-from Algoritmos import muller
-from Algoritmos import puntofijo
-from Algoritmos import Reduccion_Matrices_Gauss
-from Algoritmos import RegresionLineal
-from Algoritmos import runge_kutta_ecu_dif
-from Algoritmos import secante
-from Algoritmos import simpson
-from Algoritmos import sistema_edo_kutta
-from Algoritmos import trapezoide
+from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural
 #from Algoritmos import Trazador_cubico_natural
 from serial.tools.miniterm import console
-from Algoritmos.FactorizacionLUMarco import pasos
+
 from sqlalchemy.sql.expression import except_
 from sphinx.ext.pngmath import MathExtError
 from _elementtree import ParseError
 import code
-from Algoritmos.puntofijo import puntoFijo
-from Algoritmos.Trazador_cubico_natural import traz_cubico_nat
-from Algoritmos.trapezoide import reglaTrapezoide
-from Algoritmos.sistema_edo_kutta import sistema_edo_kuta
-from Algoritmos.euler_ec_dif import euler_ecu_dif
-from Algoritmos.MatrizInversa import MatrizInversa
 
 colorFondo = ""
 metodoSeleccionado =""
@@ -1016,7 +988,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                     self.w2.show()
                                
             elif metodoSeleccionado == "Secante":
-                    resp=secante(str(funcion),
+                    resp=secante.secante(str(funcion),
                               float(str(self.ui.leParam1.text())),
                               float(str(self.ui.leParam2.text())),
                               float(str(self.ui.leParam3.text())),
@@ -1038,7 +1010,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "Muller":
-                resp=muller(str(funcion),
+                resp=muller.muller(str(funcion),
                             float(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
@@ -1050,12 +1022,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "Lagrage":
-                resp=lagrangeMarco(str(funcion),
-                            float(str(self.ui.leParam1.text())),
+                resp=lagrangeMarco.lagrangeMarco(int(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
-                            float(str(self.ui.leParam4.text())),
-                            int(str(self.ui.leParam5.text())),lista)             
+                            float(str(self.ui.leParam4.text())),lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()
@@ -1065,7 +1035,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.PolinomialNewton()
                 
             elif metodoSeleccionado == "CubitosNaturales":
-                resp=traz_cubico_nat(str(funcion),
+                resp=Trazador_cubico_natural.traz_cubico_nat(str(funcion),
                             float(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
@@ -1077,8 +1047,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                
             elif metodoSeleccionado == "PuntoFijo":
-                 resp=puntoFijo(str(funcion),
-                            float(str(self.ui.leParam1.text())),
+                 resp=puntofijo.puntoFijo(float(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
                             float(str(self.ui.leParam4.text())),
@@ -1089,7 +1058,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "Diferenciacion":
-                resp=puntoFijo(str(funcion),
+                resp=puntofijo.puntoFijo(str(funcion),
                             float(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
@@ -1101,7 +1070,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                  
             elif metodoSeleccionado == "InTrapecio":
-                resp=reglaTrapezoide(str(funcion),
+                resp=trapezoide.reglaTrapezoide(str(funcion),
                             float(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
@@ -1113,7 +1082,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "InSimpson":
-                resp = simpson(str(funcion),
+                resp = simpson.simpson(str(funcion),
                                   float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
                                   float(str(self.ui.leParam3.text())),lista)             
@@ -1123,7 +1092,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "InGauss":
-                 resp = simpson(str(funcion),
+                 resp = simpson.simpson(str(funcion),
                                   float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
                                   float(str(self.ui.leParam3.text())),lista)             
@@ -1133,40 +1102,41 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "SolucionEuler":
-                 resp = euler_ecu_dif(str(funcion),
+                 resp = euler_ec_dif.euler_ecu_dif(str(funcion),
                                   float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                                  float(str(self.ui.leParam3.text())),
+                                  float(str(self.ui.leParam4.text())),lista)            
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
             elif metodoSeleccionado == "SolucionRunge":
-                resp = runge_kutta_ecu_dif(str(self.ui.leExpresion.text()),
-                                            float(str(self.ui.leExa.text())), 
-                                            float(str(self.ui.leExb.text())), 
-                                            float(str(self.ui.leApha.text())), 
-                                            int(str(self.ui.leEne.text())))
+                resp = runge_kutta_ecu_dif.runge_kutta_ecu_dif(str(funcion),
+                                           float(str(self.ui.leParam1.text)), 
+                                           float(str(self.ui.leParam2.text())),
+                                           float(str(self.ui.leParam3.text())),
+                                           float(str(self.ui.leParam4.text())),lista)
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()
                 self.w2.show()
                 
             elif metodoSeleccionado == "SistemaRunge":
-                 resp = sistema_edo_kuta(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
+                 resp = sistema_edo_kutta.sistema_edo_kuta(str(funcion),
+                                  str(self.ui.leParam1.text), 
                                   float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                                  float(str(self.ui.leParam3.text())),
+                                  float(str(self.ui.leParam4.text())),
+                                  float(str(self.ui.leParam5.text())),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
             elif metodoSeleccionado == "EliGauss":
-                 resp = simpson(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                 resp = Gauss.gauss( float(str(self.ui.leParam1.text)), 
+                                     lista,lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()
@@ -1183,9 +1153,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "Inversa":
-                 resp = MatrizInversa(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
+                 resp = MatrizInversa.MatrizInversa(float(str(self.ui.leParam2.text())),
                                   float(str(self.ui.leParam3.text())),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
@@ -1193,7 +1161,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "Descomposicion":
-                 resp = simpson(str(funcion),
+                 resp = simpson.simpson(str(funcion),
                                   float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
                                   float(str(self.ui.leParam3.text())),lista)             
@@ -1203,11 +1171,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "Regresion":
-                 resp = RegresionLineal(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
-        
+                 resp = RegresionLineal.RegresionLineal( float(str(self.ui.leParam1.text)),
+                                                         float(str(self.ui.leParam2.text())),
+                                                         float(str(self.ui.leParam2.text())), lista)                                
+                                              
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()
                  self.w2.show()

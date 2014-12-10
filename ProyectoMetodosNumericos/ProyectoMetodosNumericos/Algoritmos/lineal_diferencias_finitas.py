@@ -10,7 +10,7 @@ from array import *
 
 
 
-def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
+def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N):
     
     funcP = parser.expr(px).compile()
     funcQ = parser.expr(qx).compile()
@@ -26,6 +26,7 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
     u = [ [ 0 for i in range(N+1) ] for j in range(3) ]
     v = [ [ 0 for i in range(N+1) ] for j in range(3) ]
     
+    lista = []
     
     lista.append ('METODO LINEAL DE DIFERENCIAS FINITAS(METODO DEL DISPARO LINEAL)')
     
@@ -99,27 +100,18 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
     lista.append ("w2 = " + str(w2))
     
     #Paso 6
-    W1 =  [ 0 for r in range(N+1) ]
-    W2 =  [ 0 for t in range(N+1) ]
     lista.append ("")
     lista.append ("Paso #6")
     lista.append ("Mientras i sea menor o igual al numero de iteraciones")
     for i in range(N+1):
         lista.append ("------------------ i = " + str(i) + " ------------------")
-        W1[i] = u[1][i] + w2*v[1][i]
-        W2[i] = u[2][i] + w2*v[2][i]
+        W1 = u[1][i] + w2*v[1][i]
+        W2 = u[2][i] + w2*v[2][i]
         x = a + i*h
-        lista.append ("W1 = " + str(W1[i]))
-        lista.append ("W2 = " + str(W2[i]))
-    
-    lista.append("------------- RESULTADOS ------------------")
-    lista.append("\tx \tW1 \t\tW2 \t\tu1 \t\tv1")
-    for i in range(N+1):
-        x = a + i*h
-        lista.append("\t"+str(x)+"\t"+str(W1[i])+"\t"+str(W2[i])+"\t"+str(u[1][i])+"\t"+str(v[1][i]))
+        lista.append ("W1 = " + str(W1))
+        print W1
         
-    for c in lista:
-        print(c)
-
-lista = []    
-linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)
+    #for c in lista:
+    #    print(c)
+    
+linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10)

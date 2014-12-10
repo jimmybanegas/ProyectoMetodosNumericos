@@ -3,15 +3,17 @@ import math
 from math import *
 
 def runge_kutta_ecu_dif(formula, a, b, alfa, N,lista):
-    
-    funcion = parser.expr(formula).compile()
+  
     h = float((b - a))/N
+      
     t = a
     x = alfa
 
     t_list=[t]
     x_list=[x]
-
+    
+    funcion = parser.expr(formula).compile()
+    
     itera = 1
     lista.append("f(t,x) ")
     lista.append ("f("+str(t)+","+str(x)+")")
@@ -56,8 +58,8 @@ def runge_kutta_ecu_dif(formula, a, b, alfa, N,lista):
     lista.append("------------- RESULTADOS ------------------")
     lista.append ("\tf(t,w)")
     for i in range(len(t_list)):
-        print ("\tf("+str(t_list[i])+","+str(x_list[i])+")")
+        lista.append("\tf("+str(t_list[i])+","+str(x_list[i])+")")
 
-    return x_list
+    return lista
 
 

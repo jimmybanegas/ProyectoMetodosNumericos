@@ -141,7 +141,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                 if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
                      self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
                      self.ui.chPolinomialNewton.isChecked() or self.ui.chSolucionEuler.isChecked() or self.ui.chInGauss.isChecked() or
-                     self.ui.chInSimpson.isChecked() or self.ui.chSistemasRunge.isChecked() or self.ui.chPuntoFijo.isChecked() or
+                     self.ui.chInSimpson.isChecked() or self.ui.chPuntoFijo.isChecked() or
                      self.ui.chInTrapecio.isChecked()):
                     if funcion == "": 
                         QMessageBox.information(self, 'Advertencia', ''' Estos algoritmos nesecitan de una funcion''',QMessageBox.Ok) 
@@ -624,7 +624,6 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.setText("Extremo B")
             self.ui.lbParam3.setText("Condicion Inicial")
             self.ui.lbParam4.setText("Numero Subintervalos N")
-            self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -633,13 +632,12 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
             self.ui.lbParam5.setText("")
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
-            self.ui.leParam6.hide()
+            self.ui.leParam6.show()
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()  
         def InGauss(self):
@@ -817,16 +815,17 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def SolucionRunge(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"FUNCION F(x,t) : x**2+t  \n\n"
                                       +"Extremo A : -3 \n \t debe de ser de menor al extremo B \n\n"
                                       +"Extremo B : 3 \n \t debe de ser de mayor al extremo A \n\n"
                                       +"Condicion Inicial : 0 \n \t es el valor de f(A) \n\n"
-                                      +"Numero de Itereaciones : 100")
+                                      +"N : 10")
             
-            self.ui.lbParam1.setText("Extremo A")
-            self.ui.lbParam2.setText("Extremo B")
-            self.ui.lbParam3.setText("Condicion Inicial")
-            self.ui.lbParam4.setText("Numero de Iteraciones")
-            self.ui.lbParam5.setText("Fila 3")
+            self.ui.lbParam1.setText("FUNCION F(x,t)")
+            self.ui.lbParam2.setText("Extremo A")
+            self.ui.lbParam3.setText("Extremo B")
+            self.ui.lbParam4.setText("Condicion Inicial")
+            self.ui.lbParam5.setText("Numero de Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -835,9 +834,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.hide()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
@@ -1146,18 +1144,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "SolucionRunge":
-                resp = runge_kutta_ecu_dif.runge_kutta_ecu_dif(str(funcion),
-                                           float(str(self.ui.leParam1.text)), 
+                resp = runge_kutta_ecu_dif.runge_kutta_ecu_dif(str(self.ui.leParam1.text()), 
                                            float(str(self.ui.leParam2.text())),
                                            float(str(self.ui.leParam3.text())),
-                                           float(str(self.ui.leParam4.text())),lista)
-                grabartxt(self, lista, str(resp), str(funcion))
+                                           float(str(self.ui.leParam4.text())),
+                                           float(str(self.ui.leParam5.text())),lista)
+                grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                 self.w2 = Graph()
                 self.w2.show()
                 
             elif metodoSeleccionado == "SistemaRunge":
                  resp = sistema_edo_kutta.sistema_edo_kuta(str(funcion),
-                                  str(self.ui.leParam1.text), 
+                                  float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
                                   float(str(self.ui.leParam3.text())),
                                   float(str(self.ui.leParam4.text())),

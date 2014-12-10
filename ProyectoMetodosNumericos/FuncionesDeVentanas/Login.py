@@ -24,7 +24,7 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
-import Algoritmos
+from Algoritmos import bisection
 from serial.tools.miniterm import console
 from Algoritmos.FactorizacionLUMarco import pasos
 from sqlalchemy.sql.expression import except_
@@ -891,22 +891,30 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.w2 = ElegirAlgoritmo()
             self.w2.show()
             self.close()   
+        
+        def LlamarRespuesta(self):
+            self.w2 = Graph()
+            self.w2.show()    
             
         def Calcular(self): 
-            self.w2 = Graph()
-            self.w2.show()
             lista=[]            
             if metodoSeleccionado == "Biseccion":               
-                try:
-                    resp=Algoritmos.bisection.bis(str(self.ui.leEquation.text()),float(str(self.ui.leParam1.text())),float(str(self.ui.leParam2.text())),float(str(self.ui.leParam3.text())),int(str(self.ui.leParam4.text())),lista)
-                    for n in lista:
-                        self.ui.teSteps.append(n)
+                #try:
+                    resp=bisection.bis(str(funcion),float(str(self.ui.leParam1.text()))
+                                                  ,float(str(self.ui.leParam2.text()))
+                                                  ,float(str(self.ui.leParam3.text()))
+                                                  ,int(str(self.ui.leParam4.text())),lista)
+                    #for n in lista:
+                     #   print n
                 
-                    self.ui.lbResult.setText(str(resp))
-                    grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
-                except:
-                    self.ui.teSteps.clear()
-                    self.ui.teSteps.setText("Ingrese los datos corectamente")                                         
+                    #self.ui.lbResult.setText(str(resp))
+                    grabartxt(self, lista, str(resp), str(funcion))
+                    self.w2 = Graph()
+                    self.w2.show()    
+                #except:
+                    #self.ui.teSteps.clear()
+                    #self.ui.teSteps.setText("Ingrese los datos corectamente")   
+                                                          
             elif metodoSeleccionado == "Newton":
                 self.Newton()                 
             elif metodoSeleccionado == "Secante":
@@ -920,8 +928,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "PolinomialNewton":
                 self.PolinomialNewton()
             elif metodoSeleccionado == "CubitosNaturales":
-                
-            elif metodoSeleccionado == "CubitosSujetos":
+                 self.PolinomialNewton()
+            #elif metodoSeleccionado == "CubitosSujetos":
                
             elif metodoSeleccionado == "PuntoFijo":
                 self.PuntoFijo()

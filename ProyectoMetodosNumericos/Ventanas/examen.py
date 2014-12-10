@@ -14,7 +14,6 @@ from Ventanas.wmenu import Ui_WMenu
 from Ventanas.windice import Ui_WIndice
 
 from Algoritmos.runge_kutta_ecu_dif import runge_kutta_ecu_dif
-from Algoritmos.lineal_diferencias_finitas import linealDifFinitas
 from Algoritmos.simpson import simpson
 
 class MainIndice(QtGui.QMainWindow):

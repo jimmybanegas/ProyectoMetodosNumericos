@@ -83,11 +83,11 @@ class Main(QtGui.QMainWindow):
                 for n in lista:
                     self.ui.teSteps.append(n)
         
-                self.ui.lbResult.setText(str(resp))
+                #self.ui.lbResult.setText(str(resp))
                 grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
-                self.ui.teSteps.clear()
-                self.ui.teSteps.setText("Ingrese los datos corectamente")
+                #self.ui.teSteps.clear()
+                #self.ui.teSteps.setText("Ingrese los datos corectamente")
                 
         def pushbutton_ClickedPuntoFijo(self):
             lista=[]

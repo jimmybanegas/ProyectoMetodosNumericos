@@ -31,15 +31,29 @@ def reglaTrapezoide(  funcion,trapeciosN, limiteInferiorA , limiteSuperiorB , ca
     S = 0
     cadena.append("S =0")
     H = (float(limiteSuperiorB) - limiteInferiorA)/trapeciosN
+    cadena.append("Hacer la variable H = limite Superior - Limite Inferior / Numero de Trapecios")
 
     if trapeciosN != 1:
         I =1
+        cadena.append("Variable I = 1")
+        cadena.append("Mientraz I <= Numero de Trapecios -1 hacer los siguientes pasos:")
         while I<=trapeciosN-1:
+            cadena.append(str(I)+" <= "+str(trapeciosN-1))
+            
             X = X + H
+            cadena.append("X = X + H")
+            cadena.append("X = "+str(H))
+            
             S = S +funcion2(X)
+            cadena.append("S = S + X")
+            cadena.append("S = "+str(S))
+            
             I= I+ 1
+            cadena.append("I = I + 1")
+            cadena.append("I = "+str(I))
+            
     AREA = H/ 2 * (funcion2(limiteInferiorA) + 2 *S + funcion2(limiteSuperiorB))
-
+    cadena.append("AREA  = H/2 * LIMITE INFERIOR + 2 * LIMITE SUPERIOR")
     return AREA
    
 erick=[]

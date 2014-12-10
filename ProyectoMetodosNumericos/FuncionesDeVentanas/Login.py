@@ -955,6 +955,39 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam6.hide()
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
+        
+        def SistemaRunge(self):
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"FUNCION 1: X**2+Y**2+Z**3 \n\n"
+                                      +"FUNCION 2: 2*X+Y**3+(Z) \n\n"
+                                      +"X0: 2 \n\n"
+                                      +"Y0 : 1  \n\n"
+                                      +"Z0 : 6  \n\n"
+                                      +"XF : 8  \n\n"
+                                      +"N DE ITERACIONES :100")
+            self.ui.lbParam1.setText("FUNCION 1:")
+            self.ui.lbParam2.setText("FUNCION 2")
+            self.ui.lbParam3.setText("X0")
+            self.ui.lbParam4.setText("Y0")
+            self.ui.lbParam5.setText("Z0")
+            self.ui.lbParam6.setText("XF")
+            self.ui.lbParam7.setText("Numero de Itereaciones ")
+            self.ui.leParam1.show()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
+            self.ui.leParam4.show()
+            self.ui.lbParam1.show()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
+            self.ui.lbParam4.show()
+            self.ui.lbParam5.show()
+            self.ui.leParam5.show()
+            self.ui.lbParam6.show()
+            self.ui.leParam6.show()
+            self.ui.lbParam7.show()
+            self.ui.leParam7.show()
+            self.ui.lbParam8.setText("")
+            self.ui.leParam8.hide()    
            
         def closeEvent(self, evnt):
             self.w2 = ElegirAlgoritmo()

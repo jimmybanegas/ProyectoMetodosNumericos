@@ -24,7 +24,7 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
-from Algoritmos import bisection
+from Algoritmos import bisection, Trazador_cubico_natural
 from Algoritmos import Newton
 #from Algoritmos import CuadraturaGaussiana
 from Algoritmos import derivPlagrange
@@ -54,6 +54,12 @@ from sqlalchemy.sql.expression import except_
 from sphinx.ext.pngmath import MathExtError
 from _elementtree import ParseError
 import code
+from Algoritmos.puntofijo import puntoFijo
+from Algoritmos.Trazador_cubico_natural import traz_cubico_nat
+from Algoritmos.trapezoide import reglaTrapezoide
+from Algoritmos.sistema_edo_kutta import sistema_edo_kuta
+from Algoritmos.euler_ec_dif import euler_ecu_dif
+from Algoritmos.MatrizInversa import MatrizInversa
 
 colorFondo = ""
 metodoSeleccionado =""
@@ -1057,38 +1063,164 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 
             elif metodoSeleccionado == "PolinomialNewton":
                 self.PolinomialNewton()
+                
             elif metodoSeleccionado == "CubitosNaturales":
-                 self.PolinomialNewton()
-            #elif metodoSeleccionado == "CubitosSujetos":
+                resp=traz_cubico_nat(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
                
             elif metodoSeleccionado == "PuntoFijo":
-                self.PuntoFijo()
+                 resp=puntoFijo(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "Diferenciacion":
-                self.Diferenciacion()
+                resp=puntoFijo(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                 
             elif metodoSeleccionado == "InTrapecio":
-                self.InTrapecio()
+                resp=reglaTrapezoide(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
             elif metodoSeleccionado == "InSimpson":
-                self.InSimpson()
+                resp = simpson(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
             elif metodoSeleccionado == "InGauss":
-                self.InGauss()
+                 resp = simpson(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "SolucionEuler":
-                self.SolucionEuler()
+                 resp = euler_ecu_dif(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "SolucionRunge":
-                self.SolucionRunge()
+                resp = runge_kutta_ecu_dif(str(self.ui.leExpresion.text()),
+                                            float(str(self.ui.leExa.text())), 
+                                            float(str(self.ui.leExb.text())), 
+                                            float(str(self.ui.leApha.text())), 
+                                            int(str(self.ui.leEne.text())))
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
             elif metodoSeleccionado == "SistemaRunge":
-                self.SistemaRunge()
+                 resp = sistema_edo_kuta(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "EliGauss":
-                self.EliGauss()
+                 resp = simpson(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "EliGaussJordan":
-                self.EliGaussJordan()
+                 resp = simpson(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "Inversa":
-                self.Inversa()
+                 resp = MatrizInversa(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "Descomposicion":
-                self.Descomposicion()
+                 resp = simpson(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "Regresion":
-                self.Regresion()
+                 resp = RegresionLineal(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                 grabartxt(self, lista, str(resp), str(funcion))
+                 self.w2 = Graph()
+                 self.w2.show()
+                
             elif metodoSeleccionado == "Diferencias":
-                self.Diferencias() 
+                resp = lineal_diferencias_finitas(str(funcion),
+                                  float(str(self.ui.leParam1.text)), 
+                                  float(str(self.ui.leParam2.text())),
+                                  float(str(self.ui.leParam3.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
         
         def Regresar(self):
             self.w2 = ElegirAlgoritmo()

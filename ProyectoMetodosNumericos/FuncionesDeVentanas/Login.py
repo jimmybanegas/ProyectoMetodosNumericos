@@ -1177,17 +1177,17 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 
             elif metodoSeleccionado == "EliGaussJordan":
                  resp = simpson(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                                  str(self.ui.leParam1.text()), 
+                                  str(self.ui.leParam2.text()),
+                                  str(self.ui.leParam3.text()),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
             elif metodoSeleccionado == "Inversa":
-                 resp = MatrizInversa.MatrizInversa(float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                 resp = MatrizInversa.MatrizInversa((str(self.ui.leParam2.text())),
+                                (str(self.ui.leParam3.text())),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()

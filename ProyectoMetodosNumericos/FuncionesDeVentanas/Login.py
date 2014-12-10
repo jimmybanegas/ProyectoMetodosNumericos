@@ -24,6 +24,30 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
+from Algoritmos import bisection
+from Algoritmos import Newton
+#from Algoritmos import CuadraturaGaussiana
+from Algoritmos import derivPlagrange
+from Algoritmos import euler_ec_dif
+from Algoritmos import factocrout
+from Algoritmos import FactorizacionLUMarco
+from Algoritmos import falsa_posicion
+from Algoritmos import Gauss
+from Algoritmos import lagrangeMarco
+from Algoritmos import lineal_diferencias_finitas
+from Algoritmos import MatrizInversa
+from Algoritmos import minimos_cuadrado
+from Algoritmos import minimos_cuadrado
+from Algoritmos import muller
+from Algoritmos import puntofijo
+from Algoritmos import Reduccion_Matrices_Gauss
+from Algoritmos import RegresionLineal
+from Algoritmos import runge_kutta_ecu_dif
+from Algoritmos import secante
+from Algoritmos import simpson
+from Algoritmos import sistema_edo_kutta
+from Algoritmos import trapezoide
+#from Algoritmos import Trazador_cubico_natural
 from serial.tools.miniterm import console
 from Algoritmos.FactorizacionLUMarco import pasos
 from sqlalchemy.sql.expression import except_
@@ -122,13 +146,12 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.pbAlgoritmo.clicked.connect(self.EjecutarAlgoritmo)
             self.ui.pbHistorial.clicked.connect(self.VerHistorial)
             self.ui.pbRegresar.clicked.connect(self.Regresar)
+                        
             global colorFondo
             global metodoSeleccionado
             self.setStyleSheet("background-color: "+colorFondo);
             
         def closeEvent(self, evnt):
-            self.w2 = IngresarFuncion()
-            self.w2.show()
             self.close()  
             
         def EjecutarAlgoritmo(self): 
@@ -147,65 +170,82 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                         self.w2 = IngresarFuncion()
                         self.w2.show()
                         self.close()    
-                else:                    
-                   self.SeleccionarMetodo() 
-                   self.w2 = Input()
-                   self.w2.show()
-                        
-                        
-        def Regresar(self): 
-            self.close()
+                    else:                    
+                        self.SeleccionarMetodo() 
+                        self.w2 = Input()
+                        self.w2.show()
+
+                else:                
+                    self.SeleccionarMetodo() 
+                    self.w2 = Input()
+                    self.w2.show()
+                    self.close()                
+                
+        def Regresar(self):             
+            self.w2 = IngresarFuncion()
+            self.w2.show()
+            self.close()     
+                
             
+                
         def SeleccionarMetodo(self):
             global metodoSeleccionado
-            if self.ui.chBiseccion.isChecked():
-                metodoSeleccionado = "Biseccion"
-            elif self.ui.chNewton.isChecked():
-                metodoSeleccionado = "Newton" 
-            elif self.ui.chSecante.isChecked():
-                metodoSeleccionado = "Secante"
-            elif self.ui.chFalsa.isChecked():
-                metodoSeleccionado = "Falsa"
-            elif self.ui.chMuller.isChecked():
-                metodoSeleccionado = "Muller"
-            elif self.ui.chLagrage.isChecked():
-                metodoSeleccionado = "Lagrage" 
-            elif self.ui.chPolinomialNewton.isChecked():
-                metodoSeleccionado = "PolinomialNewton"
-            elif self.ui.chCubicosNaturales.isChecked():
-                metodoSeleccionado = "CubitosNaturales"
-            elif self.ui.chCubicosSujetos.isChecked():
-                metodoSeleccionado = "CubitosSujetos"
-            elif self.ui.chPuntoFijo.isChecked():
-                metodoSeleccionado = "PuntoFijo"
-            elif self.ui.chDiferenciacion.isChecked():
-                metodoSeleccionado = "Diferenciacion"
-            elif self.ui.chInTrapecio.isChecked():
-                metodoSeleccionado = "InTrapecio"
-            elif self.ui.chInSimpson.isChecked():
-                metodoSeleccionado = "InSimpson"
-            elif self.ui.chInGauss.isChecked():
-                metodoSeleccionado = "InGauss"
-            elif self.ui.chSolucionEuler.isChecked():
-                metodoSeleccionado = "SolucionEuler"
-            elif self.ui.checkBox.isChecked():
-                metodoSeleccionado = "SolucionRunge"
-            elif self.ui.chSistemasRunge.isChecked():
-                metodoSeleccionado = "SistemaRunge"
-            elif self.ui.chEliGauss.isChecked():
-                metodoSeleccionado = "EliGauss"
-            elif self.ui.chEliGaussJordan.isChecked():
-                metodoSeleccionado = "EliGaussJordan"
-            elif self.ui.chInversa.isChecked():
-                metodoSeleccionado = "Inversa"
-            elif self.ui.chDescomposicion.isChecked():
-                metodoSeleccionado = "Descomposicion"
-            elif self.ui.chRegresion.isChecked():
-                metodoSeleccionado = "Regresion"
-            elif self.ui.chDiferencias.isChecked():
-                metodoSeleccionado = "Diferencias"
-            else:
-                metodoSeleccionado = ""                                 
+            if self.ui.tabWidget.currentIndex() == 0:                
+                if self.ui.chBiseccion.isChecked():
+                    metodoSeleccionado = "Biseccion"
+                elif self.ui.chNewton.isChecked():
+                    metodoSeleccionado = "Newton" 
+                elif self.ui.chSecante.isChecked():
+                    metodoSeleccionado = "Secante"
+                elif self.ui.chFalsa.isChecked():
+                    metodoSeleccionado = "Falsa"
+                elif self.ui.chMuller.isChecked():
+                    metodoSeleccionado = "Muller"
+                    
+            if self.ui.tabWidget.currentIndex() == 1:                    
+                if self.ui.chLagrage.isChecked():
+                    metodoSeleccionado = "Lagrage" 
+                elif self.ui.chPolinomialNewton.isChecked():
+                    metodoSeleccionado = "PolinomialNewton"
+                elif self.ui.chCubicosNaturales.isChecked():
+                    metodoSeleccionado = "CubitosNaturales"
+                elif self.ui.chCubicosSujetos.isChecked():
+                    metodoSeleccionado = "CubitosSujetos"
+                    
+            if self.ui.tabWidget.currentIndex() == 2:                    
+                if self.ui.chPuntoFijo.isChecked():
+                    metodoSeleccionado = "PuntoFijo"
+                elif self.ui.chDiferenciacion.isChecked():
+                    metodoSeleccionado = "Diferenciacion"
+                elif self.ui.chInTrapecio.isChecked():
+                    metodoSeleccionado = "InTrapecio"
+                elif self.ui.chInSimpson.isChecked():
+                    metodoSeleccionado = "InSimpson"
+                elif self.ui.chInGauss.isChecked():
+                    metodoSeleccionado = "InGauss"
+                    
+            if self.ui.tabWidget.currentIndex() == 3:
+                if self.ui.chSolucionEuler.isChecked():
+                    metodoSeleccionado = "SolucionEuler"
+                elif self.ui.checkBox.isChecked():
+                    metodoSeleccionado = "SolucionRunge"
+                elif self.ui.chSistemasRunge.isChecked():
+                    metodoSeleccionado = "SistemaRunge"
+            if self.ui.tabWidget.currentIndex() == 4:                
+                if self.ui.chEliGauss.isChecked():
+                    metodoSeleccionado = "EliGauss"
+                elif self.ui.chEliGaussJordan.isChecked():
+                    metodoSeleccionado = "EliGaussJordan"
+                elif self.ui.chInversa.isChecked():
+                    metodoSeleccionado = "Inversa"
+            
+            if self.ui.tabWidget.currentIndex() == 5:                
+                if self.ui.chDescomposicion.isChecked():
+                    metodoSeleccionado = "Descomposicion"
+                elif self.ui.chRegresion.isChecked():
+                    metodoSeleccionado = "Regresion"
+                elif self.ui.chDiferencias.isChecked():
+                    metodoSeleccionado = "Diferencias"                                            
 
         def VerHistorial(self): 
             self.w2 = Historial()
@@ -327,7 +367,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "Lagrage":
                 self.Lagrage() 
             elif metodoSeleccionado == "PolinomialNewton":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.PolinomialNewton()
             elif metodoSeleccionado == "CubitosNaturales":
                 self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
             elif metodoSeleccionado == "CubitosSujetos":
@@ -347,7 +387,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "SolucionRunge":
                 self.SolucionRunge()
             elif metodoSeleccionado == "SistemaRunge":
-                self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\system-users.png />")
+                self.SistemaRunge()
             elif metodoSeleccionado == "EliGauss":
                 self.EliGauss()
             elif metodoSeleccionado == "EliGaussJordan":
@@ -357,15 +397,22 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "Descomposicion":
                 self.Descomposicion()
             elif metodoSeleccionado == "Regresion":
-                self.Regresion
+                self.Regresion()
             elif metodoSeleccionado == "Diferencias":
                 self.Diferencias() 
                 
 #self.ui.lbEjemplo.setPixmap(QPixmap("Ventanas\imagenes\Biseccion.JPG"))      
-        
-        
         def Diferencias(self):            
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"FUNCION P(X) :x*2 \n  \n\n"
+                                      +"FUNCION Q(X) : x*4 \n  \n\n"
+                                      +"FUNCION R(X) : x*4 \n  \n\n"
+                                      +"EXTREMO A : -3 \n \n\n"
+                                      +"EXTREMO B : 3 \n  \n\n"
+                                      +"CONDICION DE FRONTERA A : 0 \n  \n\n"
+                                      +"CONDICION DE FRONTERA B : 0 \n \n\n"
+                                      +"NO. DE SUBINTERVALOS N : 100")
+            
             self.ui.lbParam1.setText("Funcion P(x)")
             self.ui.lbParam2.setText("Funcion Q(x)")
             self.ui.lbParam3.setText("Funcion R(x)")
@@ -389,9 +436,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         def Biseccion(self):
             self.ui.lbEjemplo.clear()
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"LIMITE SUPERIOR : -3 \n \t debe de ser de signo contrario a limite superior \n\n"
-                                      +"LIMITE SUPERIOR : 3 \n \t debe de ser de signo contrario a limite inferior \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"LIMITE SUPERIOR A: -3 \n \t debe de ser de signo contrario a limite superior \n\n"
+                                      +"LIMITE INFERIOR B: 3 \n \t debe de ser de signo contrario a limite inferior \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
             
             self.ui.lbParam1.setText("Limite inferior A")
@@ -419,7 +466,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.clear()
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL : 1 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \n\n"
                                       +"NO.ITERACIONES : 100")
              
             self.ui.lbParam1.setText("Aproximacion Inicial")
@@ -447,7 +494,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL P0 : 0 \n\n"
                                       +"APROXIMACION INICIAL P1: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
@@ -476,7 +523,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL P0 : 0 \n\n"
                                       +"APROXIMACION INICIAL P1: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial P0")
@@ -506,7 +553,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"APROXIMACION INICIAL 0 : 5 \n\n"
                                       +"APROXIMACION INICIAL 1: -5 \n\n"
                                       +"APROXIMACION INICIAL 2: 0 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000001 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial 0")
@@ -532,16 +579,16 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def Lagrage(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"APROXIMACION INICIAL P0 : 2 \n\n"
-                                      +"APROXIMACION INICIAL P1: 2.5 \n\n"
-                                      +"APROXIMACION INICIAL P2: 4 \n\n"
-                                      +"TOLERANCIA : 0.0000001 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+                                      +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
+                                      +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
+                                      +"X DERIVADA : 4  \n\n"
                                       +"NO.ITERACIONES : 100")
            
-            self.ui.lbParam1.setText("Aproximacion Inicial 0")
-            self.ui.lbParam2.setText("Aproximacion Inicial 1")
-            self.ui.lbParam3.setText("Aproximacion Inicial 2")
-            self.ui.lbParam4.setText("Tolerancia")
+            self.ui.lbParam1.setText("GRADON")
+            self.ui.lbParam2.setText(" LISTA X ")
+            self.ui.lbParam3.setText("LISTA F(X)")
+            self.ui.lbParam4.setText("X DERIVADA")
             self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
@@ -551,8 +598,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.lbParam5.show()
-            self.ui.leParam5.show()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
@@ -564,7 +611,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"APROXIMACION INICIAL P0 : -1 \n\n"
                                       +"APROXIMACION INICIAL P1: 0 \n\n"
                                       +"APROXIMACION INICIAL P2: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000005 \n  \n\n"
                                       +"NO.ITERACIONES : 100")
            
             self.ui.lbParam1.setText("Aproximacion Inicial 0")
@@ -706,9 +753,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()    
         def Regresion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"VALOR DE X : 4 \n\n"
-                                      +"VALOR DE Y : 4 \n\n"
-                                      +"X A APROXIMAR : 0  \n\n"
+                                      +"VALOR DE X :  1 10 15 24 70 \n\n"
+                                      +"VALOR DE Y : 14 23 28 37 83 \n\n"
+                                      +"X A APROXIMAR : 100  \n\n"
                                        )
             self.ui.lbParam1.setText("Valores de X")
             self.ui.lbParam2.setText("Valores de Y")
@@ -735,9 +782,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         def Descomposicion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"Dimension de la Matriz : \n\n"
-                                      +"MATRIZ A: [[3,4],[2,5]] \n\n"
-                                      +"MATRIZ L :[[4,3],[2]]  \n\n"
-                                      +"MATRIZ U :[[4,6],[2,8]] \n\n"
+                                      +"MATRIZ A: [[3,4],[2,5]] \n\t la matriz debe de ser de n x n \n\n"
+                                      +"MATRIZ L :[[4,3],[2]] \n\t la matriz debe de ser de n x n  \n\n"
+                                      +"MATRIZ U :[[4,6],[2,8]] \n\t la matriz debe de ser de n x n \n\n"
                                       
                                       )
             self.ui.lbParam1.setText("Dimension de la Matriz")
@@ -829,11 +876,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam3.setText("Matriz B")
             self.ui.lbParam4.setText("Numero de Iteraciones")
             self.ui.lbParam5.setText("Fila 3")
-            self.ui.leParam1.show()
+            self.ui.leParam1.hide()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
             self.ui.leParam4.hide()
-            self.ui.lbParam1.show()
+            self.ui.lbParam1.hide
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.hide()
@@ -849,7 +896,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         def PuntoFijo(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"APROXIMACION INICIAL : 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n \t entre menor sea la repuesta sera mas exacta \n\n"
+                                      +"TOLERANCIA : 0.0000005 \n \n\n"
                                       +"NO.ITERACIONES : 100")
             self.ui.lbParam1.setText("Aproximacion Inicial")
             self.ui.lbParam2.setText("Tolerancia")
@@ -875,10 +922,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()  
         def InTrapecio(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"NUMERO DE TRAPECIOS : 4 \n\n"
-                                      +"LIMITE INFERIOR : -3 \n \t debe de ser menor a limite superior b \n\n"
-                                      +"LIMITE SUPERIOR : 3 \n \t debe de ser mayot a limite inferior a \n\n"
-                                      +"NUMERO DE ITERACIONES : 100 \n\n"
+                                      +"NUMERO DE TRAPECIOS : 5 \n\n"
+                                      +"LIMITE INFERIOR : 1 \n \t debe de ser menor a limite superior b \n\n"
+                                      +"LIMITE SUPERIOR : 2 \n \t debe de ser mayot a limite inferior a \n\n"
                                        )
             self.ui.lbParam1.setText("Numero de Trapecios")
             self.ui.lbParam2.setText("Limite Inferior")
@@ -903,7 +949,12 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
         def Diferenciacion(self):
-            self.ui.lbEjemplo.setText("<img src=..\Ventanas\imagenes\Ejemplos\muller.png />")
+            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+                                      +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
+                                      +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
+                                      +"X DERIVADA : 4  \n\n"
+                                      +"NO.ITERACIONES : 100")
             self.ui.lbParam1.setText("Grado N")
             self.ui.lbParam2.setText("Lista x")
             self.ui.lbParam3.setText("Lista FX")
@@ -927,14 +978,121 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
            
-            
-        
-        def Calcular(self): 
-            self.w2 = Graph()
+        def closeEvent(self, evnt):
+            self.w2 = ElegirAlgoritmo()
             self.w2.show()
-            self.close()  
+            self.close()   
+        
+        def LlamarRespuesta(self):
+            self.w2 = Graph()
+            self.w2.show()    
+            
+        def Calcular(self): 
+            lista=[]            
+            if metodoSeleccionado == "Biseccion":              
+                    resp=bisection.bis(str(funcion),float(str(self.ui.leParam1.text()))
+                                                  ,float(str(self.ui.leParam2.text()))
+                                                  ,float(str(self.ui.leParam3.text()))
+                                                  ,int(str(self.ui.leParam4.text())),lista)
+
+                    grabartxt(self, lista, str(resp), str(funcion))
+                    self.w2 = Graph()
+                    self.w2.show()    
+                                                          
+            elif metodoSeleccionado == "Newton":          
+                    resp=Newton.Newt(str(funcion)
+                                     ,float(str(self.ui.leParam1.text()))
+                                     ,float(str(self.ui.leParam2.text()))
+                                    ,int(str(self.ui.leParam3.text())),lista)
+                    
+                    grabartxt(self, lista, str(resp), str(funcion))
+                    self.w2 = Graph()
+                    self.w2.show()
+                               
+            elif metodoSeleccionado == "Secante":
+                    resp=secante(str(funcion),
+                              float(str(self.ui.leParam1.text())),
+                              float(str(self.ui.leParam2.text())),
+                              float(str(self.ui.leParam3.text())),
+                              int(str(self.ui.leParam4.text())),lista)              
+        
+                    grabartxt(self, lista, str(resp), str(funcion))
+                    self.w2 = Graph()
+                    self.w2.show()
+                
+            elif metodoSeleccionado == "Falsa":
+                resp=falsa_posicion.pos_f(str(funcion)
+                           ,float(str(self.ui.leParam1.text())),
+                           float(str(self.ui.leParam2.text())),
+                           float(str(self.ui.leParam3.text())),
+                           int(str(self.ui.leParam4.text())),lista)
+
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
+            elif metodoSeleccionado == "Muller":
+                resp=muller(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
+                
+            elif metodoSeleccionado == "Lagrage":
+                resp=lagrangeMarco(str(funcion),
+                            float(str(self.ui.leParam1.text())),
+                            float(str(self.ui.leParam2.text())),
+                            float(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            int(str(self.ui.leParam5.text())),lista)             
+        
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show() 
+                
+            elif metodoSeleccionado == "PolinomialNewton":
+                self.PolinomialNewton()
+            elif metodoSeleccionado == "CubitosNaturales":
+                 self.PolinomialNewton()
+            #elif metodoSeleccionado == "CubitosSujetos":
+               
+            elif metodoSeleccionado == "PuntoFijo":
+                self.PuntoFijo()
+            elif metodoSeleccionado == "Diferenciacion":
+                self.Diferenciacion()
+            elif metodoSeleccionado == "InTrapecio":
+                self.InTrapecio()
+            elif metodoSeleccionado == "InSimpson":
+                self.InSimpson()
+            elif metodoSeleccionado == "InGauss":
+                self.InGauss()
+            elif metodoSeleccionado == "SolucionEuler":
+                self.SolucionEuler()
+            elif metodoSeleccionado == "SolucionRunge":
+                self.SolucionRunge()
+            elif metodoSeleccionado == "SistemaRunge":
+                self.SistemaRunge()
+            elif metodoSeleccionado == "EliGauss":
+                self.EliGauss()
+            elif metodoSeleccionado == "EliGaussJordan":
+                self.EliGaussJordan()
+            elif metodoSeleccionado == "Inversa":
+                self.Inversa()
+            elif metodoSeleccionado == "Descomposicion":
+                self.Descomposicion()
+            elif metodoSeleccionado == "Regresion":
+                self.Regresion()
+            elif metodoSeleccionado == "Diferencias":
+                self.Diferencias() 
         
         def Regresar(self):
+            self.w2 = ElegirAlgoritmo()
+            self.w2.show()
             self.close()
             
 if __name__ == "__main__":

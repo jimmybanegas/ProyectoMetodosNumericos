@@ -895,7 +895,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         def Calcular(self): 
             self.w2 = Graph()
             self.w2.show()
-            self.close()  
+            #self.close()  
         
         def Regresar(self):
             self.w2 = ElegirAlgoritmo()

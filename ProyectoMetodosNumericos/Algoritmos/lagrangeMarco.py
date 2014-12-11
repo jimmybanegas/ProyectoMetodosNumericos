@@ -77,8 +77,8 @@ def lagrangeMarco(gradoN,listaX,listaFX,xDerivada,listaPasos):
     
     listaPasos.append("paso 22 imprimir derivadaPolinomio ")
     listaPasos.append(derivadaPolinomio )
-pasos = []
-lagrangeMarco(4,[23,45,22,134,324],[433,46,232,435,66],28,pasos)
+#pasos = []
+#lagrangeMarco(4,[23,45,22,134,324],[433,46,232,435,66],28,pasos)
             
 
             

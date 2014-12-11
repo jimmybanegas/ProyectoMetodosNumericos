@@ -109,11 +109,11 @@ listaw.append(1.3)
 listaw.append(1.6)
 listaw.append(1.9)
 listaw.append(2.2)
-
+'''
 traz_cubico_nat(listaw,lista,listamp)
 
 
 for n in listamp:
 	print n
-
-a=raw_input('--> ')
+'''
+#a=raw_input('--> ')

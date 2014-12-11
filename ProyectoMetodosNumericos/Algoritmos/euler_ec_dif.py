@@ -42,7 +42,7 @@ def euler_ecu_dif(formula, a, b, alfa, N, lista):
         lista.append("\tf("+str(t_list[i])+","+str(x_list[i])+")")
     
     return fun_x_t
-lista = []
-euler_ecu_dif("x - t**2 + 1",0,2,0.5,10, lista)
-for c in lista:
-    print c
+#lista = []
+#euler_ecu_dif("x - t**2 + 1",0,2,0.5,10, lista)
+#for c in lista:
+#    print c

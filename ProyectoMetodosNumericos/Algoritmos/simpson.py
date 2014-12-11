@@ -40,6 +40,6 @@ def simpson(formula, a, b,n,cadena):
     return Xl
 
 
-if __name__ == '__main__':
-    cadena=[]
-    print (simpson("sin(x)",0,3.141592654,20,cadena))
+#if __name__ == '__main__':
+#    cadena=[]
+ #   print (simpson("sin(x)",0,3.141592654,20,cadena))

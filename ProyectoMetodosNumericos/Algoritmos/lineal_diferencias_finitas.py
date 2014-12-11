@@ -121,5 +121,5 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
     for c in lista:
         print(c)
 
-lista = []    
-linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)
+#lista = []    
+#linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)

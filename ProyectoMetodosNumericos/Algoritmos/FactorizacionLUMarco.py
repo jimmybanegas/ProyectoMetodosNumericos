@@ -55,7 +55,7 @@ mU = [[0,0,0,0],
       [0,0,0,1]]
 pasos = []
 factorizacionLUMarco(3, mA, mL, mU, pasos)
-
+'''
 for paso in pasos:
     print(paso)
     print(" ")
@@ -77,6 +77,6 @@ for i in range(1, n+1):
     for j in range(1, n+1):
         print( mU[i][j]),
     print("")
-    
+    '''
 #imprimir los pasos, para saber que hizo el algoritmo:
 

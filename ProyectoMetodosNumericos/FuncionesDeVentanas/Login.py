@@ -1131,17 +1131,6 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "SolucionEuler":
-<<<<<<< HEAD
-                 resp = euler_ec_dif.euler_ecu_dif(str(self.ui.leParam1.text()),
-                                  float(str(self.ui.leParam2.text())), 
-                                  float(str(self.ui.leParam3.text())),
-                                  float(str(self.ui.leParam4.text())),
-                                  int(str(self.ui.leParam5.text())),lista)            
-        
-                 grabartxt(self, lista, str(resp), str(funcion))
-                 self.w2 = Graph()
-                 self.w2.show()
-=======
                 resp = euler_ec_dif.euler_ecu_dif(str(funcion),
                                   float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
@@ -1151,7 +1140,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()
                 self.w2.show()
->>>>>>> Memo
+
                 
             elif metodoSeleccionado == "SolucionRunge":
                 resp = runge_kutta_ecu_dif.runge_kutta_ecu_dif(str(self.ui.leParam1.text()), 

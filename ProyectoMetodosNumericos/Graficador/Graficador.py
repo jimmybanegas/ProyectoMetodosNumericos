@@ -1,11 +1,11 @@
 '''
-Created on 10/11/2014
+Created on 13/11/2014
 
 @author: Jimmy Ramos
 '''
 import sys
 from PyQt4 import QtGui, QtCore
-from Ventanas.Graph import Ui_MainWindow
+from Ventanas.ventanaGraficado import Ui_MainWindow
 
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):

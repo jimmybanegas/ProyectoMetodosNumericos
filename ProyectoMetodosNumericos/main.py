@@ -16,12 +16,12 @@ from Algoritmos.muller import muller
 from Algoritmos.secante import secante
 from Ventanas.visualFunctions import resetAll, hideAll
 
-from Archivos import creartxt, grabartxt, leerultimotxt
+from Archivos import *
 
 from Ventanas.mwindow import Ui_MWindow
 '''from Ventanas.login import Ui_MainWindow'''
 from Main2 import Main2
-from Ventanas.Steps import Steps
+from Ventanas.Steps import Ui_MainWindow
 
 class Main(QtGui.QMainWindow):
         #Init
@@ -37,10 +37,12 @@ class Main(QtGui.QMainWindow):
             self.ui.pushButtonOtros.clicked.connect(self.mWind2)
             self.ui.pbPasos.clicked.connect(self.showPasos)
             self.w2=None
-            creartxt(self)            
+            creartxt(self)
+            creartxtfunciones(self)
+                        
             
         def showPasos(self):
-            self.w2 = Steps()
+            self.w2 = Ui_MainWindow()
             self.w2.show()
             self.close()
         
@@ -66,6 +68,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
             
                 self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -80,11 +83,11 @@ class Main(QtGui.QMainWindow):
                 for n in lista:
                     self.ui.teSteps.append(n)
         
-                self.ui.lbResult.setText(str(resp))
-                grabartxt(self, lista, str(resp))
+                #self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
-                self.ui.teSteps.clear()
-                self.ui.teSteps.setText("Ingrese los datos corectamente")
+                #self.ui.teSteps.clear()
+                #self.ui.teSteps.setText("Ingrese los datos corectamente")
                 
         def pushbutton_ClickedPuntoFijo(self):
             lista=[]
@@ -94,7 +97,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
-                grabartxt(self, lista, str(resp))
+                grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -107,7 +110,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
-                grabartxt(self, lista, str(resp))
+                grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -120,7 +123,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
-                grabartxt(self, lista, str(resp))
+                grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")
@@ -133,6 +136,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.teSteps.append(n)
         
                 self.ui.lbResult.setText(str(resp))
+                grabartxt(self, lista, str(resp), str(self.ui.leEquation.text()))
             except:
                 self.ui.teSteps.clear()
                 self.ui.teSteps.setText("Ingrese los datos corectamente")

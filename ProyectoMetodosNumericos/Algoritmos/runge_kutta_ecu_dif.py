@@ -1,30 +1,32 @@
 import parser
 import math
-from math import cos
+from math import *
 
-def runge_kutta_ecu_dif(formula, a, b, alfa, N):
-    
-    funcion = parser.expr(formula).compile()
+def runge_kutta_ecu_dif(formula, a, b, alfa, N,lista):
+  
     h = float((b - a))/N
+      
     t = a
     x = alfa
 
     t_list=[t]
     x_list=[x]
-
+    
+    funcion = parser.expr(formula).compile()
+    
     itera = 1
-    print ("f(t,x) ")
-    print ("f("+str(t)+","+str(x)+")")
+    lista.append("f(t,x) ")
+    lista.append ("f("+str(t)+","+str(x)+")")
 
-    print ("Paso #2")
-    print ("Mientras i sea menor o igual al numero de iteraciones" )
-    print ("Hacer los pasos 3, 4, 5 x 6" )
+    lista.append ("Paso #2")
+    lista.append("Mientras i sea menor o igual al numero de iteraciones" )
+    lista.append ("Hacer los pasos 3, 4, 5 x 6" )
     while itera <= N:
-        print ("------------- i = " + str(itera) + " ------------------")
+        lista.append ("------------- i = " + str(itera) + " ------------------")
         t_bak = t
         x_bak = x
 
-        print ("Paso #3")
+        lista.append("Paso #3")
         fun_t_x = eval(funcion)
         k_1 = h * fun_t_x
 
@@ -49,16 +51,15 @@ def runge_kutta_ecu_dif(formula, a, b, alfa, N):
         t_list.append(t)
         x_list.append(x)
 
-        print ("f(t,x)")
-        print ("f("+str(t)+","+str(x)+")")
+        lista.append ("f(t,x)")
+        lista.append ("f("+str(t)+","+str(x)+")")
         itera = itera+1
 
-    print ("------------- RESULTADOS ------------------")
-    print ("\tf(t,w)")
+    lista.append("------------- RESULTADOS ------------------")
+    lista.append ("\tf(t,w)")
     for i in range(len(t_list)):
-        print ("\tf("+str(t_list[i])+","+str(x_list[i])+")")
+        lista.append("\tf("+str(t_list[i])+","+str(x_list[i])+")")
 
-    return x_list
+    return lista
 
-if __name__ == '__main__':
-    runge_kutta_ecu_dif("x - t**2 + 1",0,2,0.5,10)
+

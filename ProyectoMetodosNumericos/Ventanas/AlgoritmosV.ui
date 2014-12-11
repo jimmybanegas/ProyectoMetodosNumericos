@@ -80,7 +80,7 @@ background: rgb(210, 221, 239);
  }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab0">
      <attribute name="title">
@@ -184,8 +184,8 @@ background: rgb(210, 221, 239);
      <widget class="QRadioButton" name="chLagrage">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
+        <x>20</x>
+        <y>70</y>
         <width>361</width>
         <height>31</height>
        </rect>
@@ -202,8 +202,8 @@ background: rgb(210, 221, 239);
      <widget class="QRadioButton" name="chPolinomialNewton">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>90</y>
+        <x>340</x>
+        <y>50</y>
         <width>471</width>
         <height>71</height>
        </rect>
@@ -216,44 +216,6 @@ background: rgb(210, 221, 239);
       <property name="text">
        <string>Interpolacion Polinomial
 de Newton</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="chCubicosNaturales">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>20</y>
-        <width>471</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Interpolacion Mediante
-Cubitos Naturales</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="chCubicosSujetos">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>110</y>
-        <width>471</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Interpolacion Mediante
-Cubitos Sujetos</string>
       </property>
      </widget>
     </widget>
@@ -279,29 +241,11 @@ Cubitos Sujetos</string>
        <string>Metodo de Punto Fijo</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="chDiferenciacion">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>90</y>
-        <width>361</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Diferenciacion Numerica</string>
-      </property>
-     </widget>
      <widget class="QRadioButton" name="chInTrapecio">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>130</y>
+        <y>100</y>
         <width>361</width>
         <height>71</height>
        </rect>
@@ -437,29 +381,11 @@ Gauss</string>
        <string>Sistemas de Ecuaciones Por Eliminacion de Gauss</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="chEliGaussJordan">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>90</y>
-        <width>751</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Sistemas de Ecuaciones Por Eliminacion de Gauss Jordan</string>
-      </property>
-     </widget>
      <widget class="QRadioButton" name="chInversa">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>140</y>
+        <y>90</y>
         <width>751</width>
         <height>31</height>
        </rect>
@@ -538,7 +464,7 @@ Gauss</string>
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>340</y>
+      <y>350</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -566,8 +492,8 @@ Gauss</string>
    <widget class="QPushButton" name="pbAlgoritmo">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>340</y>
+      <x>580</x>
+      <y>350</y>
       <width>141</width>
       <height>51</height>
      </rect>
@@ -628,7 +554,7 @@ Gauss</string>
      <x>0</x>
      <y>0</y>
      <width>907</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

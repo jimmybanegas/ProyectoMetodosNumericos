@@ -140,7 +140,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             else:
                 if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
                      self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
-                     self.ui.chPolinomialNewton.isChecked() or self.ui.chSolucionEuler.isChecked() or self.ui.chInGauss.isChecked() or
+                     self.ui.chPolinomialNewton.isChecked()or self.ui.chInGauss.isChecked() or
                      self.ui.chInSimpson.isChecked() or self.ui.chPuntoFijo.isChecked() or
                      self.ui.chInTrapecio.isChecked()):
                     if funcion == "": 
@@ -615,15 +615,16 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def SolucionEuler(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
+                                      +"FUNCION F(x,t) :x**2+t -3 \n \t debe de ser de menor al extremo B \n\n"
                                       +"Extremo A : -3 \n \t debe de ser de menor al extremo B \n\n"
                                       +"Extremo B : 3 \n \t debe de ser de mayor al extremo A \n\n"
                                       +"Condicion Inicial : 0 \n \t es el valor de f(A) \n\n"
                                       +"Numero Subintervalos N : 100")
-            
-            self.ui.lbParam1.setText("Extremo A")
-            self.ui.lbParam2.setText("Extremo B")
-            self.ui.lbParam3.setText("Condicion Inicial")
-            self.ui.lbParam4.setText("Numero Subintervalos N")
+            self.ui.lbParam1.setText("FUNCION F(x,t)")
+            self.ui.lbParam2.setText("Extremo A")
+            self.ui.lbParam3.setText("Extremo B")
+            self.ui.lbParam4.setText("Condicion Inicial")
+            self.ui.lbParam5.setText("Numero Subintervalos N")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -632,8 +633,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.show()
             self.ui.lbParam3.show()
             self.ui.lbParam4.show()
-            self.ui.leParam5.hide()
-            self.ui.lbParam5.setText("")
+            self.ui.leParam5.show()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
@@ -1133,11 +1133,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "SolucionEuler":
-                 resp = euler_ec_dif.euler_ecu_dif(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
+                 resp = euler_ec_dif.euler_ecu_dif(str(self.ui.leParam1.text()),
+                                  float(str(self.ui.leParam2.text())), 
                                   float(str(self.ui.leParam3.text())),
-                                  float(str(self.ui.leParam4.text())),lista)            
+                                  float(str(self.ui.leParam4.text())),
+                                  int(str(self.ui.leParam5.text())),lista)            
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()

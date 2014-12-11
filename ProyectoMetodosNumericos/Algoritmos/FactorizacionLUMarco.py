@@ -38,6 +38,7 @@ def factorizacionLUMarco(dimensionN, matrizA, matrizL, matrizU, listaPasos):
         listaPasos.append("#Paso 6-  lnn y unn tales que lnnUnn=ann - sumatoria (n-1 , k=1) lnk Ukn")
         listaPasos.append("#Seleccionar matrizL[n][n] y matrizU[n][n] tal que matrizL[n][n]*matrizU[n][n] = 0")
         if(matrizL[dimensionN][dimensionN]*matrizU[dimensionN][dimensionN] == 0):
+<<<<<<< HEAD
             print("A = LU, pero A es singular")
 
 n = 3
@@ -80,3 +81,32 @@ for i in range(1, n+1):
     '''
 #imprimir los pasos, para saber que hizo el algoritmo:
 
+=======
+            listaPasos.append("A = LU, pero A es singular")
+            listaPasos.append(" ")
+    
+            listaPasos.append("Matriz A")
+            for i in matrizA.length:
+                listaPasos.append("/n")
+                for j in matrizA.length:
+                    listaPasos.append( matrizA[i][j]),
+                    listaPasos.append("")
+    
+            listaPasos.append("Matriz L")
+            for i in matrizL.length:
+                listaPasos.append("/n")
+                for j in matrizL.length:
+                    listaPasos.append( matrizL[i][j]),
+                
+                listaPasos.append("")
+            
+            listaPasos.append("Matriz U")
+            
+            for i in matrizU.length:
+                listaPasos.append("/n")
+                for j in matrizU.length:
+                    listaPasos.append( matrizU[i][j]),
+                listaPasos.append("")
+            
+                
+>>>>>>> Memo

@@ -1049,9 +1049,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 
             elif metodoSeleccionado == "Lagrage":
                 resp=lagrangeMarco.lagrangeMarco(int(str(self.ui.leParam1.text())),
-                            self.ui.leParam2.text(),
-                            self.ui.leParam3.text(),
-                            float(str(self.ui.leParam4.text())),lista)             
+                            eval(str(self.ui.leParam2.text())),
+                            eval(str(self.ui.leParam3.text())),
+                            float(str(self.ui.leParam4.text())),
+                            lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()

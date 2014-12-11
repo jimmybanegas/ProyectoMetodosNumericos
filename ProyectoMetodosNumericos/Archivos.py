@@ -29,7 +29,8 @@ def creartxtfunciones(self):
         archi.close()
       
             
-def grabartxt(self, lista, respuesta, funcion):
+def grabartxt(self, mylist, respuesta, funcion):
+    lista = results = [str(i) for i in mylist]
     fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
     archi=open(fn,'r+')
             

@@ -193,8 +193,6 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             if self.ui.tabWidget.currentIndex() == 2:                    
                 if self.ui.chPuntoFijo.isChecked():
                     metodoSeleccionado = "PuntoFijo"
-                elif self.ui.chDiferenciacion.isChecked():
-                    metodoSeleccionado = "Diferenciacion"
                 elif self.ui.chInTrapecio.isChecked():
                     metodoSeleccionado = "InTrapecio"
                 elif self.ui.chInSimpson.isChecked():
@@ -212,8 +210,6 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             if self.ui.tabWidget.currentIndex() == 4:                
                 if self.ui.chEliGauss.isChecked():
                     metodoSeleccionado = "EliGauss"
-                elif self.ui.chEliGaussJordan.isChecked():
-                    metodoSeleccionado = "EliGaussJordan"
                 elif self.ui.chInversa.isChecked():
                     metodoSeleccionado = "Inversa"
             

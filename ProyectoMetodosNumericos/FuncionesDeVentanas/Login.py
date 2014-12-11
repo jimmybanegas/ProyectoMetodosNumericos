@@ -1211,10 +1211,14 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "Diferencias":
-                resp = lineal_diferencias_finitas(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                resp = lineal_diferencias_finitas.linealDiferenciasFinitas(str(self.ui.leParam1.text()),
+                                  str(self.ui.leParam2.text()), 
+                                  str(self.ui.leParam3.text()),
+                                  float(str(self.ui.leParam4.text())),
+                                  float(str(self.ui.leParam5.text())),
+                                  float(str(self.ui.leParam6.text())),
+                                  float(str(self.ui.leParam7.text())),
+                                  int(str(self.ui.leParam8.text())),lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()

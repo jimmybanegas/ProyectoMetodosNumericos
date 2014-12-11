@@ -38,45 +38,30 @@ def factorizacionLUMarco(dimensionN, matrizA, matrizL, matrizU, listaPasos):
         listaPasos.append("#Paso 6-  lnn y unn tales que lnnUnn=ann - sumatoria (n-1 , k=1) lnk Ukn")
         listaPasos.append("#Seleccionar matrizL[n][n] y matrizU[n][n] tal que matrizL[n][n]*matrizU[n][n] = 0")
         if(matrizL[dimensionN][dimensionN]*matrizU[dimensionN][dimensionN] == 0):
-            print("A = LU, pero A es singular")
-
-n = 3
-mA = [[0,0,0,0],
-      [0,1,3,4],
-      [0,2,4,1],
-      [0,3,1,1]]
-mL = [[0,0,0,0],
-      [0,1,0,0],
-      [0,0,1,0],
-      [0,0,0,1]]
-mU = [[0,0,0,0],
-      [0,1,0,0],
-      [0,0,1,0],
-      [0,0,0,1]]
-pasos = []
-factorizacionLUMarco(3, mA, mL, mU, pasos)
-
-for paso in pasos:
-    print(paso)
-    print(" ")
-
-print("Matriz A")
-for i in range(1, n+1):
-    for j in range(1, n+1):
-        print( mA[i][j]),
-    print("")
-
-print("Matriz L")
-for i in range(1, n+1):
-    for j in range(1, n+1):
-        print( mL[i][j]),
-    print("")
+            listaPasos.append("A = LU, pero A es singular")
+            listaPasos.append(" ")
     
-print("Matriz U")
-for i in range(1, n+1):
-    for j in range(1, n+1):
-        print( mU[i][j]),
-    print("")
+            listaPasos.append("Matriz A")
+            for i in matrizA.length:
+                listaPasos.append("/n")
+                for j in matrizA.length:
+                    listaPasos.append( matrizA[i][j]),
+                    listaPasos.append("")
     
-#imprimir los pasos, para saber que hizo el algoritmo:
-
+            listaPasos.append("Matriz L")
+            for i in matrizL.length:
+                listaPasos.append("/n")
+                for j in matrizL.length:
+                    listaPasos.append( matrizL[i][j]),
+                
+                listaPasos.append("")
+            
+            listaPasos.append("Matriz U")
+            
+            for i in matrizU.length:
+                listaPasos.append("/n")
+                for j in matrizU.length:
+                    listaPasos.append( matrizU[i][j]),
+                listaPasos.append("")
+            
+                

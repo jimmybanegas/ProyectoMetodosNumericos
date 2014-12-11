@@ -556,14 +556,14 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()
         def Lagrage(self):
-            self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+            self.ui.lbEjemplo.setText("\t\t\t EJEMPLO \n\n"
+                                      +"GRADO: 4  \n\n"
                                       +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
                                       +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
                                       +"X DERIVADA : 4  \n\n"
-                                      +"NO.ITERACIONES : 100")
+                                      )
            
-            self.ui.lbParam1.setText("GRADON")
+            self.ui.lbParam1.setText("GRADO")
             self.ui.lbParam2.setText(" LISTA X ")
             self.ui.lbParam3.setText("LISTA F(X)")
             self.ui.lbParam4.setText("X DERIVADA")
@@ -637,7 +637,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
-            self.ui.leParam6.show()
+            self.ui.leParam6.hide()
             self.ui.leParam7.hide()
             self.ui.leParam8.hide()  
         def InGauss(self):
@@ -729,9 +729,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()    
         def Regresion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"VALOR DE X :  1 10 15 24 70 \n\n"
-                                      +"VALOR DE Y : 14 23 28 37 83 \n\n"
-                                      +"X A APROXIMAR : 100  \n\n"
+                                      +"VALOR DE X : [[1,10,15,24,70]] \n\n"
+                                      +"VALOR DE Y : [[14,23,28,37,83]] \n\n"
+                                      +"X A APROXIMAR : 0  \n\n"
                                        )
             self.ui.lbParam1.setText("Valores de X")
             self.ui.lbParam2.setText("Valores de Y")
@@ -767,7 +767,6 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.lbParam2.setText("Matriz A")
             self.ui.lbParam3.setText("Matriz L")
             self.ui.lbParam4.setText("Matriz U")
-            self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
             self.ui.leParam3.show()
@@ -1054,8 +1053,8 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 
             elif metodoSeleccionado == "Lagrage":
                 resp=lagrangeMarco.lagrangeMarco(int(str(self.ui.leParam1.text())),
-                            float(str(self.ui.leParam2.text())),
-                            float(str(self.ui.leParam3.text())),
+                            self.ui.leParam2.text(),
+                            self.ui.leParam3.text(),
                             float(str(self.ui.leParam4.text())),lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
@@ -1105,8 +1104,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                             float(str(self.ui.leParam1.text())),
                             float(str(self.ui.leParam2.text())),
                             float(str(self.ui.leParam3.text())),
-                            float(str(self.ui.leParam4.text())),
-                            int(str(self.ui.leParam5.text())),lista)             
+                            lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()
@@ -1114,9 +1112,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 
             elif metodoSeleccionado == "InSimpson":
                 resp = simpson.simpson(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                                  float(self.ui.leParam1.text()), 
+                                  float(self.ui.leParam2.text()),
+                                  int(self.ui.leParam3.text()),lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()
@@ -1124,24 +1122,24 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 
             elif metodoSeleccionado == "InGauss":
                  resp = simpson.simpson(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                                  float(self.ui.leParam1.text()), 
+                                  float(self.ui.leParam2.text()),
+                                  float(self.ui.leParam3.text()),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
             elif metodoSeleccionado == "SolucionEuler":
-                 resp = euler_ec_dif.euler_ecu_dif(str(funcion),
+                resp = euler_ec_dif.euler_ecu_dif(str(funcion),
                                   float(str(self.ui.leParam1.text)), 
                                   float(str(self.ui.leParam2.text())),
                                   float(str(self.ui.leParam3.text())),
-                                  float(str(self.ui.leParam4.text())),lista)            
-        
-                 grabartxt(self, lista, str(resp), str(funcion))
-                 self.w2 = Graph()
-                 self.w2.show()
+                                  float(str(self.ui.leParam4.text())),lista)   
+                 
+                grabartxt(self, lista, str(resp), str(funcion))
+                self.w2 = Graph()
+                self.w2.show()
                 
             elif metodoSeleccionado == "SolucionRunge":
                 resp = runge_kutta_ecu_dif.runge_kutta_ecu_dif(str(self.ui.leParam1.text()), 
@@ -1149,7 +1147,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                            float(str(self.ui.leParam3.text())),
                                            float(str(self.ui.leParam4.text())),
                                            float(str(self.ui.leParam5.text())),lista)
-                grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
+                grabartxt(self, lista, "ver pasos ", str(self.ui.leParam1.text()))
                 self.w2 = Graph()
                 self.w2.show()
                 
@@ -1187,26 +1185,25 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  resp = MatrizInversa.MatrizInversa((str(self.ui.leParam2.text())),
                                 (str(self.ui.leParam3.text())),lista)             
         
-                 grabartxt(self, lista, str(resp), str(funcion))
+                 grabartxt(self, lista, "ver pasos", str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
             elif metodoSeleccionado == "Descomposicion":
-                 resp = simpson.simpson(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),lista)             
+                 resp =FactorizacionLUMarco.factorizacionLUMarco(float(self.ui.leParam1.text()), 
+                                                                 self.ui.leParam2.text(),self.ui.leParam3.text(),
+                                                                 self.ui.leParam4.text(),lista)             
         
-                 grabartxt(self, lista, str(resp), str(funcion))
+                 grabartxt(self, lista, "ver pasos", str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
             elif metodoSeleccionado == "Regresion":
-                 resp = RegresionLineal.RegresionLineal( float(str(self.ui.leParam1.text)),
-                                                         float(str(self.ui.leParam2.text())),
-                                                         float(str(self.ui.leParam2.text())), lista)                                
+                 resp = RegresionLineal.RegresionLineal( self.ui.leParam1.text(),
+                                                         self.ui.leParam2.text(),
+                                                         int(self.ui.leParam3.text()), lista)                                
                                               
-                 grabartxt(self, lista, str(resp), str(funcion))
+                 grabartxt(self, lista, "VER PASOS", str(funcion))
                  self.w2 = Graph()
                  self.w2.show()
                 
@@ -1236,6 +1233,7 @@ if __name__ == "__main__":
 #
 # Created: Wed Nov 19 20:48:21 2014
 #      by: PyQt4 UI code generator 4.9.6
+
 #
 # WARNING! All changes made in this file will be lost!
 

@@ -39,7 +39,7 @@ def RegresionLineal(valoresX, valoresY, Xo, lista):
         lista.append(" Y de Xo=" + str(y))
         return y
 
-
+'''
 if __name__ == '__main__':
     print "Metodo de Regresion Lineal"
     lx = map(float, raw_input("Ingrese los valores de x: ").split())
@@ -49,3 +49,5 @@ if __name__ == '__main__':
     y = RegresionLineal(lx,ly,xx)
     
     print "y=" + str(y) + " para x=" + x  
+    '''
+   

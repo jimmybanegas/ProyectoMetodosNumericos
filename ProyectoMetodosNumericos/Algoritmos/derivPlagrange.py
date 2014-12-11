@@ -64,7 +64,7 @@ X = [1, 2, 3, 4]
 Fx = [1, 4, 9, 16]
 ene = 2
 exd = 2.5
-lista = []
-print(str(deriv_PLagrange(ene, X, Fx, exd, lista)))
-for i in range(lista.__len__()):
-    print(lista[i])
+#lista = []
+#print(str(deriv_PLagrange(ene, X, Fx, exd, lista)))
+#for i in range(lista.__len__()):
+#    print(lista[i])

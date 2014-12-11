@@ -57,4 +57,4 @@ def reglaTrapezoide(  funcion,trapeciosN, limiteInferiorA , limiteSuperiorB , ca
     return AREA
    
 erick=[]
-print(str(reglaTrapezoide("x**2+2",5,1,2,erick)))
+#print(str(reglaTrapezoide("x**2+2",5,1,2,erick)))

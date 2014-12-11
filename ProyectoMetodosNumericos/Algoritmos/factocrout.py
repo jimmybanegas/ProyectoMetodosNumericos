@@ -36,6 +36,7 @@ def factoCroutTridiagon(n, A, lista):
         X[i] = Z[i]-U[i][i+1]*X[i+1]
     
     return X;
+'''
 if( __name__ == "__main__"):
     arg = ([[2, -1, 0, 0, 1],
             [-1, 2, -1, 0, 0],
@@ -53,3 +54,4 @@ if( __name__ == "__main__"):
     dim = 3
     lis = []
     print(factoCroutTridiagon(dim, mat, lis))
+    '''

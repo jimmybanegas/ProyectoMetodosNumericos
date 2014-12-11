@@ -101,7 +101,7 @@ def resolver_matriz(A,b):
         x[k] = (b[k] - np.dot(A[k][k+1:],x[k+1:]))/A[k][k]
         k = k-1
     return x
-    
+'''
 X=[0.00,0.25,0.50,0.75,1.00]
 Y=[1.000,1.2840,1.6487,2.1170,2.7183]
 cadena=[]
@@ -109,3 +109,4 @@ B=[[10,1,-5],[-20,3,20],[5,3,5]]
 S=[1,2,6]
 resp=minimos_cuadrado(2,X,Y,5,cadena)
 print resp
+'''

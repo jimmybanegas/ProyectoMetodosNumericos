@@ -643,18 +643,18 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"LIMITE SUPERIOR B : 3 \n \t debe de ser mayot a limite inferior a \n\n"
                                        )
             
-            self.ui.lbParam1.setText("Numeros de Puntos a Utilizar")
+            self.ui.lbParam1.setText("Matriz")
             self.ui.lbParam2.setText("Limite Inferior A")
             self.ui.lbParam3.setText("Limite Superior B")
             self.ui.lbParam4.setText("Numero Subintervalos N")
             self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
+            self.ui.leParam2.hide()
+            self.ui.leParam3.hide()
             self.ui.leParam4.hide()
             self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
+            self.ui.lbParam2.hide()
+            self.ui.lbParam3.hide()
             self.ui.lbParam4.hide()
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
@@ -1117,10 +1117,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "InGauss":
-                 resp = simpson.simpson(str(funcion),
-                                  float(self.ui.leParam1.text()), 
-                                  float(self.ui.leParam2.text()),
-                                  float(self.ui.leParam3.text()),lista)             
+                 resp = Gauss.gauss(eval(str(self.ui.leParam1.text())), lista)     
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()

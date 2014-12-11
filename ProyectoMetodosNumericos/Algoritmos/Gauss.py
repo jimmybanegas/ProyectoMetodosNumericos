@@ -12,16 +12,17 @@ def pprint(A):
 def appending(A, lista):
     n = len(A)
     for i in range(0, n):
-        line = ""
+
+        str1 = " "
         for j in range(0, n+1):
-            line += str(A[i][j]) + "\t"
+            str1 += str(A[i][j])+ "\t"
             if j == n-1:
-                line += "| "
-        lista.append(line)
-    line.append("")
+                str1 += "| "
+        lista.append(str1)
+    lista.append("")
 
 
-def gauss(A, lista, respuesta):
+def gauss(A, lista):
     n = len(A)
     lista.append("PROCEDIMIENTO DE RESOLUCION DE UNA MATRIZ")
     lista.append("Matriz a Resolver =")
@@ -68,9 +69,8 @@ def gauss(A, lista, respuesta):
             A[k][n] -= A[k][i] * x[i]
     
     lista.append("Resolviendo la ecuacion Ax=b para la matriz ingresada...")
-    lista.appending(A, lista)
+    appending(A, lista)
     lista.append("Proceso finalizado!")
-    respuesta = x
     return x
     
 
@@ -82,8 +82,9 @@ if __name__ == "__main__":
     # Print input
     pprint(A)
 
+    temp = []
     # Calculate solution
-    x = gauss(A)
+    x = gauss(A, temp)
 
     # Print result
     line = "Result:\t"

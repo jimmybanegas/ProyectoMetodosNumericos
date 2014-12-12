@@ -378,14 +378,14 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
 #self.ui.lbEjemplo.setPixmap(QPixmap("Ventanas\imagenes\Biseccion.JPG"))      
         def Diferencias(self):            
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"FUNCION P(X) :x*2 \n  \n\n"
-                                      +"FUNCION Q(X) : x*4 \n  \n\n"
-                                      +"FUNCION R(X) : x*4 \n  \n\n"
-                                      +"EXTREMO A : -3 \n \n\n"
-                                      +"EXTREMO B : 3 \n  \n\n"
-                                      +"CONDICION DE FRONTERA A : 0 \n  \n\n"
-                                      +"CONDICION DE FRONTERA B : 0 \n \n\n"
-                                      +"NO. DE SUBINTERVALOS N : 100")
+                                      +"FUNCION P(X) :-2/x \n  \n"
+                                      +"FUNCION Q(X) : 2/(x*x) \n  \n"
+                                      +"FUNCION R(X) :(sin( log(x, e) )) / (x*x) \n  \n"
+                                      +"EXTREMO A : 1 \n \n"
+                                      +"EXTREMO B : 2 \n  \n"
+                                      +"CONDICION DE FRONTERA A : 1 \n  \n"
+                                      +"CONDICION DE FRONTERA B : 2 \n \n"
+                                      +"NO. DE SUBINTERVALOS N : 10")
             
             self.ui.lbParam1.setText("Funcion P(x)")
             self.ui.lbParam2.setText("Funcion Q(x)")
@@ -612,10 +612,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
         def SolucionEuler(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
                                       +"FUNCION F(x,t) :x**2+t -3 \n \t debe de ser de menor al extremo B \n\n"
-                                      +"Extremo A : -3 \n \t debe de ser de menor al extremo B \n\n"
-                                      +"Extremo B : 3 \n \t debe de ser de mayor al extremo A \n\n"
-                                      +"Condicion Inicial : 0 \n \t es el valor de f(A) \n\n"
-                                      +"Numero Subintervalos N : 100")
+                                      +"Extremo A : 0 \n \t debe de ser de menor al extremo B \n\n"
+                                      +"Extremo B : 2 \n \t debe de ser de mayor al extremo A \n\n"
+                                      +"Condicion Inicial : 0.5 \n \t es el valor de f(A) \n\n"
+                                      +"Numero Subintervalos N : 10")
             self.ui.lbParam1.setText("FUNCION F(x,t)")
             self.ui.lbParam2.setText("Extremo A")
             self.ui.lbParam3.setText("Extremo B")
@@ -753,10 +753,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def Descomposicion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"Dimension de la Matriz : \n\n"
-                                      +"MATRIZ A: [[3,4],[2,5]] \n\t la matriz debe de ser de n x n \n\n"
-                                      +"MATRIZ L :[[4,3],[2]] \n\t la matriz debe de ser de n x n  \n\n"
-                                      +"MATRIZ U :[[4,6],[2,8]] \n\t la matriz debe de ser de n x n \n\n"
+                                      +"Dimension de la Matriz : 3\n\n"
+                                      +"MATRIZ A: [[0,0,0,0],[0,1,3,4],[0,2,1,3],[0,4,2,1]] \n\t la matriz debe de ser de n x n \n\n"
+                                      +"MATRIZ L :[[0,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]] \n\t la matriz debe de ser de n x n  \n\n"
+                                      +"MATRIZ U :[[0,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]] \n\t la matriz debe de ser de n x n \n\n"
                                       
                                       )
             self.ui.lbParam1.setText("Dimension de la Matriz")
@@ -921,11 +921,10 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def Diferenciacion(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"GRADO: 100 \n \t numero de iteraciones\n\n"
+                                      +"GRADO: 4 \n \t numero de iteraciones\n\n"
                                       +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
                                       +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
-                                      +"X DERIVADA : 4  \n\n"
-                                      +"NO.ITERACIONES : 100")
+                                      +"X DERIVADA : 1.5  \n\n")
             self.ui.lbParam1.setText("Grado N")
             self.ui.lbParam2.setText("Lista x")
             self.ui.lbParam3.setText("Lista FX")
@@ -1210,7 +1209,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                   float(str(self.ui.leParam6.text())),
                                   float(str(self.ui.leParam7.text())),
                                   int(str(self.ui.leParam8.text())),lista)             
-        
+                resp = "Ver Pasos"
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()
                 self.w2.show()

@@ -296,3 +296,30 @@ class Ui_MainWindow(object):
         self.pbRegresar.setText(_translate("MainWindow", "Regresar", None))
 
 import imagenes_rc
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'AlgoritmosV.ui'
+#
+# Created: Fri Dec 12 17:01:54 2014
+#      by: PyQt4 UI code generator 4.9.6
+#
+# WARNING! All changes made in this file will be lost!
+
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'AlgoritmosV.ui'
+#
+# Created: Fri Dec 12 17:03:47 2014
+#      by: PyQt4 UI code generator 4.9.6
+#
+# WARNING! All changes made in this file will be lost!
+
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'C:\Users\manuel\Documents\ProyectoMetodos\ProyectoMetodosNumericos\ProyectoMetodosNumericos\ProyectoMetodosNumericos\Ventanas\AlgoritmosV.ui'
+#
+# Created: Fri Dec 12 17:06:32 2014
+#      by: PyQt4 UI code generator 4.9.6
+#
+# WARNING! All changes made in this file will be lost!
+

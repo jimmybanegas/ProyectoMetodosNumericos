@@ -5,7 +5,10 @@ Created on Sat Nov 15 00:18:39 2014
 @author: Marco
 """
 
-def lagrangeMarco(gradoN,listaX,listaFX,xDerivada,listaPasos):
+def lagrangeMarco(gradoN,listaXt,listaFXt,xDerivada,listaPasos):
+    listaX = eval(listaXt)
+    listaFX = eval(listaFXt)
+    
     listaPasos.append("#paso1 derivadaPolinomio =0")
     
     derivadaPolinomio=0 
@@ -79,8 +82,8 @@ def lagrangeMarco(gradoN,listaX,listaFX,xDerivada,listaPasos):
     listaPasos.append(derivadaPolinomio )
     return derivadaPolinomio
 #pasos = []
-#lagrangeMarco(4,[23,45,22,134,324],[433,46,232,435,66],28,pasos)
-            
+#lagrangeMarco(4,"[23,45,22,134,324]","[433,46,232,435,66]",28,pasos)
+#print pasos            
 
             
             

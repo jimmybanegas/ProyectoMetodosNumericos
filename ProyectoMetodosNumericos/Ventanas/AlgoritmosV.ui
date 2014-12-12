@@ -80,7 +80,7 @@ background: rgb(210, 221, 239);
  }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab0">
      <attribute name="title">
@@ -227,7 +227,7 @@ de Newton</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>30</y>
+        <y>80</y>
         <width>361</width>
         <height>31</height>
        </rect>
@@ -245,7 +245,7 @@ de Newton</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>100</y>
+        <y>130</y>
         <width>361</width>
         <height>71</height>
        </rect>
@@ -297,6 +297,24 @@ Simpsons</string>
        <string>Integracion Numerica
 Cuadratura:
 Gauss</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="chDiferenciacion">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>361</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Diferenciacion Numerica</string>
       </property>
      </widget>
     </widget>
@@ -568,3 +586,12 @@ Gauss</string>
  </resources>
  <connections/>
 </ui>
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'AlgoritmosV.py'
+#
+# Created: Fri Dec 12 17:00:36 2014
+#      by: PyQt4 UI code generator 4.9.6
+#
+# WARNING! All changes made in this file will be lost!
+

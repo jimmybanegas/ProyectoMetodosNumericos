@@ -673,21 +673,21 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"FILA 2 :2 4 6 \n \n\n"
                                       +"FILA 3 :3 6 8 \n \n\n"
                                        )
-            self.ui.lbParam1.setText("Numero de Filas")
+            self.ui.lbParam1.setText("Matriz")
             self.ui.lbParam2.setText("Numero de Columnas")
             self.ui.lbParam3.setText("Fila 1")
             self.ui.lbParam4.setText("Fila 2")
             self.ui.lbParam5.setText("Fila 3")
             self.ui.leParam1.show()
-            self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.show()
+            self.ui.leParam2.hide()
+            self.ui.leParam3.hide()
+            self.ui.leParam4.hide()
             self.ui.lbParam1.show()
-            self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.show()
-            self.ui.lbParam5.show()
-            self.ui.leParam5.show()
+            self.ui.lbParam2.hide()
+            self.ui.lbParam3.hide()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
@@ -1159,8 +1159,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "EliGauss":
-                 resp = Gauss.gauss( float(str(self.ui.leParam1.text)), 
-                                     lista)             
+                 resp = Gauss.gauss(eval(str(self.ui.leParam1.text())), lista)
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()

@@ -7,8 +7,13 @@ Created on Sat Nov 15 10:58:38 2014
 @author: Marco
 """
 
-def factorizacionLUMarco(dimensionN, matrizA, matrizL, matrizU, listaPasos):
+def factorizacionLUMarco(dimensionN, matrizAt, matrizLt, matrizUt, listaPasos):
     #Seleccionar L_11*U_11 = A_11
+    
+    matrizA = eval(matrizAt)
+    matrizL = eval(matrizLt)
+    matrizU = eval(matrizUt)
+    
     listaPasos.append("#Paso 1-Seleccionar L_11*U_11 = A_11")
     if(matrizL[1][1]*matrizU[1][1] == 0):
         print("Factorizacion Fallo")

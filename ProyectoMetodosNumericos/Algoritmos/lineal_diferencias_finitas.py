@@ -118,8 +118,5 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
         x = a + i*h
         lista.append("\t"+str(x)+"\t"+str(W1[i])+"\t"+str(W2[i])+"\t"+str(u[1][i])+"\t"+str(v[1][i]))
         
-    for c in lista:
-        print(c)
-
 #lista = []    
 #linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)

@@ -1,3 +1,6 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=c3485021223413b6e630d65530fcb5b7ef4a4f0a
 eclipse.preferences.version=1
 encoding//Algoritmos/CuadraturaGaussiana.py=utf-8
 encoding//Algoritmos/FactorizacionLUMarco.py=utf-8
@@ -6,10 +9,8 @@ encoding//Algoritmos/Newton.py=utf-8
 encoding//Algoritmos/derivPlagrange.py=utf-8
 encoding//Algoritmos/factocrout.py=utf-8
 encoding//Algoritmos/lagrange2.py=utf-8
-<<<<<<< HEAD
-=======
 encoding//Algoritmos/lagrangeMarco.py=utf-8
->>>>>>> c3485021223413b6e630d65530fcb5b7ef4a4f0a
+encoding//Algoritmos/lagrange_1.py=utf-8
 encoding//Algoritmos/lineal_diferencias_finitas.py=utf-8
 encoding//Algoritmos/muller.py=utf-8
 encoding//Algoritmos/puntofijo.py=utf-8

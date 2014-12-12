@@ -24,7 +24,7 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
-from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural
+from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural, lagrange_1
 #from Algoritmos import Trazador_cubico_natural
 from serial.tools.miniterm import console
 
@@ -556,13 +556,13 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"GRADO: 4  \n\n"
                                       +"LISTA X : [23,45,22,134,324] \n \t las 2 listas tienen el mismo numero de elementos  \n\n"
                                       +"LISTA F(X): [433,46,232,435,66] \n \t las 2 listas tienen el mismo numero de elementos \n\n"
-                                      +"X DERIVADA : 4  \n\n"
+                                      +"PUNTO A EVALUAR : 4  \n\n"
                                       )
            
             self.ui.lbParam1.setText("GRADO")
             self.ui.lbParam2.setText(" LISTA X ")
             self.ui.lbParam3.setText("LISTA F(X)")
-            self.ui.lbParam4.setText("X DERIVADA")
+            self.ui.lbParam4.setText("PUNTO A EVALUAR")
             self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
@@ -1048,7 +1048,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "Lagrage":
-                resp=lagrangeMarco.lagrangeMarco(int(str(self.ui.leParam1.text())),
+                resp=lagrange_1.lagrange(int(str(self.ui.leParam1.text())),
                             eval(str(self.ui.leParam2.text())),
                             eval(str(self.ui.leParam3.text())),
                             float(str(self.ui.leParam4.text())),

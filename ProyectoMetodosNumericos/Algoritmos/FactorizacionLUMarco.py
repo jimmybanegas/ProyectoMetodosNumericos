@@ -45,27 +45,27 @@ def factorizacionLUMarco(dimensionN, matrizAt, matrizLt, matrizUt, listaPasos):
         if(matrizL[dimensionN][dimensionN]*matrizU[dimensionN][dimensionN] == 0):
             listaPasos.append("A = LU, pero A es singular")
             listaPasos.append(" ")
-    
-            listaPasos.append("Matriz A")
-            for i in matrizA.length:
-                listaPasos.append("/n")
-                for j in matrizA.length:
-                    listaPasos.append( matrizA[i][j]),
-                    listaPasos.append("")
-    
-            listaPasos.append("Matriz L")
-            for i in matrizL.length:
-                listaPasos.append("/n")
-                for j in matrizL.length:
-                    listaPasos.append( matrizL[i][j]),
-                
+
+        listaPasos.append("Matriz A")
+        for i in range(1,dimensionN+1):
+            listaPasos.append("/t")
+            for j in range(1,dimensionN+1):
+                listaPasos.append( matrizA[i][j]),
                 listaPasos.append("")
+
+        listaPasos.append("Matriz L")
+        for i in range(1,dimensionN+1):
+            listaPasos.append("/t")
+            for j in range(1,dimensionN+1):
+                listaPasos.append( matrizL[i][j]),
             
-            listaPasos.append("Matriz U")
-            
-            for i in matrizU.length:
-                listaPasos.append("/n")
-                for j in matrizU.length:
-                    listaPasos.append( matrizU[i][j]),
-                listaPasos.append("")
+            listaPasos.append("")
         
+        listaPasos.append("Matriz U")
+        
+        for i in range(1,dimensionN+1):
+            listaPasos.append("/t")
+            for j in range(1,dimensionN+1):
+                listaPasos.append( matrizU[i][j]),
+            listaPasos.append("")
+    

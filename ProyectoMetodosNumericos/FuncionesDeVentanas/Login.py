@@ -199,6 +199,8 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                     metodoSeleccionado = "InSimpson"
                 elif self.ui.chInGauss.isChecked():
                     metodoSeleccionado = "InGauss"
+                elif self.ui.chDiferenciacion.isChecked():
+                    metodoSeleccionado = "Diferenciacion"
                     
             if self.ui.tabWidget.currentIndex() == 3:
                 if self.ui.chSolucionEuler.isChecked():
@@ -1084,12 +1086,12 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  self.w2.show()
                 
             elif metodoSeleccionado == "Diferenciacion":
-                resp=puntofijo.puntoFijo(str(funcion),
-                            float(str(self.ui.leParam1.text())),
-                            float(str(self.ui.leParam2.text())),
-                            float(str(self.ui.leParam3.text())),
+                resp=lagrangeMarco.lagrangeMarco(
+                            int(str(self.ui.leParam1.text())),
+                            (str(self.ui.leParam2.text())),
+                            (str(self.ui.leParam3.text())),
                             float(str(self.ui.leParam4.text())),
-                            int(str(self.ui.leParam5.text())),lista)             
+                            lista)             
         
                 grabartxt(self, lista, str(resp), str(funcion))
                 self.w2 = Graph()

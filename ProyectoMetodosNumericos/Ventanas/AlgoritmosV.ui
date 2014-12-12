@@ -80,7 +80,7 @@ background: rgb(210, 221, 239);
  }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab0">
      <attribute name="title">
@@ -586,12 +586,3 @@ Gauss</string>
  </resources>
  <connections/>
 </ui>
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'AlgoritmosV.py'
-#
-# Created: Fri Dec 12 17:00:36 2014
-#      by: PyQt4 UI code generator 4.9.6
-#
-# WARNING! All changes made in this file will be lost!
-

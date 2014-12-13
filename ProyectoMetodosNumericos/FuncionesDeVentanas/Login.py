@@ -135,6 +135,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
         def EjecutarAlgoritmo(self): 
             self.SeleccionarMetodo() 
             global funcion
+            global OcupaFuncion
             if(metodoSeleccionado ==''):
                 QMessageBox.information(self, 'Advertencia', ''' No ha seleccioando algoritmo''',QMessageBox.Ok)
             else:
@@ -143,14 +144,19 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                      self.ui.chPolinomialNewton.isChecked()or self.ui.chInGauss.isChecked() or
                      self.ui.chInSimpson.isChecked() or self.ui.chPuntoFijo.isChecked() or
                      self.ui.chInTrapecio.isChecked()):
-                                        
+                    
+                        OcupaFuncion = True       
                         self.SeleccionarMetodo() 
                         self.w2 = IngresarFuncion()
                         self.w2.show() 
+                        self.close()  
                 else:
+                    
+                    OcupaFuncion = False
                     self.SeleccionarMetodo() 
                     self.w2 = Input()
                     self.w2.show()          
+                    self.close()  
                 
         def Regresar(self):             
             self.w2 = IngresarFuncion()
@@ -306,6 +312,7 @@ class Steps(QtGui.QMainWindow,Ui_MainWindow):
                 self.ui.teSteps.append(n)
             global colorFondo
             self.setStyleSheet("background-color: "+colorFondo);
+            self.ui.lbResult.setText(leerultimarespuesta(self))
           
         def Cerrar(self): 
             self.close()
@@ -981,8 +988,13 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.close()   
         
         def LlamarRespuesta(self):
-            self.w2 = Graph()
-            self.w2.show()    
+            if (OcupaFuncion == True):
+            
+                self.w2 = Graph()
+                self.w2.show()    
+            else:
+                self.w2 = Steps()
+                self.w2.show()
             
         def Calcular(self): 
             lista=[]            
@@ -1048,7 +1060,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                             lista)             
         
                 grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
-                self.w2 = Graph()
+                self.w2 = Steps()
                 self.w2.show() 
                 
             elif metodoSeleccionado == "PolinomialNewton":
@@ -1129,7 +1141,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                   int(str(self.ui.leParam5.text())),lista)   
                  
                 grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
-                self.w2 = Graph()
+                self.w2 = Steps()
                 self.w2.show()
 
                 
@@ -1160,7 +1172,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                  resp = Gauss.gauss(eval(str(self.ui.leParam1.text())), lista)
         
                  grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
-                 self.w2 = Graph()
+                 self.w2 = Steps()
                  self.w2.show()
                 
             elif metodoSeleccionado == "EliGaussJordan":
@@ -1170,7 +1182,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                   str(self.ui.leParam3.text()),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
-                 self.w2 = Graph()
+                 self.w2 = Steps()
                  self.w2.show()
                 
             elif metodoSeleccionado == "Inversa":
@@ -1187,7 +1199,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                                                  str(self.ui.leParam4.text()),lista)             
         
                  grabartxt(self, lista, "ver pasos", str(self.ui.leParam1.text()))
-                 self.w2 = Graph()
+                 self.w2 = Steps()
                  self.w2.show()
                 
             elif metodoSeleccionado == "Regresion":
@@ -1210,7 +1222,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                   int(str(self.ui.leParam8.text())),lista)             
                 resp = "Ver Pasos"
                 grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
-                self.w2 = Graph()
+                self.w2 = Steps()
                 self.w2.show()
         
         def Regresar(self):

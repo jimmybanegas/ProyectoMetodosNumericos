@@ -330,7 +330,9 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leEquation.setEnabled(False)
             global colorFondo
             global metodoSeleccionado
-           
+            if(OcupaFuncion == False):
+                self.ui.leEquation.hide()
+                self.ui.label.hide()
             self.setStyleSheet("background-color: "+colorFondo);
             if metodoSeleccionado == "Biseccion":
                 self.Biseccion()                                          

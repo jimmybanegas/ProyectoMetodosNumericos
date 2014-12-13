@@ -24,7 +24,7 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
-from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural, lagrange_1
+from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural, lagrange_1,CuadraturaGaussiana
 #from Algoritmos import Trazador_cubico_natural
 from serial.tools.miniterm import console
 
@@ -635,26 +635,27 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()  
         def InGauss(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"NUMERO DE PUNTOS A UTILIZAR : 4 \n\n"
-                                      +"LIMITE INFERIOR A : -3 \n \t debe de ser menor a limite superior b \n\n"
+                                      +"LIMITE INFERIOR A : 0 \n \t debe de ser menor a limite superior b \n\n"
                                       +"LIMITE SUPERIOR B : 3 \n \t debe de ser mayot a limite inferior a \n\n"
+                                      +"N: debe ser 2 , 3,4,5,6 \n\n"
+                                      
                                        )
             
-            self.ui.lbParam1.setText("Matriz")
-            self.ui.lbParam2.setText("Limite Inferior A")
-            self.ui.lbParam3.setText("Limite Superior B")
-            self.ui.lbParam4.setText("Numero Subintervalos N")
-            self.ui.lbParam5.setText("No. Iteraciones")
+            
+            self.ui.lbParam1.setText("Limite Inferior A")
+            self.ui.lbParam2.setText("Limite Superior B")
+            self.ui.lbParam3.setText("N")
             self.ui.leParam1.show()
-            self.ui.leParam2.hide()
-            self.ui.leParam3.hide()
+            self.ui.leParam2.show()
+            self.ui.leParam3.show()
             self.ui.leParam4.hide()
             self.ui.lbParam1.show()
-            self.ui.lbParam2.hide()
-            self.ui.lbParam3.hide()
+            self.ui.lbParam2.show()
+            self.ui.lbParam3.show()
             self.ui.lbParam4.hide()
             self.ui.lbParam5.hide()
             self.ui.leParam5.hide()
+            self.ui.lbParam4.setText("")
             self.ui.lbParam5.setText("")
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
@@ -949,7 +950,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                       +"Y0 : 1  \n\n"
                                       +"Z0 : 6  \n\n"
                                       +"XF : 8  \n\n"
-                                      +"N DE ITERACIONES :100")
+                                      +"N DE ITERACIONES :10")
             self.ui.lbParam1.setText("FUNCION 1:")
             self.ui.lbParam2.setText("FUNCION 2")
             self.ui.lbParam3.setText("X0")
@@ -1110,7 +1111,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "InGauss":
-                 resp = Gauss.gauss(eval(str(self.ui.leParam1.text())), lista)     
+                 resp = CuadraturaGaussiana.cuadraturaGaus(str(funcion),
+                                                            float(str(self.ui.leParam1.text())), 
+                                                            float(str(self.ui.leParam2.text())),
+                                                             float(str(self.ui.leParam3.text())),
+                                                              lista)     
         
                  grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                  self.w2 = Graph()
@@ -1139,12 +1144,13 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show()
                 
             elif metodoSeleccionado == "SistemaRunge":
-                 resp = sistema_edo_kutta.sistema_edo_kuta(str(funcion),
-                                  float(str(self.ui.leParam1.text)), 
-                                  float(str(self.ui.leParam2.text())),
-                                  float(str(self.ui.leParam3.text())),
-                                  float(str(self.ui.leParam4.text())),
-                                  float(str(self.ui.leParam5.text())),lista)             
+                 resp = sistema_edo_kutta.sistema_edo_kuta(str(self.ui.leParam1.text()), 
+                                           str(self.ui.leParam2.text()),
+                                           float(str(self.ui.leParam3.text())),
+                                           float(str(self.ui.leParam4.text())),
+                                           float(str(self.ui.leParam5.text())),
+                                           float(str(self.ui.leParam6.text())),
+                                           float(str(self.ui.leParam7.text())),lista)             
         
                  grabartxt(self, lista, str(resp), str(funcion))
                  self.w2 = Graph()

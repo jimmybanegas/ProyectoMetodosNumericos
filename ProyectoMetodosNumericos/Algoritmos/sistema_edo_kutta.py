@@ -10,7 +10,7 @@ def sistema_edo_kuta(formula,formula2,x0,y0,z0,xf,N,lista):
     x=x0
     y=y0
     z=z0
-    
+    x_list=[x]
     y_list=[y]
     z_list=[z]
     
@@ -65,20 +65,21 @@ def sistema_edo_kuta(formula,formula2,x0,y0,z0,xf,N,lista):
         y = y_bak+float(h)/6*(k_1+2*k_2+2*k_3+k_4)
         z = z_bak+float(h)/6*(c_1+2*c_2+2*c_3+c_4)
         x = x+float(h)
-        
+       
+        x_list.append(x)
         y_list.append(y)
         z_list.append(z)
 
-        lista.append ("f(t,x)")
+        lista.append ("f(x,y,z)")
         lista.append ("f("+str(x)+","+str(y)+","+str(z)+")")
         itera = itera+1
 
     lista.append("------------- RESULTADOS ------------------")
     lista.append ("\tf(t,w)")
     for i in range(len(y_list)):
-        print ("\tf("+str(y_list[i])+","+str(z_list[i])+")")
+        lista.append("\tf("+str(x_list[i])+","+str(y_list[i])+","+str(z_list[i])+")")
 
-    return y_list
+
 
 
     

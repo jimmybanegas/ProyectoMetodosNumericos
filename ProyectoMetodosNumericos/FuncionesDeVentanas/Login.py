@@ -100,9 +100,17 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
                 except (MathExtError,NameError) :
                     QMessageBox.information(self, 'Advertencia', ''' No ha ingresado la funcion correctamente ''',QMessageBox.Ok)
             else:
+                self.w3 = CutePlot.CutePlot()
+                self.w3.textbox.setText(str(self.ui.lnFuncion.text()))
+                self.w3.on_draw()
+                self.w3.guardarImagen()
                 self.w2 = Input()
                 self.w2.show()
                 self.close()             
+            
+            
+                
+            
             
     #La funcion evaluar es la que me llevara a el grafico de la f(X) que haya ingresado
         def Evaluar(self): 

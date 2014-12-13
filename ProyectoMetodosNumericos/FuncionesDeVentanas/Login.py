@@ -167,7 +167,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                     self.close()  
                 
         def Regresar(self):             
-            self.w2 = IngresarFuncion()
+            self.w2 = MyApp()
             self.w2.show()
             self.close()     
                 

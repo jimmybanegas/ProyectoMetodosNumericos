@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Steps.ui'
 #
-# Created: Wed Dec 10 19:42:18 2014
+# Created: Fri Dec 12 22:29:42 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -64,6 +64,21 @@ class Ui_MainWindow(object):
         icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/edit-delete.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCerrar.setIcon(icon1)
         self.btnCerrar.setObjectName(_fromUtf8("btnCerrar"))
+        self.label_2 = QtGui.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(30, 422, 101, 41))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.lbResult = QtGui.QLabel(self.centralwidget)
+        self.lbResult.setGeometry(QtCore.QRect(150, 430, 141, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lbResult.setFont(font)
+        self.lbResult.setText(_fromUtf8(""))
+        self.lbResult.setObjectName(_fromUtf8("lbResult"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 866, 21))
@@ -80,5 +95,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Pasos de la ecuación", None))
         self.label.setText(_translate("MainWindow", "Pasos para resolver la ecuación:", None))
         self.btnCerrar.setText(_translate("MainWindow", "Cerrar", None))
+        self.label_2.setText(_translate("MainWindow", "Respuesta=", None))
 
 import imagenes_rc

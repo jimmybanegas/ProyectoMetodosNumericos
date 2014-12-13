@@ -53,7 +53,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.close()
     
     def Ingresar(self): 
-        self.w2 = IngresarFuncion()
+        self.w2 = ElegirAlgoritmo()
         self.w2.show()
         self.close()           
         
@@ -94,13 +94,13 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
                 try:
                     x=1
                     eval(funcion)
-                    self.w2 = ElegirAlgoritmo()
+                    self.w2 = Input()
                     self.w2.show()
                     self.close()             
                 except (MathExtError,NameError) :
                     QMessageBox.information(self, 'Advertencia', ''' No ha ingresado la funcion correctamente ''',QMessageBox.Ok)
             else:
-                self.w2 = ElegirAlgoritmo()
+                self.w2 = Input()
                 self.w2.show()
                 self.close()             
             
@@ -143,21 +143,14 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
                      self.ui.chPolinomialNewton.isChecked()or self.ui.chInGauss.isChecked() or
                      self.ui.chInSimpson.isChecked() or self.ui.chPuntoFijo.isChecked() or
                      self.ui.chInTrapecio.isChecked()):
-                    if funcion == "": 
-                        QMessageBox.information(self, 'Advertencia', ''' Estos algoritmos nesecitan de una funcion''',QMessageBox.Ok) 
-                        self.w2 = IngresarFuncion()
-                        self.w2.show()
-                        self.close()    
-                    else:                    
+                                        
                         self.SeleccionarMetodo() 
-                        self.w2 = Input()
-                        self.w2.show()
-
-                else:                
+                        self.w2 = IngresarFuncion()
+                        self.w2.show() 
+                else:
                     self.SeleccionarMetodo() 
                     self.w2 = Input()
-                    self.w2.show()
-                    self.close()                
+                    self.w2.show()          
                 
         def Regresar(self):             
             self.w2 = IngresarFuncion()

@@ -1,5 +1,5 @@
-5
-3663
+7
+5943
                                          1
 0
 Paso #1
@@ -179,6 +179,127 @@ p = -3.0078125 + (-2.96875--3.0078125)/2
 FP = 0.01171875
 es falso
 b=-2.98828125 p=-2.98828125
+method failed
+#
+1
+[1, 4, -2]
+PROCEDIMIENTO DE RESOLUCION DE UNA MATRIZ
+Matriz a Resolver =
+ 1	1	1	| 3	
+ 2	3	7	| 0	
+ 1	3	-2	| 17	
+
+Buscando el maximo de la columna actual...
+maximo = 1
+Cambiando de lugar las filas ...
+ 2	3	7	| 0	
+ 1	1	1	| 3	
+ 1	3	-2	| 17	
+
+Haciendo todas las filas debajo de esta = 0
+ 2	3	7	| 0	
+ 0	-2	-6	| 3	
+ 0	0	-9	| 17	
+
+Buscando el maximo de la columna actual...
+maximo = 1
+Cambiando de lugar las filas ...
+ 2	3	7	| 0	
+ 0	-2	-6	| 3	
+ 0	0	-9	| 17	
+
+Haciendo todas las filas debajo de esta = 0
+ 2	3	7	| 0	
+ 0	-2	-6	| 3	
+ 0	0	-9	| 17	
+
+Buscando el maximo de la columna actual...
+maximo = 2
+Cambiando de lugar las filas ...
+ 2	3	7	| 0	
+ 0	-2	-6	| 3	
+ 0	0	-9	| 17	
+
+Haciendo todas las filas debajo de esta = 0
+ 2	3	7	| 0	
+ 0	-2	-6	| 3	
+ 0	0	-9	| 17	
+
+Resolviendo la ecuacion Ax=b para la matriz ingresada...
+ 2	3	7	| 2	
+ 0	-2	-6	| -9	
+ 0	0	-9	| 17	
+
+Proceso finalizado!
+#
+1
+0
+Paso #1
+Tome i = 1
+FA = f(a) = 0.0
+Paso #2
+Mientras i sea menor o igual al numero de iteraciones
+Hacer los pasos 3, 4, 5 y 6
+------------- i = 1 ------------------
+Paso #3
+p = -2.0 + (2.0--2.0)/2
+FP = 2.0
+es falso
+b=0.0 p=0.0
+------------- i = 2 ------------------
+Paso #3
+p = -2.0 + (0.0--2.0)/2
+FP = 1.0
+es falso
+b=-1.0 p=-1.0
+------------- i = 3 ------------------
+Paso #3
+p = -2.0 + (-1.0--2.0)/2
+FP = 0.5
+es falso
+b=-1.5 p=-1.5
+------------- i = 4 ------------------
+Paso #3
+p = -2.0 + (-1.5--2.0)/2
+FP = 0.25
+es falso
+b=-1.75 p=-1.75
+------------- i = 5 ------------------
+Paso #3
+p = -2.0 + (-1.75--2.0)/2
+FP = 0.125
+es falso
+b=-1.875 p=-1.875
+------------- i = 6 ------------------
+Paso #3
+p = -2.0 + (-1.875--2.0)/2
+FP = 0.0625
+es falso
+b=-1.9375 p=-1.9375
+------------- i = 7 ------------------
+Paso #3
+p = -2.0 + (-1.9375--2.0)/2
+FP = 0.03125
+es falso
+b=-1.96875 p=-1.96875
+------------- i = 8 ------------------
+Paso #3
+p = -2.0 + (-1.96875--2.0)/2
+FP = 0.015625
+es falso
+b=-1.984375 p=-1.984375
+------------- i = 9 ------------------
+Paso #3
+p = -2.0 + (-1.984375--2.0)/2
+FP = 0.0078125
+es falso
+b=-1.9921875 p=-1.9921875
+------------- i = 10 ------------------
+Paso #3
+p = -2.0 + (-1.9921875--2.0)/2
+FP = 0.00390625
+es falso
+b=-1.99609375 p=-1.99609375
 method failed
 #
 1

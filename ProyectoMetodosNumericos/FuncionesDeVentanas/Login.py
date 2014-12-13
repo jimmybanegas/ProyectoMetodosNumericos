@@ -669,11 +669,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide() 
         def EliGauss(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"NUMERO DE FILAS : 3 \n\n"
-                                      +"NUMERO DE COLUMNAS : 3 \n\n"
-                                      +"FILA 1 :3 4 6 \n \n\n"
-                                      +"FILA 2 :2 4 6 \n \n\n"
-                                      +"FILA 3 :3 6 8 \n \n\n"
+                                      +"MATRIZ: [[1, 1, 1, 3], [2, 3, 7, 0], [1, 3, -2, 17]]"
                                        )
             self.ui.lbParam1.setText("Matriz")
             self.ui.lbParam2.setText("Numero de Columnas")
@@ -1055,7 +1051,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                             float(str(self.ui.leParam4.text())),
                             lista)             
         
-                grabartxt(self, lista, str(resp), str(funcion))
+                grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                 self.w2 = Graph()
                 self.w2.show() 
                 
@@ -1121,7 +1117,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "InGauss":
                  resp = Gauss.gauss(eval(str(self.ui.leParam1.text())), lista)     
         
-                 grabartxt(self, lista, str(resp), str(funcion))
+                 grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                  self.w2 = Graph()
                  self.w2.show()
                 
@@ -1132,7 +1128,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                   float(str(self.ui.leParam4.text())),
                                   int(str(self.ui.leParam5.text())),lista)   
                  
-                grabartxt(self, lista, str(resp), str(funcion))
+                grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                 self.w2 = Graph()
                 self.w2.show()
 
@@ -1162,7 +1158,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             elif metodoSeleccionado == "EliGauss":
                  resp = Gauss.gauss(eval(str(self.ui.leParam1.text())), lista)
         
-                 grabartxt(self, lista, str(resp), str(funcion))
+                 grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                  self.w2 = Graph()
                  self.w2.show()
                 
@@ -1189,7 +1185,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                                                  str(self.ui.leParam2.text()),str(self.ui.leParam3.text()),
                                                                  str(self.ui.leParam4.text()),lista)             
         
-                 grabartxt(self, lista, "ver pasos", str(funcion))
+                 grabartxt(self, lista, "ver pasos", str(self.ui.leParam1.text()))
                  self.w2 = Graph()
                  self.w2.show()
                 
@@ -1212,7 +1208,7 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                                   float(str(self.ui.leParam7.text())),
                                   int(str(self.ui.leParam8.text())),lista)             
                 resp = "Ver Pasos"
-                grabartxt(self, lista, str(resp), str(funcion))
+                grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
                 self.w2 = Graph()
                 self.w2.show()
         

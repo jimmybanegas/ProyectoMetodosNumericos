@@ -281,7 +281,9 @@ class Graph(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.btnVerPasos.clicked.connect(self.VerPasos)
             self.ui.btnRegresar.clicked.connect(self.Regresar)
             self.ui.lbResult.setText(leerultimarespuesta(self))
-            self.ui.lbImage.setText( "<img src=..\FuncionesDeVentanas\untitled.png />" )
+            path = os.path.abspath("untitled.png") 
+            #self.ui.lbImage.setText( "<img src=..\FuncionesDeVentanas\untitled.png />" )
+            self.ui.lbImage.setText( "<img src="+path+" />" )
             
         def VerPasos(self): 
             self.w2 = Steps()

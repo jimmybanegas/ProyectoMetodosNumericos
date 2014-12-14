@@ -24,7 +24,7 @@ from Ventanas import Graph
 from Graficador import CutePlot
 import Graficador
 import Ventanas
-from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural, lagrange_1,CuadraturaGaussiana
+from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural, lagrange_1,CuadraturaGaussiana,InterpolacionNewton
 #from Algoritmos import Trazador_cubico_natural
 from serial.tools.miniterm import console
 
@@ -596,27 +596,24 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
             self.ui.leParam8.hide()
         def PolinomialNewton(self):
             self.ui.lbEjemplo.setText("\t\t\tEJEMPLO \n\n"
-                                      +"APROXIMACION INICIAL P0 : -1 \n\n"
-                                      +"APROXIMACION INICIAL P1: 0 \n\n"
-                                      +"APROXIMACION INICIAL P2: 1 \n\n"
-                                      +"TOLERANCIA : 0.0000005 \n  \n\n"
-                                      +"NO.ITERACIONES : 100")
+                                      +"Valores x0, x1 ... xn : -2, -1, 2, 3 \n\n"
+                                      +"Valores f(x0),f(x1)...,f(xn): 4, 1, 4, 9 \n\n")
            
-            self.ui.lbParam1.setText("Aproximacion Inicial 0")
-            self.ui.lbParam2.setText("Aproximacion Inicial 1")
+            self.ui.lbParam1.setText("Valores x0, x1 ... xn")
+            self.ui.lbParam2.setText("Valores f(x0),f(x1)...,f(xn)")
             self.ui.lbParam3.setText("Aproximacion Inicial 2")
             self.ui.lbParam4.setText("Tolerancia")
             self.ui.lbParam5.setText("No. Iteraciones")
             self.ui.leParam1.show()
             self.ui.leParam2.show()
-            self.ui.leParam3.show()
-            self.ui.leParam4.show()
+            self.ui.leParam3.hide()
+            self.ui.leParam4.hide()
             self.ui.lbParam1.show()
             self.ui.lbParam2.show()
-            self.ui.lbParam3.show()
-            self.ui.lbParam4.show()
-            self.ui.lbParam5.show()
-            self.ui.leParam5.show()
+            self.ui.lbParam3.hide()
+            self.ui.lbParam4.hide()
+            self.ui.lbParam5.hide()
+            self.ui.leParam5.hide()
             self.ui.lbParam6.setText("")
             self.ui.lbParam7.setText("")
             self.ui.lbParam8.setText("")
@@ -1074,7 +1071,11 @@ class Input(QtGui.QMainWindow,Ui_MainWindow):
                 self.w2.show() 
                 
             elif metodoSeleccionado == "PolinomialNewton":
-                self.PolinomialNewton()
+                resp = InterpolacionNewton.interpolacionNewton(str(self.ui.leParam1.text()), str(self.ui.leParam2.text()), lista)
+                
+                grabartxt(self, lista, str(resp), str(self.ui.leParam1.text()))
+                self.w2 = Steps()
+                self.w2.show() 
                 
             elif metodoSeleccionado == "CubitosNaturales":
                 resp=Trazador_cubico_natural.traz_cubico_nat(str(funcion),

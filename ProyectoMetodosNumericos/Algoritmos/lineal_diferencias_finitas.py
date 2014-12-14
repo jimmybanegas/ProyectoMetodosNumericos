@@ -116,7 +116,10 @@ def linealDiferenciasFinitas(px, qx, rx, a, b, alpha, beta, N, lista):
     lista.append("\tx \tW1 \t\tW2 \t\tu1 \t\tv1")
     for i in range(N+1):
         x = a + i*h
-        lista.append("\t"+str(x)+"\t"+str(W1[i])+"\t"+str(W2[i])+"\t"+str(u[1][i])+"\t"+str(v[1][i]))
+        lista.append("\t"+str(x)+"|"+str(W1[i])+"|"+str(W2[i])+"|"+str(u[1][i])+"|"+str(v[1][i]))
         
-#lista = []    
-#linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)
+'''lista = []    
+linealDiferenciasFinitas("-2/x","2/(x*x)","(sin( log(x, e) )) / (x*x)", 1, 2, 1, 2, 10, lista)
+for t in lista:
+    print t
+    '''

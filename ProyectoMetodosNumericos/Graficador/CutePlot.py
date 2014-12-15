@@ -20,12 +20,10 @@ matplotlib.rcParams['backend.qt4'] = 'PySide'
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 from matplotlib.figure import Figure
-canvas =""
 
 
 class CutePlot(QMainWindow):
-    global canvas
-         
+    
     def __init__(self, parent=None):
         super(CutePlot, self).__init__(parent)
         
@@ -48,14 +46,13 @@ class CutePlot(QMainWindow):
         self.upperbound.setText(str(self.UB_default))
         
     def create_main_frame(self):
-        global canvas
         self.main_frame = QWidget()
         # 7x5 inches, 80 dots-per-inch
         self.dpi = 80
-        self.fig = Figure((7, 5), dpi = self.dpi)
-        canvas = FigureCanvas(self.fig)
-        canvas.setParent(self.main_frame)
-        self.guardarImagen()
+        self.fig = Figure((5, 3), dpi = self.dpi)
+        self.canvas = FigureCanvas(self.fig)
+        self.canvas.setParent(self.main_frame)
+        
         self.is_data = False
         
         self.axes = self.fig.add_subplot(111)
@@ -67,7 +64,7 @@ class CutePlot(QMainWindow):
         # axis_state = 3: show all 4 subplots
         self.axis_state = 0
         
-        self.mpl_toolbar = NavigationToolbar(canvas, self.main_frame)
+        self.mpl_toolbar = NavigationToolbar(self.canvas, self.main_frame)
         
         # f(x) textbox
         self.title = QLabel('<font size=4><em>f</em> (<em>x </em>) =</font>')
@@ -144,7 +141,7 @@ class CutePlot(QMainWindow):
         vbox = QVBoxLayout()
         vbox.addLayout(grid)
         vbox.addLayout(grid2)
-        vbox.addWidget(canvas)
+        vbox.addWidget(self.canvas)
         vbox.addWidget(self.mpl_toolbar)
                     
         self.main_frame.setLayout(vbox)
@@ -156,8 +153,6 @@ class CutePlot(QMainWindow):
        
         
     def on_draw(self, *args):
-        global canvas
-        
         # Get x-domain from user input
         self.LB_input = unicode(self.lowerbound.text())
         self.UB_input = unicode(self.upperbound.text())
@@ -301,7 +296,7 @@ class CutePlot(QMainWindow):
         
         self.axes.set_xlabel('$x$')
         self.axes.set_ylabel('$f(x)$')
-        canvas.draw()
+        self.canvas.draw()
         self.guardarImagen()
         
         
@@ -375,11 +370,10 @@ class CutePlot(QMainWindow):
         return action
         
     def save_plot(self):
-        global canvas
         file_choices = "PNG (*.png)"
         path = unicode(QFileDialog.getSaveFileName(self, 'Save file', '', file_choices))
         if path:
-            canvas.print_figure(path, dpi = self.dpi)
+            self.canvas.print_figure(path, dpi = self.dpi)
             self.statusBar().showMessage('Saved to %s' % path, 2000)
     
     def import_data(self):
@@ -767,12 +761,11 @@ class CutePlot(QMainWindow):
             
     
     def guardarImagen(self):
-        global canvas
         path = os.path.abspath("untitled.png")  
-        canvas.resize(460,261 )     
-        canvas.print_figure(path, dpi = self.dpi)
+        self.canvas.resize(460,261 )     
+        self.canvas.print_figure(path, dpi = self.dpi)
         self.statusBar().showMessage('Saved to %s' % path, 2000)
-        canvas.resize(560,361 ) 
+        self.canvas.resize(560,361 ) 
          
 def main():
     # Check if QApplication already exists; if not, create it!

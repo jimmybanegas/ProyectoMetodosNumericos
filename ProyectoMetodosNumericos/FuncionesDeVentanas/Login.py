@@ -25,7 +25,7 @@ from Graficador import CutePlot
 import Graficador
 import Ventanas
 from Algoritmos import bisection,Newton,derivPlagrange,euler_ec_dif,factocrout,FactorizacionLUMarco,falsa_posicion,Gauss,lagrangeMarco,lineal_diferencias_finitas,MatrizInversa,minimos_cuadrado,muller,puntofijo,Reduccion_Matrices_Gauss,RegresionLineal,runge_kutta_ecu_dif, secante,simpson,sistema_edo_kutta, trapezoide,Trazador_cubico_natural, lagrange_1,CuadraturaGaussiana,InterpolacionNewton
-#from Algoritmos import Trazador_cubico_natural
+
 from serial.tools.miniterm import console
 
 from sqlalchemy.sql.expression import except_
@@ -93,9 +93,9 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.w3 = CutePlot.CutePlot()
             self.w3.textbox.setText(str(self.ui.lnFuncion.text()))
             self.w3.on_draw()
-            self.w3.show()
             self.w3.guardarImagen()
-            self.w3.close()
+        
+           
             if  funcion != "" :
                 try:
                     x=1

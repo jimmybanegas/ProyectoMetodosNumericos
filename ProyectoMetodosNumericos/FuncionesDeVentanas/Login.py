@@ -149,7 +149,7 @@ class ElegirAlgoritmo(QtGui.QMainWindow,Ui_MainWindow):
             else:
                 if (self.ui.chBiseccion.isChecked() or self.ui.chNewton.isChecked() or self.ui.chSecante.isChecked() or 
                      self.ui.chFalsa.isChecked() or self.ui.chMuller.isChecked() or self.ui.chLagrage.isChecked() or
-                     self.ui.chPolinomialNewton.isChecked()or self.ui.chInGauss.isChecked() or
+                     self.ui.chInGauss.isChecked() or
                      self.ui.chInSimpson.isChecked() or self.ui.chPuntoFijo.isChecked() or
                      self.ui.chInTrapecio.isChecked()):
                     

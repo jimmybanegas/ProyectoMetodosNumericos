@@ -158,6 +158,6 @@ def deployaword (self, texto, nombre):
     for n in texto:
         document.add_paragraph(
         str(n), style='ListBullet')
-        
-    document.save(nombre+'.docx')
+         
+    document.save(nombre)
     

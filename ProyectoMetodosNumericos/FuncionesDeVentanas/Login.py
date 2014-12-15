@@ -9,7 +9,7 @@ import parser
 import math
 from parser import ParserError
 from math import *
-from Archivos import *
+from FuncionesDeVentanas.Archivos import *
 from collections import namedtuple
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import *
@@ -281,7 +281,8 @@ class Historial(QtGui.QMainWindow,Ui_MainWindow):
             for n in pasos:
                 texto.append(n)
                 
-            deployaword(self, texto, "Ejercicio "+nombre)
+            path = os.path.abspath('Ejercicio_'+nombre+'.docx')    
+            deployaword(self, texto, path)
             self.ui.lblExito.setText("Creado!")
             
             

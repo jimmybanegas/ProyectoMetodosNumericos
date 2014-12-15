@@ -9,29 +9,33 @@ from docx import Document
 
 def creartxt(self):
     try: 
-        temp = os.path.join(os.path.dirname(__file__), 'datos.txt')
+        temp = os.path.join(os.path.abspath('datos.txt'))
+        #path = os.path.abspath('Ejercicio_'+nombre+'.docx')  
         archi = open(temp,'r')
         archi.close() 
     except: 
-        temp = os.path.join(os.path.dirname(__file__), 'datos.txt')
+        #temp = os.path.join(os.path.dirname(__file__), 'datos.txt')
+        temp = os.path.join(os.path.abspath('datos.txt'))
         archi=open(temp,'w')
         archi.write('0\n')
         archi.close()
         
 def creartxtfunciones(self):
     try: 
-        temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+        #temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+        temp = os.path.join(os.path.abspath('resueltos.txt'))
         archi = open(temp,'r')
         archi.close() 
     except: 
-        temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+        #temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+        temp = os.path.join(os.path.abspath('resueltos.txt'))
         archi=open(temp,'w')
         archi.close()
       
             
 def grabartxt(self, mylist, respuesta, funcion):
     lista = results = [str(i) for i in mylist]
-    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    fn = os.path.join(os.path.abspath('datos.txt'))
     archi=open(fn,'r+')
             
     numero_de_registros = archi.readline()
@@ -58,7 +62,7 @@ def grabartxt(self, mylist, respuesta, funcion):
     archi.write('#\n')
     archi.close()
     
-    temp = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+    temp = os.path.join(os.path.abspath('resueltos.txt'))
     arch2=open(temp,'a')
     
     arch2.write(str(funcion)+'\n')
@@ -69,7 +73,7 @@ def grabartxt(self, mylist, respuesta, funcion):
     
 def leerresueltos(self):
     lista = []
-    fn = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+    fn = os.path.join(os.path.abspath('resueltos.txt'))
     archi=open(fn,'r')
     archi.seek(0,0)
     linea=archi.readline()
@@ -82,7 +86,7 @@ def leerresueltos(self):
 
 def leerposiciones(self):
     lista = []
-    fn = os.path.join(os.path.dirname(__file__), 'resueltos.txt')
+    fn = os.path.join(os.path.abspath('resueltos.txt'))
     archi=open(fn,'r')
     archi.seek(0,0)
     archi.readline()
@@ -98,7 +102,7 @@ def leerposiciones(self):
 
 def leerultimotxt(self):
     lista = []
-    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    fn = os.path.join(os.path.abspath('datos.txt'))
     archi=open(fn,'r')
     archi.seek(0,0)
     numero_registros = archi.readline()
@@ -124,7 +128,7 @@ def leerultimotxt(self):
     return lista
     
 def leerultimarespuesta(self):
-    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    fn = os.path.join(os.path.abspath('datos.txt'))
     archi=open(fn,'r+')
     archi.seek(0,0)
     numero_registros = archi.readline()
@@ -142,7 +146,7 @@ def leerultimarespuesta(self):
     
 def leerespecifico(self, posicion):
     lista = []
-    fn = os.path.join(os.path.dirname(__file__), 'datos.txt')
+    fn = os.path.join(os.path.abspath('datos.txt'))
     archi=open(fn,'r+')
     archi.seek(int(posicion), 0)
     linea=archi.readline()

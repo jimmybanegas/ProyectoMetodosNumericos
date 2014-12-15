@@ -9,7 +9,7 @@ import parser
 import math
 from parser import ParserError
 from math import *
-from FuncionesDeVentanas.Archivos import *
+from Archivos import *
 from collections import namedtuple
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import *

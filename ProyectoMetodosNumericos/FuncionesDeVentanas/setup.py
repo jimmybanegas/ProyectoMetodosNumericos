@@ -1,7 +1,7 @@
 '''
 Created on 11/12/2014
 
-@author: 
+@author: Jimmy Ramos
 '''
 
 import sys
@@ -11,6 +11,6 @@ build_exe_options = {"packages": ["os","parser","math","docx","lxml","PySide.QtG
 
 setup(name = "Proyecto Metodos Numericos",
     version = "3.1",
-    description = "Metodos",
+    description = "Proyecto Metodos Numericos",
     options = {"build_exe": build_exe_options },
     executables = [Executable("Login.py", base = "Win32GUI")])

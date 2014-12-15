@@ -281,7 +281,7 @@ class Historial(QtGui.QMainWindow,Ui_MainWindow):
             for n in pasos:
                 texto.append(n)
                 
-            deployaword(self, texto, "Ejejercicio "+nombre)
+            deployaword(self, texto, "Ejercicio "+nombre)
             self.ui.lblExito.setText("Creado!")
             
             

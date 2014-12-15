@@ -93,7 +93,9 @@ class IngresarFuncion(QtGui.QMainWindow,Ui_MainWindow):
             self.w3 = CutePlot.CutePlot()
             self.w3.textbox.setText(str(self.ui.lnFuncion.text()))
             self.w3.on_draw()
+            self.w3.show()
             self.w3.guardarImagen()
+            self.w3.close()
             if  funcion != "" :
                 try:
                     x=1
